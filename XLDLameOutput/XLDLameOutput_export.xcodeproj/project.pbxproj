@@ -154,6 +154,8 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XLDLameOutput_export" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -249,6 +251,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -259,14 +262,15 @@
 					suppress,
 				);
 				PREBINDING = NO;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
-				VALID_ARCHS = "i386 ppc";
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -277,8 +281,8 @@
 					suppress,
 				);
 				PREBINDING = NO;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
-				VALID_ARCHS = "i386 ppc";
 			};
 			name = Release;
 		};

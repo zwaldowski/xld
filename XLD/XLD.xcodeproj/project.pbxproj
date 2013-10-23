@@ -13,16 +13,10 @@
 		BF001A280F6A1B4C0090585D /* XLDDDPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BF001A260F6A1B4C0090585D /* XLDDDPParser.m */; };
 		BF1166A7128AF2450058749F /* XLDCDDABackend.c in Sources */ = {isa = PBXBuildFile; fileRef = BF1166A6128AF2450058749F /* XLDCDDABackend.c */; };
 		BF1192010E7B91DA004BC21D /* gain_analysis.c in Sources */ = {isa = PBXBuildFile; fileRef = BF1191FF0E7B91DA004BC21D /* gain_analysis.c */; };
-		BF12FEB90A3D2F1700822690 /* XLDTtaDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3758C60A3C14090003FD0E /* XLDTtaDecoder.bundle */; };
-		BF12FEBA0A3D2F1700822690 /* XLDWavpackDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3758C70A3C14090003FD0E /* XLDWavpackDecoder.bundle */; };
-		BF12FEBB0A3D2F1700822690 /* XLDAlacDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3758C80A3C14090003FD0E /* XLDAlacDecoder.bundle */; };
-		BF12FEBD0A3D2F1700822690 /* XLDLibsndfileDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3758CA0A3C14090003FD0E /* XLDLibsndfileDecoder.bundle */; };
-		BF12FF950A3D586D00822690 /* XLDVorbisOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF12FF940A3D586D00822690 /* XLDVorbisOutput.bundle */; };
 		BF1539E61374F6BF003E1C69 /* XLDDiscBurner.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1539E51374F6BF003E1C69 /* XLDDiscBurner.m */; };
 		BF153A2513752BC3003E1C69 /* XLDTrackProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF153A2413752BC3003E1C69 /* XLDTrackProducer.m */; };
 		BF2013FA10BC62D800A82187 /* shn.icns in Resources */ = {isa = PBXBuildFile; fileRef = BF2013F910BC62D800A82187 /* shn.icns */; };
 		BF21887E0B1FD6F20010AA1E /* xld.icns in Resources */ = {isa = PBXBuildFile; fileRef = BF21887D0B1FD6F20010AA1E /* xld.icns */; };
-		BF23610B0A3E8B670040DAC4 /* XLDAacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF23610A0A3E8B670040DAC4 /* XLDAacOutput.bundle */; };
 		BF23B67C12338C1F00AF5305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF23B67A12338C1F00AF5305 /* MainMenu.xib */; };
 		BF23B69112338DD800AF5305 /* Player.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF23B69012338DD800AF5305 /* Player.xib */; };
 		BF23B69612338E0A00AF5305 /* Queue.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF23B69412338E0A00AF5305 /* Queue.xib */; };
@@ -33,10 +27,8 @@
 		BF24F1C40E828D8E007E24DE /* offsetlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF24F1C30E828D8E007E24DE /* offsetlist.plist */; };
 		BF24F1D80E829140007E24DE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF24F1D70E829140007E24DE /* IOKit.framework */; };
 		BF2B874812A00413002CB1FF /* XLDTrackValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B874612A00413002CB1FF /* XLDTrackValidator.m */; };
-		BF2D3F980E72C5BD00BE32E5 /* XLDSparkleUpdater.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF2D3F970E72C5BD00BE32E5 /* XLDSparkleUpdater.bundle */; };
 		BF2E0E300E5EDA4100A13E00 /* XLDAccurateRipChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E0E2E0E5EDA4100A13E00 /* XLDAccurateRipChecker.m */; };
 		BF2F0010128E75E800B01786 /* XLDSecureRipperEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2FFFEE128E53AA00B01786 /* XLDSecureRipperEngine.m */; };
-		BF310DBA0CE9889A005083EC /* XLDAacOutput2.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF310D9A0CE98882005083EC /* XLDAacOutput2.bundle */; };
 		BF3755110A3AA78F0003FD0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF3755100A3AA78F0003FD0E /* Localizable.strings */; };
 		BF37551A0A3ABA090003FD0E /* XLDCueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3755190A3ABA090003FD0E /* XLDCueParser.m */; };
 		BF3755EE0A3BFD820003FD0E /* XLDTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3755ED0A3BFD820003FD0E /* XLDTrack.m */; };
@@ -46,7 +38,6 @@
 		BF43BCEB0B00C1FF00A676A0 /* sfifo.c in Sources */ = {isa = PBXBuildFile; fileRef = BF43BCE90B00C1FF00A676A0 /* sfifo.c */; };
 		BF476DA213FCE9B500E66093 /* XLDPluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF476DA113FCE9B500E66093 /* XLDPluginManager.m */; };
 		BF476E4313FD14DD00E66093 /* SaveAs.png in Resources */ = {isa = PBXBuildFile; fileRef = BF476E4213FD14DD00E66093 /* SaveAs.png */; };
-		BF51575B0D7D937C001C0905 /* XLDHEAACOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF51575A0D7D937C001C0905 /* XLDHEAACOutput.bundle */; };
 		BF5593DD0EC9EEAA00562F2C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5593DC0EC9EEAA00562F2C /* CoreAudio.framework */; };
 		BF567DB416A0257D0024A3C8 /* XLDWavOutput.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF567DB216A0257D0024A3C8 /* XLDWavOutput.xib */; };
 		BF5FB7A5178D53C30076055E /* XLDLMAXMLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5FB7A3178D53C30076055E /* XLDLMAXMLLoader.m */; };
@@ -54,17 +45,13 @@
 		BF69CA771390264E008332B5 /* XLDMusicBrainzReleaseList.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69CA761390264E008332B5 /* XLDMusicBrainzReleaseList.m */; };
 		BF69CA851390268B008332B5 /* XLDMusicBrainzRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69CA841390268B008332B5 /* XLDMusicBrainzRelease.m */; };
 		BF6A1E180E580EE900C5E823 /* XLDAccurateRipDB.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6A1E160E580EE900C5E823 /* XLDAccurateRipDB.m */; };
-		BF6CA3C30D6579610089BAAA /* XLDMP3Decoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF6CA3C20D6579610089BAAA /* XLDMP3Decoder.bundle */; };
 		BF6E297A10BDAF4400406393 /* batch.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E297510BDAF4400406393 /* batch.png */; };
 		BF6E297C10BDAF4400406393 /* general.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E297710BDAF4400406393 /* general.png */; };
 		BF6E297D10BDAF4400406393 /* metadata.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E297810BDAF4400406393 /* metadata.png */; };
 		BF6E297E10BDAF4400406393 /* cddb.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E297910BDAF4400406393 /* cddb.png */; };
 		BF7BA3260E5328EB0062F558 /* XLDCDDAResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7BA3240E5328EB0062F558 /* XLDCDDAResult.m */; };
-		BF7C727C0DE34D3400325E88 /* XLDWavpackOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF7C725B0DE34D1D00325E88 /* XLDWavpackOutput.bundle */; };
 		BF7DF1360A381110006893CB /* XLDController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7DF1350A38110F006893CB /* XLDController.m */; };
 		BF7DF16B0A384011006893CB /* XLDDefaultOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7DF16A0A384011006893CB /* XLDDefaultOutput.m */; };
-		BF7E84200A428C30004D738A /* XLDLameOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF7E841F0A428C30004D738A /* XLDLameOutput.bundle */; };
-		BF7E84310A428C43004D738A /* XLDApeDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF3758C90A3C14090003FD0E /* XLDApeDecoder.bundle */; };
 		BF85F5851371579E00D71081 /* DiscRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF85F5841371579E00D71081 /* DiscRecording.framework */; };
 		BF85F5871371579E00D71081 /* DiscRecordingUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF85F5861371579E00D71081 /* DiscRecordingUI.framework */; };
 		BF8AA6C1139B6CFB0041328A /* ExportStopPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA6BF139B6CFB0041328A /* ExportStopPressed.png */; };
@@ -97,8 +84,6 @@
 		BFA1E9B717111DAE00A4607C /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA1E9B417111DAE00A4607C /* del.png */; };
 		BFA1E9B817111DAE00A4607C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = BFA1E9B517111DAE00A4607C /* add.png */; };
 		BFA1E9BB17111DC000A4607C /* XLDRenamer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA1E9B917111DC000A4607C /* XLDRenamer.m */; };
-		BFA7C90416296F6700C5116B /* XLDOpusOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFA7C90316296F6700C5116B /* XLDOpusOutput.bundle */; };
-		BFB24D1C10BA622D00E11EBF /* XLDShortenDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFB24D1B10BA622D00E11EBF /* XLDShortenDecoder.bundle */; };
 		BFB7CEA9123A8B7200F0870D /* XLDMetadataTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB7CEA7123A8B7200F0870D /* XLDMetadataTextParser.m */; };
 		BFB9DC291281509E009445A3 /* XLDWavOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB9DC281281509E009445A3 /* XLDWavOutput.m */; };
 		BFB9DC331281540B009445A3 /* XLDAiffOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB9DC321281540B009445A3 /* XLDAiffOutput.m */; };
@@ -108,9 +93,7 @@
 		BFB9E02C12829A55009445A3 /* XLDCustomFormatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB9E02B12829A55009445A3 /* XLDCustomFormatManager.m */; };
 		BFB9E03012829DCD009445A3 /* CustomFormatManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB9E02E12829DCD009445A3 /* CustomFormatManager.xib */; };
 		BFC102A00E91DAEE00C18EEE /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = BFC1029F0E91DAEE00C18EEE /* dsa_pub.pem */; };
-		BFC1702E0A4BDC4400EA040C /* XLDAlacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFC1702D0A4BDC4400EA040C /* XLDAlacOutput.bundle */; };
 		BFC1B05B14ADAADC003FE6DE /* XLDDiscogsRelease.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC1B05A14ADAADC003FE6DE /* XLDDiscogsRelease.m */; };
-		BFC1B34A14B179EB003FE6DE /* XLDID3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFC1B34814B179C8003FE6DE /* XLDID3.framework */; };
 		BFC5E7670E4D730300B3EF55 /* XLDCDDARipper.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC5E7650E4D730300B3EF55 /* XLDCDDARipper.m */; };
 		BFC5E9FA0E4E294300B3EF55 /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC5E9F90E4E294300B3EF55 /* DiskArbitration.framework */; };
 		BFCAB0DE0F74176B00A8480A /* oga.icns in Resources */ = {isa = PBXBuildFile; fileRef = BFCAB0D80F74176B00A8480A /* oga.icns */; };
@@ -126,7 +109,6 @@
 		BFDBBA661334D0DC00718DAF /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDBBA651334D0DC00718DAF /* cancel.png */; };
 		BFDC10FC0E1F34D20039A2AF /* XLDMetadataEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC10FA0E1F34D20039A2AF /* XLDMetadataEditor.m */; };
 		BFDD9CFB146EBDB500C9391C /* XLD_cmdline.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD9CFA146EBDB500C9391C /* XLD_cmdline.m */; };
-		BFE3A02B0ABAA9A000E64AF8 /* XLDFlacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFE3A02A0ABAA9A000E64AF8 /* XLDFlacOutput.bundle */; };
 		BFE88E2E1318073600931123 /* XLDSilentDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE88E2D1318073600931123 /* XLDSilentDecoder.m */; };
 		BFE88E501318096F00931123 /* XLDDiscLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE88E4F1318096F00931123 /* XLDDiscLayout.m */; };
 		BFE88E59131809AD00931123 /* XLDMultipleFileWrappedDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE88E58131809AD00931123 /* XLDMultipleFileWrappedDecoder.m */; };
@@ -134,9 +116,331 @@
 		BFF32F511382C0D600B5DCDB /* XLDAmazonSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF32F501382C0D600B5DCDB /* XLDAmazonSearcher.m */; };
 		BFF3316613862CDC00B5DCDB /* XLDCoverArtSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF3316513862CDC00B5DCDB /* XLDCoverArtSearcher.m */; };
 		BFF331701386359D00B5DCDB /* CoverArtSearcher.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF3316E1386359D00B5DCDB /* CoverArtSearcher.xib */; };
-		BFF7E77E1126FEDD00300E40 /* XLDTakDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFF7E77D1126FEDD00300E40 /* XLDTakDecoder.bundle */; };
-		BFFCC5F20B0F7A62005CE0B7 /* XLDFlacDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFFCC5CB0B0F7A45005CE0B7 /* XLDFlacDecoder.bundle */; };
+		DB8E0FF71818535D0099CBC4 /* XLDID3.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FB1181853150099CBC4 /* XLDID3.framework */; };
+		DB8E0FF81818536C0099CBC4 /* XLDOpusOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FD4181853150099CBC4 /* XLDOpusOutput.bundle */; };
+		DB8E0FFA181853BA0099CBC4 /* XLDShortenDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FA7181853150099CBC4 /* XLDShortenDecoder.bundle */; };
+		DB8E0FFB181853C20099CBC4 /* XLDSparkleUpdater.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0F7E181853150099CBC4 /* XLDSparkleUpdater.bundle */; };
+		DB8E0FFC181853CD0099CBC4 /* XLDWavpackOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0F88181853150099CBC4 /* XLDWavpackOutput.bundle */; };
+		DB8E0FFD181853D40099CBC4 /* XLDHEAACOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FA2181853150099CBC4 /* XLDHEAACOutput.bundle */; };
+		DB8E0FFE181853E60099CBC4 /* XLDAacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FB6181853150099CBC4 /* XLDAacOutput.bundle */; };
+		DB8E100F181854230099CBC4 /* XLDFlacDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E1004181854000099CBC4 /* XLDFlacDecoder.bundle */; };
+		DB8E1010181854290099CBC4 /* XLDFlacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E100A181854080099CBC4 /* XLDFlacOutput.bundle */; };
+		DB8E1011181854300099CBC4 /* XLDAlacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FC5181853150099CBC4 /* XLDAlacOutput.bundle */; };
+		DB8E101A181854610099CBC4 /* XLDApeDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E10171818544F0099CBC4 /* XLDApeDecoder.bundle */; };
+		DB8E101B181854660099CBC4 /* XLDLameOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0F8D181853150099CBC4 /* XLDLameOutput.bundle */; };
+		DB8E101C1818546D0099CBC4 /* XLDAacOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0F9D181853150099CBC4 /* XLDAacOutput.bundle */; };
+		DB8E101D1818549F0099CBC4 /* XLDVorbisDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FBB181853150099CBC4 /* XLDVorbisDecoder.bundle */; };
+		DB8E102E181854BE0099CBC4 /* XLDTtaDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FAC181853150099CBC4 /* XLDTtaDecoder.bundle */; };
+		DB8E102F181854C60099CBC4 /* XLDWavpackDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FCF181853150099CBC4 /* XLDWavpackDecoder.bundle */; };
+		DB8E1030181854D00099CBC4 /* XLDAlacDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FCA181853150099CBC4 /* XLDAlacDecoder.bundle */; };
+		DB8E1031181854DE0099CBC4 /* XLDMP3Decoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0FC0181853150099CBC4 /* XLDMP3Decoder.bundle */; };
+		DB8E10641818562D0099CBC4 /* XLDVorbisOutput.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E1061181856160099CBC4 /* XLDVorbisOutput.bundle */; };
+		DB8E10651818566E0099CBC4 /* XLDLibsndfileDecoder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB8E0F98181853150099CBC4 /* XLDLibsndfileDecoder.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8E0F7D181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F61181852ED0099CBC4 /* XLDSparkleUpdater_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDSparkleUpdater;
+		};
+		DB8E0F82181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5F181852ED0099CBC4 /* XLDSd2fOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDSd2fOutput;
+		};
+		DB8E0F87181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F66181852ED0099CBC4 /* XLDWavpackOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDWavpackOutput;
+		};
+		DB8E0F8C181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5B181852ED0099CBC4 /* XLDLameOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDLameOutput;
+		};
+		DB8E0F92181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F62181852ED0099CBC4 /* XLDTakDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDTakDecoder;
+		};
+		DB8E0F97181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5C181852ED0099CBC4 /* XLDLibsndfileDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDLibsndfileDecoder;
+		};
+		DB8E0F9C181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F55181852ED0099CBC4 /* XLDAacOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDAacOutput;
+		};
+		DB8E0FA1181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F59181852ED0099CBC4 /* XLDHEAACOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDHEAACOutput;
+		};
+		DB8E0FA6181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F60181852ED0099CBC4 /* XLDShortenDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDShortenDecoder;
+		};
+		DB8E0FAB181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F63181852ED0099CBC4 /* XLDTtaDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDTtaDecoder;
+		};
+		DB8E0FB0181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5A181852ED0099CBC4 /* XLDID3_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = XLDID3;
+		};
+		DB8E0FB5181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F56181852ED0099CBC4 /* XLDAacOutput2_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF310D830CE98869005083EC;
+			remoteInfo = XLDAacOutput2;
+		};
+		DB8E0FBA181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F64181852ED0099CBC4 /* XLDVorbisDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDVorbisDecoder;
+		};
+		DB8E0FBF181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5D181852ED0099CBC4 /* XLDMP3Decoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDMP3Decoder;
+		};
+		DB8E0FC4181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F58181852ED0099CBC4 /* XLDAlacOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDAlacOutput;
+		};
+		DB8E0FC9181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F57181852ED0099CBC4 /* XLDAlacDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDAlacDecoder;
+		};
+		DB8E0FCE181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F65181852ED0099CBC4 /* XLDWavpackDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDWavpackDecoder;
+		};
+		DB8E0FD3181853150099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5E181852ED0099CBC4 /* XLDOpusOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDOpusOutput;
+		};
+		DB8E0FD5181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F55181852ED0099CBC4 /* XLDAacOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDAacOutput;
+		};
+		DB8E0FD7181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F56181852ED0099CBC4 /* XLDAacOutput2_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDAacOutput2;
+		};
+		DB8E0FD9181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F57181852ED0099CBC4 /* XLDAlacDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDAlacDecoder;
+		};
+		DB8E0FDB181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F58181852ED0099CBC4 /* XLDAlacOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDAlacOutput;
+		};
+		DB8E0FDD181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F59181852ED0099CBC4 /* XLDHEAACOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDHEAACOutput;
+		};
+		DB8E0FDF181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5A181852ED0099CBC4 /* XLDID3_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = XLDID3;
+		};
+		DB8E0FE1181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5B181852ED0099CBC4 /* XLDLameOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDLameOutput;
+		};
+		DB8E0FE3181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5C181852ED0099CBC4 /* XLDLibsndfileDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDLibsndfileDecoder;
+		};
+		DB8E0FE5181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5D181852ED0099CBC4 /* XLDMP3Decoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDMP3Decoder;
+		};
+		DB8E0FE7181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5E181852ED0099CBC4 /* XLDOpusOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDOpusOutput;
+		};
+		DB8E0FE9181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F5F181852ED0099CBC4 /* XLDSd2fOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDSd2fOutput;
+		};
+		DB8E0FEB181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F60181852ED0099CBC4 /* XLDShortenDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDShortenDecoder;
+		};
+		DB8E0FED181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F61181852ED0099CBC4 /* XLDSparkleUpdater_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDSparkleUpdater;
+		};
+		DB8E0FEF181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F63181852ED0099CBC4 /* XLDTtaDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDTtaDecoder;
+		};
+		DB8E0FF1181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F64181852ED0099CBC4 /* XLDVorbisDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDVorbisDecoder;
+		};
+		DB8E0FF3181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F65181852ED0099CBC4 /* XLDWavpackDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDWavpackDecoder;
+		};
+		DB8E0FF5181853530099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0F66181852ED0099CBC4 /* XLDWavpackOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDWavpackOutput;
+		};
+		DB8E1003181854000099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0FFF181854000099CBC4 /* XLDFlacDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDFlacDecoder;
+		};
+		DB8E1009181854080099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E1005181854080099CBC4 /* XLDFlacOutput_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDFlacOutput;
+		};
+		DB8E100B1818540F0099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E0FFF181854000099CBC4 /* XLDFlacDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDFlacDecoder;
+		};
+		DB8E100D1818540F0099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E1005181854080099CBC4 /* XLDFlacOutput_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDFlacOutput;
+		};
+		DB8E10161818544F0099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E10121818544F0099CBC4 /* XLDApeDecoder_export.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = XLDApeDecoder;
+		};
+		DB8E1018181854590099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E10121818544F0099CBC4 /* XLDApeDecoder_export.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XLDApeDecoder;
+		};
+		DB8E1060181856160099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E1039181855640099CBC4 /* XLDVorbisOutput.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB8E1040181855B90099CBC4;
+			remoteInfo = XLDVorbisOutput;
+		};
+		DB8E1062181856240099CBC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E1039181855640099CBC4 /* XLDVorbisOutput.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8E103F181855B90099CBC4;
+			remoteInfo = XLDVorbisOutput;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BF12FE8E0A3D2EC900822690 /* CopyFiles */ = {
@@ -145,25 +449,25 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BFA7C90416296F6700C5116B /* XLDOpusOutput.bundle in CopyFiles */,
-				BFF7E77E1126FEDD00300E40 /* XLDTakDecoder.bundle in CopyFiles */,
-				BFB24D1C10BA622D00E11EBF /* XLDShortenDecoder.bundle in CopyFiles */,
-				BF2D3F980E72C5BD00BE32E5 /* XLDSparkleUpdater.bundle in CopyFiles */,
-				BF7C727C0DE34D3400325E88 /* XLDWavpackOutput.bundle in CopyFiles */,
-				BF51575B0D7D937C001C0905 /* XLDHEAACOutput.bundle in CopyFiles */,
-				BF310DBA0CE9889A005083EC /* XLDAacOutput2.bundle in CopyFiles */,
-				BFFCC5F20B0F7A62005CE0B7 /* XLDFlacDecoder.bundle in CopyFiles */,
-				BFE3A02B0ABAA9A000E64AF8 /* XLDFlacOutput.bundle in CopyFiles */,
-				BFC1702E0A4BDC4400EA040C /* XLDAlacOutput.bundle in CopyFiles */,
-				BF7E84310A428C43004D738A /* XLDApeDecoder.bundle in CopyFiles */,
-				BF7E84200A428C30004D738A /* XLDLameOutput.bundle in CopyFiles */,
-				BF23610B0A3E8B670040DAC4 /* XLDAacOutput.bundle in CopyFiles */,
-				BF12FF950A3D586D00822690 /* XLDVorbisOutput.bundle in CopyFiles */,
-				BF12FEB90A3D2F1700822690 /* XLDTtaDecoder.bundle in CopyFiles */,
-				BF12FEBA0A3D2F1700822690 /* XLDWavpackDecoder.bundle in CopyFiles */,
-				BF12FEBB0A3D2F1700822690 /* XLDAlacDecoder.bundle in CopyFiles */,
-				BF12FEBD0A3D2F1700822690 /* XLDLibsndfileDecoder.bundle in CopyFiles */,
-				BF6CA3C30D6579610089BAAA /* XLDMP3Decoder.bundle in CopyFiles */,
+				DB8E0FF81818536C0099CBC4 /* XLDOpusOutput.bundle in CopyFiles */,
+				DB8E0FFA181853BA0099CBC4 /* XLDShortenDecoder.bundle in CopyFiles */,
+				DB8E0FFB181853C20099CBC4 /* XLDSparkleUpdater.bundle in CopyFiles */,
+				DB8E0FFC181853CD0099CBC4 /* XLDWavpackOutput.bundle in CopyFiles */,
+				DB8E0FFD181853D40099CBC4 /* XLDHEAACOutput.bundle in CopyFiles */,
+				DB8E0FFE181853E60099CBC4 /* XLDAacOutput.bundle in CopyFiles */,
+				DB8E100F181854230099CBC4 /* XLDFlacDecoder.bundle in CopyFiles */,
+				DB8E1010181854290099CBC4 /* XLDFlacOutput.bundle in CopyFiles */,
+				DB8E1011181854300099CBC4 /* XLDAlacOutput.bundle in CopyFiles */,
+				DB8E101A181854610099CBC4 /* XLDApeDecoder.bundle in CopyFiles */,
+				DB8E101B181854660099CBC4 /* XLDLameOutput.bundle in CopyFiles */,
+				DB8E101C1818546D0099CBC4 /* XLDAacOutput.bundle in CopyFiles */,
+				DB8E101D1818549F0099CBC4 /* XLDVorbisDecoder.bundle in CopyFiles */,
+				DB8E10641818562D0099CBC4 /* XLDVorbisOutput.bundle in CopyFiles */,
+				DB8E102E181854BE0099CBC4 /* XLDTtaDecoder.bundle in CopyFiles */,
+				DB8E102F181854C60099CBC4 /* XLDWavpackDecoder.bundle in CopyFiles */,
+				DB8E1030181854D00099CBC4 /* XLDAlacDecoder.bundle in CopyFiles */,
+				DB8E10651818566E0099CBC4 /* XLDLibsndfileDecoder.bundle in CopyFiles */,
+				DB8E1031181854DE0099CBC4 /* XLDMP3Decoder.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +477,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFC1B34A14B179EB003FE6DE /* XLDID3.framework in CopyFiles */,
+				DB8E0FF71818535D0099CBC4 /* XLDID3.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +500,6 @@
 		BF1191FF0E7B91DA004BC21D /* gain_analysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gain_analysis.c; sourceTree = "<group>"; };
 		BF1192000E7B91DA004BC21D /* gain_analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gain_analysis.h; sourceTree = "<group>"; };
 		BF12FEFF0A3D4A7D00822690 /* XLDOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutput.h; sourceTree = "<group>"; };
-		BF12FF940A3D586D00822690 /* XLDVorbisOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDVorbisOutput.bundle; path = ../XLDVorbisOutput/build/Release/XLDVorbisOutput.bundle; sourceTree = "<group>"; };
 		BF1539E41374F6BF003E1C69 /* XLDDiscBurner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDiscBurner.h; sourceTree = "<group>"; };
 		BF1539E51374F6BF003E1C69 /* XLDDiscBurner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDDiscBurner.m; sourceTree = "<group>"; };
 		BF153A2313752BC3003E1C69 /* XLDTrackProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrackProducer.h; sourceTree = "<group>"; };
@@ -205,7 +508,6 @@
 		BF1856E10D9FB266000A924A /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF2013F910BC62D800A82187 /* shn.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = shn.icns; sourceTree = "<group>"; };
 		BF21887D0B1FD6F20010AA1E /* xld.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = xld.icns; sourceTree = "<group>"; };
-		BF23610A0A3E8B670040DAC4 /* XLDAacOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDAacOutput.bundle; path = ../XLDAacOutput/build/Release/XLDAacOutput.bundle; sourceTree = "<group>"; };
 		BF23B67B12338C1F00AF5305 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BF23B68312338C3900AF5305 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BF23B68412338C4F00AF5305 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -249,23 +551,16 @@
 		BF24F1D70E829140007E24DE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		BF2B874612A00413002CB1FF /* XLDTrackValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDTrackValidator.m; sourceTree = "<group>"; };
 		BF2B874712A00413002CB1FF /* XLDTrackValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrackValidator.h; sourceTree = "<group>"; };
-		BF2D3F970E72C5BD00BE32E5 /* XLDSparkleUpdater.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDSparkleUpdater.bundle; path = ../XLDSparkleUpdater/build/Release/XLDSparkleUpdater.bundle; sourceTree = "<group>"; };
 		BF2E0E2D0E5EDA4100A13E00 /* XLDAccurateRipChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDAccurateRipChecker.h; sourceTree = "<group>"; };
 		BF2E0E2E0E5EDA4100A13E00 /* XLDAccurateRipChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDAccurateRipChecker.m; sourceTree = "<group>"; };
 		BF2FFFED128E53AA00B01786 /* XLDSecureRipperEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDSecureRipperEngine.h; sourceTree = "<group>"; };
 		BF2FFFEE128E53AA00B01786 /* XLDSecureRipperEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDSecureRipperEngine.m; sourceTree = "<group>"; };
-		BF310D9A0CE98882005083EC /* XLDAacOutput2.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDAacOutput2.bundle; path = ../XLDAacOutput2/build/Release/XLDAacOutput2.bundle; sourceTree = "<group>"; };
 		BF37550E0A3AA7800003FD0E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF3755180A3ABA090003FD0E /* XLDCueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDCueParser.h; sourceTree = "<group>"; };
 		BF3755190A3ABA090003FD0E /* XLDCueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDCueParser.m; sourceTree = "<group>"; };
 		BF3755EB0A3BFD820003FD0E /* XLDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = XLDDecoder.h; sourceTree = "<group>"; };
 		BF3755EC0A3BFD820003FD0E /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
 		BF3755ED0A3BFD820003FD0E /* XLDTrack.m */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.objc; path = XLDTrack.m; sourceTree = "<group>"; };
-		BF3758C60A3C14090003FD0E /* XLDTtaDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDTtaDecoder.bundle; path = ../XLDTtaDecoder/build/Release/XLDTtaDecoder.bundle; sourceTree = "<group>"; };
-		BF3758C70A3C14090003FD0E /* XLDWavpackDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDWavpackDecoder.bundle; path = ../XLDWavpackDecoder/build/Release/XLDWavpackDecoder.bundle; sourceTree = "<group>"; };
-		BF3758C80A3C14090003FD0E /* XLDAlacDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDAlacDecoder.bundle; path = ../XLDAlacDecoder/build/Release/XLDAlacDecoder.bundle; sourceTree = "<group>"; };
-		BF3758C90A3C14090003FD0E /* XLDApeDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDApeDecoder.bundle; path = ../XLDApeDecoder/build/Release/XLDApeDecoder.bundle; sourceTree = "<group>"; };
-		BF3758CA0A3C14090003FD0E /* XLDLibsndfileDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDLibsndfileDecoder.bundle; path = ../XLDLibsndfileDecoder/build/Release/XLDLibsndfileDecoder.bundle; sourceTree = "<group>"; };
 		BF375A320A3C423F0003FD0E /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF3811420CE9EB79008C7B47 /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BF3D6BAF13237F6F002CA462 /* XLDDiscView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDiscView.h; sourceTree = "<group>"; };
@@ -286,7 +581,6 @@
 		BF476DA113FCE9B500E66093 /* XLDPluginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDPluginManager.m; sourceTree = "<group>"; };
 		BF476E4213FD14DD00E66093 /* SaveAs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveAs.png; sourceTree = "<group>"; };
 		BF4AA77710A69C50002441F3 /* Dutch */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Dutch; path = Dutch.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BF51575A0D7D937C001C0905 /* XLDHEAACOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDHEAACOutput.bundle; path = ../XLDHEAACOutput/build/Release/XLDHEAACOutput.bundle; sourceTree = "<group>"; };
 		BF5593DC0EC9EEAA00562F2C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
 		BF564F3B1325447600838FC4 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/DiscView.xib; sourceTree = "<group>"; };
 		BF564F3C1325447E00838FC4 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/DiscView.xib; sourceTree = "<group>"; };
@@ -324,19 +618,16 @@
 		BF6A1E150E580EE900C5E823 /* XLDAccurateRipDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDAccurateRipDB.h; sourceTree = "<group>"; };
 		BF6A1E160E580EE900C5E823 /* XLDAccurateRipDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDAccurateRipDB.m; sourceTree = "<group>"; };
 		BF6A22820E5B11DF00C5E823 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BF6CA3C20D6579610089BAAA /* XLDMP3Decoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDMP3Decoder.bundle; path = ../XLDMP3Decoder/build/Release/XLDMP3Decoder.bundle; sourceTree = "<group>"; };
 		BF6E297510BDAF4400406393 /* batch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batch.png; sourceTree = "<group>"; };
 		BF6E297710BDAF4400406393 /* general.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = general.png; sourceTree = "<group>"; };
 		BF6E297810BDAF4400406393 /* metadata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metadata.png; sourceTree = "<group>"; };
 		BF6E297910BDAF4400406393 /* cddb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cddb.png; sourceTree = "<group>"; };
 		BF7BA3230E5328EB0062F558 /* XLDCDDAResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDCDDAResult.h; sourceTree = "<group>"; };
 		BF7BA3240E5328EB0062F558 /* XLDCDDAResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDCDDAResult.m; sourceTree = "<group>"; };
-		BF7C725B0DE34D1D00325E88 /* XLDWavpackOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDWavpackOutput.bundle; path = ../XLDWavpackOutput/build/Release/XLDWavpackOutput.bundle; sourceTree = "<group>"; };
 		BF7DF1340A38110F006893CB /* XLDController.h */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.h; path = XLDController.h; sourceTree = "<group>"; };
 		BF7DF1350A38110F006893CB /* XLDController.m */ = {isa = PBXFileReference; fileEncoding = 0; lastKnownFileType = sourcecode.c.objc; path = XLDController.m; sourceTree = "<group>"; };
 		BF7DF1690A384011006893CB /* XLDDefaultOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDefaultOutput.h; sourceTree = "<group>"; };
 		BF7DF16A0A384011006893CB /* XLDDefaultOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDDefaultOutput.m; sourceTree = "<group>"; };
-		BF7E841F0A428C30004D738A /* XLDLameOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDLameOutput.bundle; path = ../XLDLameOutput/build/Release/XLDLameOutput.bundle; sourceTree = "<group>"; };
 		BF85F5841371579E00D71081 /* DiscRecording.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = /System/Library/Frameworks/DiscRecording.framework; sourceTree = "<absolute>"; };
 		BF85F5861371579E00D71081 /* DiscRecordingUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecordingUI.framework; path = /System/Library/Frameworks/DiscRecordingUI.framework; sourceTree = "<absolute>"; };
 		BF8AA6BF139B6CFB0041328A /* ExportStopPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExportStopPressed.png; sourceTree = "<group>"; };
@@ -387,10 +678,8 @@
 		BFA1E9B517111DAE00A4607C /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		BFA1E9B917111DC000A4607C /* XLDRenamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDRenamer.m; sourceTree = "<group>"; };
 		BFA1E9BA17111DC000A4607C /* XLDRenamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDRenamer.h; sourceTree = "<group>"; };
-		BFA7C90316296F6700C5116B /* XLDOpusOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDOpusOutput.bundle; path = ../XLDOpusOutput/build/Release/XLDOpusOutput.bundle; sourceTree = "<group>"; };
 		BFA7CBF6163C10C400C5116B /* XLDLogChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDLogChecker.h; sourceTree = "<group>"; };
 		BFAC8365128BFBB8001A3797 /* cachetest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cachetest.c; sourceTree = "<group>"; };
-		BFB24D1B10BA622D00E11EBF /* XLDShortenDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDShortenDecoder.bundle; path = ../XLDShortenDecoder/build/Release/XLDShortenDecoder.bundle; sourceTree = "<group>"; };
 		BFB7CEA7123A8B7200F0870D /* XLDMetadataTextParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDMetadataTextParser.m; sourceTree = "<group>"; };
 		BFB7CEA8123A8B7200F0870D /* XLDMetadataTextParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDMetadataTextParser.h; sourceTree = "<group>"; };
 		BFB9DC271281509E009445A3 /* XLDWavOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDWavOutput.h; sourceTree = "<group>"; };
@@ -407,7 +696,6 @@
 		BFB9E02B12829A55009445A3 /* XLDCustomFormatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDCustomFormatManager.m; sourceTree = "<group>"; };
 		BFB9E02F12829DCD009445A3 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/CustomFormatManager.xib; sourceTree = "<group>"; };
 		BFC1029F0E91DAEE00C18EEE /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		BFC1702D0A4BDC4400EA040C /* XLDAlacOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDAlacOutput.bundle; path = ../XLDAlacOutput/build/Release/XLDAlacOutput.bundle; sourceTree = "<group>"; };
 		BFC1B05914ADAADC003FE6DE /* XLDDiscogsRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDiscogsRelease.h; sourceTree = "<group>"; };
 		BFC1B05A14ADAADC003FE6DE /* XLDDiscogsRelease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDDiscogsRelease.m; sourceTree = "<group>"; };
 		BFC1B34814B179C8003FE6DE /* XLDID3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLDID3.framework; path = ../XLDID3/build/Release/XLDID3.framework; sourceTree = "<group>"; };
@@ -445,7 +733,6 @@
 		BFDC10F90E1F34D20039A2AF /* XLDMetadataEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDMetadataEditor.h; sourceTree = "<group>"; };
 		BFDC10FA0E1F34D20039A2AF /* XLDMetadataEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDMetadataEditor.m; sourceTree = "<group>"; };
 		BFDD9CFA146EBDB500C9391C /* XLD_cmdline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLD_cmdline.m; sourceTree = "<group>"; };
-		BFE3A02A0ABAA9A000E64AF8 /* XLDFlacOutput.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDFlacOutput.bundle; path = ../XLDFlacOutput/build/Release/XLDFlacOutput.bundle; sourceTree = "<group>"; };
 		BFE88E2C1318073200931123 /* XLDSilentDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDSilentDecoder.h; sourceTree = "<group>"; };
 		BFE88E2D1318073600931123 /* XLDSilentDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDSilentDecoder.m; sourceTree = "<group>"; };
 		BFE88E4E1318096A00931123 /* XLDDiscLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDiscLayout.h; sourceTree = "<group>"; };
@@ -470,8 +757,28 @@
 		BFF3383C1388FA7600B5DCDB /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/CoverArtSearcher.xib; sourceTree = "<group>"; };
 		BFF3383D1388FA8D00B5DCDB /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = zh_TW; path = zh_TW.lproj/CoverArtSearcher.xib; sourceTree = "<group>"; };
 		BFF7C6A2137D753800192CA7 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = French; path = French.lproj/Credits.rtfd; sourceTree = "<group>"; };
-		BFF7E77D1126FEDD00300E40 /* XLDTakDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDTakDecoder.bundle; path = ../XLDTakDecoder/build/Release/XLDTakDecoder.bundle; sourceTree = "<group>"; };
-		BFFCC5CB0B0F7A45005CE0B7 /* XLDFlacDecoder.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = XLDFlacDecoder.bundle; path = ../XLDFlacDecoder/build/Release/XLDFlacDecoder.bundle; sourceTree = "<group>"; };
+		DB8E0F55181852ED0099CBC4 /* XLDAacOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDAacOutput_export.xcodeproj; path = XLDAacOutput/XLDAacOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F56181852ED0099CBC4 /* XLDAacOutput2_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDAacOutput2_export.xcodeproj; path = XLDAacOutput2/XLDAacOutput2_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F57181852ED0099CBC4 /* XLDAlacDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDAlacDecoder_export.xcodeproj; path = XLDAlacDecoder/XLDAlacDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F58181852ED0099CBC4 /* XLDAlacOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDAlacOutput_export.xcodeproj; path = XLDAlacOutput/XLDAlacOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F59181852ED0099CBC4 /* XLDHEAACOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDHEAACOutput_export.xcodeproj; path = XLDHEAACOutput/XLDHEAACOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5A181852ED0099CBC4 /* XLDID3_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDID3_export.xcodeproj; path = XLDID3/XLDID3_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5B181852ED0099CBC4 /* XLDLameOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDLameOutput_export.xcodeproj; path = XLDLameOutput/XLDLameOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5C181852ED0099CBC4 /* XLDLibsndfileDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDLibsndfileDecoder_export.xcodeproj; path = XLDLibsndfileDecoder/XLDLibsndfileDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5D181852ED0099CBC4 /* XLDMP3Decoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDMP3Decoder_export.xcodeproj; path = XLDMP3Decoder/XLDMP3Decoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5E181852ED0099CBC4 /* XLDOpusOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDOpusOutput_export.xcodeproj; path = XLDOpusOutput/XLDOpusOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F5F181852ED0099CBC4 /* XLDSd2fOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDSd2fOutput_export.xcodeproj; path = XLDSd2fOutput/XLDSd2fOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F60181852ED0099CBC4 /* XLDShortenDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDShortenDecoder_export.xcodeproj; path = XLDShortenDecoder/XLDShortenDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F61181852ED0099CBC4 /* XLDSparkleUpdater_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDSparkleUpdater_export.xcodeproj; path = XLDSparkleUpdater/XLDSparkleUpdater_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F62181852ED0099CBC4 /* XLDTakDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDTakDecoder_export.xcodeproj; path = XLDTakDecoder/XLDTakDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F63181852ED0099CBC4 /* XLDTtaDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDTtaDecoder_export.xcodeproj; path = XLDTtaDecoder/XLDTtaDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F64181852ED0099CBC4 /* XLDVorbisDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDVorbisDecoder_export.xcodeproj; path = XLDVorbisDecoder/XLDVorbisDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F65181852ED0099CBC4 /* XLDWavpackDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDWavpackDecoder_export.xcodeproj; path = XLDWavpackDecoder/XLDWavpackDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0F66181852ED0099CBC4 /* XLDWavpackOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDWavpackOutput_export.xcodeproj; path = XLDWavpackOutput/XLDWavpackOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E0FFF181854000099CBC4 /* XLDFlacDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDFlacDecoder_export.xcodeproj; path = XLDFlacDecoder/XLDFlacDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E1005181854080099CBC4 /* XLDFlacOutput_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDFlacOutput_export.xcodeproj; path = XLDFlacOutput/XLDFlacOutput_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E10121818544F0099CBC4 /* XLDApeDecoder_export.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDApeDecoder_export.xcodeproj; path = XLDApeDecoder/XLDApeDecoder_export.xcodeproj; sourceTree = "<group>"; };
+		DB8E1039181855640099CBC4 /* XLDVorbisOutput.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XLDVorbisOutput.xcodeproj; path = XLDVorbisOutput/XLDVorbisOutput.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -636,9 +943,9 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				BF375B940A3D0D0F0003FD0E /* Plugin */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				DB8E0F67181852ED0099CBC4 /* Projects */,
 			);
 			name = XLD;
 			sourceTree = "<group>";
@@ -722,32 +1029,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BF375B940A3D0D0F0003FD0E /* Plugin */ = {
-			isa = PBXGroup;
-			children = (
-				BF2D3F970E72C5BD00BE32E5 /* XLDSparkleUpdater.bundle */,
-				BF7C725B0DE34D1D00325E88 /* XLDWavpackOutput.bundle */,
-				BF51575A0D7D937C001C0905 /* XLDHEAACOutput.bundle */,
-				BF6CA3C20D6579610089BAAA /* XLDMP3Decoder.bundle */,
-				BF310D9A0CE98882005083EC /* XLDAacOutput2.bundle */,
-				BFFCC5CB0B0F7A45005CE0B7 /* XLDFlacDecoder.bundle */,
-				BFE3A02A0ABAA9A000E64AF8 /* XLDFlacOutput.bundle */,
-				BFC1702D0A4BDC4400EA040C /* XLDAlacOutput.bundle */,
-				BF7E841F0A428C30004D738A /* XLDLameOutput.bundle */,
-				BF23610A0A3E8B670040DAC4 /* XLDAacOutput.bundle */,
-				BF12FF940A3D586D00822690 /* XLDVorbisOutput.bundle */,
-				BF3758C60A3C14090003FD0E /* XLDTtaDecoder.bundle */,
-				BF3758C70A3C14090003FD0E /* XLDWavpackDecoder.bundle */,
-				BF3758C80A3C14090003FD0E /* XLDAlacDecoder.bundle */,
-				BF3758C90A3C14090003FD0E /* XLDApeDecoder.bundle */,
-				BF3758CA0A3C14090003FD0E /* XLDLibsndfileDecoder.bundle */,
-				BFB24D1B10BA622D00E11EBF /* XLDShortenDecoder.bundle */,
-				BFF7E77D1126FEDD00300E40 /* XLDTakDecoder.bundle */,
-				BFA7C90316296F6700C5116B /* XLDOpusOutput.bundle */,
-			);
-			name = Plugin;
-			sourceTree = "<group>";
-		};
 		BF9AB2FB0E84D96A0089A313 /* paranoia */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +1047,212 @@
 			path = paranoia;
 			sourceTree = "<group>";
 		};
+		DB8E0F67181852ED0099CBC4 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F56181852ED0099CBC4 /* XLDAacOutput2_export.xcodeproj */,
+				DB8E0F55181852ED0099CBC4 /* XLDAacOutput_export.xcodeproj */,
+				DB8E0F57181852ED0099CBC4 /* XLDAlacDecoder_export.xcodeproj */,
+				DB8E0F58181852ED0099CBC4 /* XLDAlacOutput_export.xcodeproj */,
+				DB8E10121818544F0099CBC4 /* XLDApeDecoder_export.xcodeproj */,
+				DB8E0FFF181854000099CBC4 /* XLDFlacDecoder_export.xcodeproj */,
+				DB8E1005181854080099CBC4 /* XLDFlacOutput_export.xcodeproj */,
+				DB8E0F59181852ED0099CBC4 /* XLDHEAACOutput_export.xcodeproj */,
+				DB8E0F5A181852ED0099CBC4 /* XLDID3_export.xcodeproj */,
+				DB8E0F5B181852ED0099CBC4 /* XLDLameOutput_export.xcodeproj */,
+				DB8E0F5C181852ED0099CBC4 /* XLDLibsndfileDecoder_export.xcodeproj */,
+				DB8E0F5D181852ED0099CBC4 /* XLDMP3Decoder_export.xcodeproj */,
+				DB8E0F5E181852ED0099CBC4 /* XLDOpusOutput_export.xcodeproj */,
+				DB8E0F5F181852ED0099CBC4 /* XLDSd2fOutput_export.xcodeproj */,
+				DB8E0F60181852ED0099CBC4 /* XLDShortenDecoder_export.xcodeproj */,
+				DB8E0F61181852ED0099CBC4 /* XLDSparkleUpdater_export.xcodeproj */,
+				DB8E0F62181852ED0099CBC4 /* XLDTakDecoder_export.xcodeproj */,
+				DB8E0F63181852ED0099CBC4 /* XLDTtaDecoder_export.xcodeproj */,
+				DB8E0F64181852ED0099CBC4 /* XLDVorbisDecoder_export.xcodeproj */,
+				DB8E1039181855640099CBC4 /* XLDVorbisOutput.xcodeproj */,
+				DB8E0F65181852ED0099CBC4 /* XLDWavpackDecoder_export.xcodeproj */,
+				DB8E0F66181852ED0099CBC4 /* XLDWavpackOutput_export.xcodeproj */,
+			);
+			name = Projects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DB8E0F7A181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F7E181853150099CBC4 /* XLDSparkleUpdater.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F7F181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F83181853150099CBC4 /* XLDSd2fOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F84181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F88181853150099CBC4 /* XLDWavpackOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F89181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F8D181853150099CBC4 /* XLDLameOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F8E181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F93181853150099CBC4 /* XLDTakDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F94181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F98181853150099CBC4 /* XLDLibsndfileDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F99181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0F9D181853150099CBC4 /* XLDAacOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0F9E181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FA2181853150099CBC4 /* XLDHEAACOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FA3181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FA7181853150099CBC4 /* XLDShortenDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FA8181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FAC181853150099CBC4 /* XLDTtaDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FAD181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FB1181853150099CBC4 /* XLDID3.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FB2181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FB6181853150099CBC4 /* XLDAacOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FB7181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FBB181853150099CBC4 /* XLDVorbisDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FBC181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FC0181853150099CBC4 /* XLDMP3Decoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FC1181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FC5181853150099CBC4 /* XLDAlacOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FC6181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FCA181853150099CBC4 /* XLDAlacDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FCB181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FCF181853150099CBC4 /* XLDWavpackDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E0FD0181853150099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E0FD4181853150099CBC4 /* XLDOpusOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E1000181854000099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1004181854000099CBC4 /* XLDFlacDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E1006181854080099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E100A181854080099CBC4 /* XLDFlacOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E10131818544F0099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E10171818544F0099CBC4 /* XLDApeDecoder.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E103A181855640099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1061181856160099CBC4 /* XLDVorbisOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,6 +1269,27 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB8E1063181856240099CBC4 /* PBXTargetDependency */,
+				DB8E1019181854590099CBC4 /* PBXTargetDependency */,
+				DB8E100C1818540F0099CBC4 /* PBXTargetDependency */,
+				DB8E100E1818540F0099CBC4 /* PBXTargetDependency */,
+				DB8E0FD6181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FD8181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FDA181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FDC181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FDE181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FE0181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FE2181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FE4181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FE6181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FE8181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FEA181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FEC181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FEE181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FF0181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FF2181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FF4181853530099CBC4 /* PBXTargetDependency */,
+				DB8E0FF6181853530099CBC4 /* PBXTargetDependency */,
 			);
 			name = XLD;
 			productInstallPath = "$(HOME)/Applications";
@@ -815,12 +1323,259 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* XLD */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DB8E0FB2181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F56181852ED0099CBC4 /* XLDAacOutput2_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F99181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F55181852ED0099CBC4 /* XLDAacOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FC6181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F57181852ED0099CBC4 /* XLDAlacDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FC1181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F58181852ED0099CBC4 /* XLDAlacOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E10131818544F0099CBC4 /* Products */;
+					ProjectRef = DB8E10121818544F0099CBC4 /* XLDApeDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E1000181854000099CBC4 /* Products */;
+					ProjectRef = DB8E0FFF181854000099CBC4 /* XLDFlacDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E1006181854080099CBC4 /* Products */;
+					ProjectRef = DB8E1005181854080099CBC4 /* XLDFlacOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F9E181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F59181852ED0099CBC4 /* XLDHEAACOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FAD181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5A181852ED0099CBC4 /* XLDID3_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F89181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5B181852ED0099CBC4 /* XLDLameOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F94181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5C181852ED0099CBC4 /* XLDLibsndfileDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FBC181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5D181852ED0099CBC4 /* XLDMP3Decoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FD0181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5E181852ED0099CBC4 /* XLDOpusOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F7F181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F5F181852ED0099CBC4 /* XLDSd2fOutput_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FA3181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F60181852ED0099CBC4 /* XLDShortenDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F7A181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F61181852ED0099CBC4 /* XLDSparkleUpdater_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F8E181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F62181852ED0099CBC4 /* XLDTakDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FA8181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F63181852ED0099CBC4 /* XLDTtaDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FB7181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F64181852ED0099CBC4 /* XLDVorbisDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E103A181855640099CBC4 /* Products */;
+					ProjectRef = DB8E1039181855640099CBC4 /* XLDVorbisOutput.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0FCB181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F65181852ED0099CBC4 /* XLDWavpackDecoder_export.xcodeproj */;
+				},
+				{
+					ProductGroup = DB8E0F84181853150099CBC4 /* Products */;
+					ProjectRef = DB8E0F66181852ED0099CBC4 /* XLDWavpackOutput_export.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* XLD */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DB8E0F7E181853150099CBC4 /* XLDSparkleUpdater.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDSparkleUpdater.bundle;
+			remoteRef = DB8E0F7D181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F83181853150099CBC4 /* XLDSd2fOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDSd2fOutput.bundle;
+			remoteRef = DB8E0F82181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F88181853150099CBC4 /* XLDWavpackOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDWavpackOutput.bundle;
+			remoteRef = DB8E0F87181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F8D181853150099CBC4 /* XLDLameOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDLameOutput.bundle;
+			remoteRef = DB8E0F8C181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F93181853150099CBC4 /* XLDTakDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDTakDecoder.bundle;
+			remoteRef = DB8E0F92181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F98181853150099CBC4 /* XLDLibsndfileDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDLibsndfileDecoder.bundle;
+			remoteRef = DB8E0F97181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0F9D181853150099CBC4 /* XLDAacOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDAacOutput.bundle;
+			remoteRef = DB8E0F9C181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FA2181853150099CBC4 /* XLDHEAACOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDHEAACOutput.bundle;
+			remoteRef = DB8E0FA1181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FA7181853150099CBC4 /* XLDShortenDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDShortenDecoder.bundle;
+			remoteRef = DB8E0FA6181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FAC181853150099CBC4 /* XLDTtaDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDTtaDecoder.bundle;
+			remoteRef = DB8E0FAB181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FB1181853150099CBC4 /* XLDID3.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XLDID3.framework;
+			remoteRef = DB8E0FB0181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FB6181853150099CBC4 /* XLDAacOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDAacOutput.bundle;
+			remoteRef = DB8E0FB5181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FBB181853150099CBC4 /* XLDVorbisDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDVorbisDecoder.bundle;
+			remoteRef = DB8E0FBA181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FC0181853150099CBC4 /* XLDMP3Decoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDMP3Decoder.bundle;
+			remoteRef = DB8E0FBF181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FC5181853150099CBC4 /* XLDAlacOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDAlacOutput.bundle;
+			remoteRef = DB8E0FC4181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FCA181853150099CBC4 /* XLDAlacDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDAlacDecoder.bundle;
+			remoteRef = DB8E0FC9181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FCF181853150099CBC4 /* XLDWavpackDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDWavpackDecoder.bundle;
+			remoteRef = DB8E0FCE181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E0FD4181853150099CBC4 /* XLDOpusOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDOpusOutput.bundle;
+			remoteRef = DB8E0FD3181853150099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E1004181854000099CBC4 /* XLDFlacDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDFlacDecoder.bundle;
+			remoteRef = DB8E1003181854000099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E100A181854080099CBC4 /* XLDFlacOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDFlacOutput.bundle;
+			remoteRef = DB8E1009181854080099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E10171818544F0099CBC4 /* XLDApeDecoder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDApeDecoder.bundle;
+			remoteRef = DB8E10161818544F0099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB8E1061181856160099CBC4 /* XLDVorbisOutput.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XLDVorbisOutput.bundle;
+			remoteRef = DB8E1060181856160099CBC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -941,6 +1696,114 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB8E0FD6181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDAacOutput;
+			targetProxy = DB8E0FD5181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FD8181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDAacOutput2;
+			targetProxy = DB8E0FD7181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FDA181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDAlacDecoder;
+			targetProxy = DB8E0FD9181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FDC181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDAlacOutput;
+			targetProxy = DB8E0FDB181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FDE181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDHEAACOutput;
+			targetProxy = DB8E0FDD181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FE0181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDID3;
+			targetProxy = DB8E0FDF181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FE2181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDLameOutput;
+			targetProxy = DB8E0FE1181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FE4181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDLibsndfileDecoder;
+			targetProxy = DB8E0FE3181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FE6181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDMP3Decoder;
+			targetProxy = DB8E0FE5181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FE8181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDOpusOutput;
+			targetProxy = DB8E0FE7181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FEA181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDSd2fOutput;
+			targetProxy = DB8E0FE9181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FEC181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDShortenDecoder;
+			targetProxy = DB8E0FEB181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FEE181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDSparkleUpdater;
+			targetProxy = DB8E0FED181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FF0181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDTtaDecoder;
+			targetProxy = DB8E0FEF181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FF2181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDVorbisDecoder;
+			targetProxy = DB8E0FF1181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FF4181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDWavpackDecoder;
+			targetProxy = DB8E0FF3181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E0FF6181853530099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDWavpackOutput;
+			targetProxy = DB8E0FF5181853530099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E100C1818540F0099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDFlacDecoder;
+			targetProxy = DB8E100B1818540F0099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E100E1818540F0099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDFlacOutput;
+			targetProxy = DB8E100D1818540F0099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E1019181854590099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDApeDecoder;
+			targetProxy = DB8E1018181854590099CBC4 /* PBXContainerItemProxy */;
+		};
+		DB8E1063181856240099CBC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XLDVorbisOutput;
+			targetProxy = DB8E1062181856240099CBC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -1186,23 +2049,20 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XLD_Prefix.pch;
-				GCC_VERSION = 4.0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lsndfile",
 					"-lcddb",
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Debug;
@@ -1210,23 +2070,20 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XLD_Prefix.pch;
-				GCC_VERSION = 4.0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lsndfile",
 					"-lcddb",
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Release;
