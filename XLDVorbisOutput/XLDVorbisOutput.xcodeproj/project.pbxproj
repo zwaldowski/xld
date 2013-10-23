@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB8E1044181855B90099CBC4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E1043181855B90099CBC4 /* Cocoa.framework */; };
+		DB8E104E181855B90099CBC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB8E104C181855B90099CBC4 /* InfoPlist.strings */; };
+		DB8E1055181855FD0099CBC4 /* XLDVorbisOutput.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8E1053181855FD0099CBC4 /* XLDVorbisOutput.xib */; };
+		DB8E105D181856090099CBC4 /* XLDVorbisOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E105A181856090099CBC4 /* XLDVorbisOutput.m */; };
+		DB8E105E181856090099CBC4 /* XLDVorbisOutputTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8E105C181856090099CBC4 /* XLDVorbisOutputTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB8E1040181855B90099CBC4 /* XLDVorbisOutput.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLDVorbisOutput.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8E1043181855B90099CBC4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DB8E1046181855B90099CBC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB8E1047181855B90099CBC4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DB8E1048181855B90099CBC4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DB8E104B181855B90099CBC4 /* XLDVorbisOutput-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDVorbisOutput-Info.plist"; sourceTree = "<group>"; };
+		DB8E104D181855B90099CBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB8E104F181855B90099CBC4 /* XLDVorbisOutput-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDVorbisOutput-Prefix.pch"; sourceTree = "<group>"; };
+		DB8E1054181855FD0099CBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/XLDVorbisOutput.xib; sourceTree = "<group>"; };
+		DB8E1056181856090099CBC4 /* XLDOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutput.h; sourceTree = "<group>"; };
+		DB8E1057181856090099CBC4 /* XLDOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutputTask.h; sourceTree = "<group>"; };
+		DB8E1058181856090099CBC4 /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
+		DB8E1059181856090099CBC4 /* XLDVorbisOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDVorbisOutput.h; sourceTree = "<group>"; };
+		DB8E105A181856090099CBC4 /* XLDVorbisOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDVorbisOutput.m; sourceTree = "<group>"; };
+		DB8E105B181856090099CBC4 /* XLDVorbisOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDVorbisOutputTask.h; sourceTree = "<group>"; };
+		DB8E105C181856090099CBC4 /* XLDVorbisOutputTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDVorbisOutputTask.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB8E103D181855B90099CBC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8E1044181855B90099CBC4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB8E1032181855640099CBC4 = {
+			isa = PBXGroup;
+			children = (
+				DB8E1049181855B90099CBC4 /* XLDVorbisOutput */,
+				DB8E1042181855B90099CBC4 /* Frameworks */,
+				DB8E1041181855B90099CBC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB8E1041181855B90099CBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1040181855B90099CBC4 /* XLDVorbisOutput.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8E1042181855B90099CBC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1043181855B90099CBC4 /* Cocoa.framework */,
+				DB8E1045181855B90099CBC4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB8E1045181855B90099CBC4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1046181855B90099CBC4 /* Foundation.framework */,
+				DB8E1047181855B90099CBC4 /* CoreData.framework */,
+				DB8E1048181855B90099CBC4 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DB8E1049181855B90099CBC4 /* XLDVorbisOutput */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E1056181856090099CBC4 /* XLDOutput.h */,
+				DB8E1057181856090099CBC4 /* XLDOutputTask.h */,
+				DB8E1058181856090099CBC4 /* XLDTrack.h */,
+				DB8E1059181856090099CBC4 /* XLDVorbisOutput.h */,
+				DB8E105A181856090099CBC4 /* XLDVorbisOutput.m */,
+				DB8E105B181856090099CBC4 /* XLDVorbisOutputTask.h */,
+				DB8E105C181856090099CBC4 /* XLDVorbisOutputTask.m */,
+				DB8E104A181855B90099CBC4 /* Supporting Files */,
+			);
+			path = XLDVorbisOutput;
+			sourceTree = "<group>";
+		};
+		DB8E104A181855B90099CBC4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E104B181855B90099CBC4 /* XLDVorbisOutput-Info.plist */,
+				DB8E104C181855B90099CBC4 /* InfoPlist.strings */,
+				DB8E104F181855B90099CBC4 /* XLDVorbisOutput-Prefix.pch */,
+				DB8E1053181855FD0099CBC4 /* XLDVorbisOutput.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB8E103F181855B90099CBC4 /* XLDVorbisOutput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8E1050181855B90099CBC4 /* Build configuration list for PBXNativeTarget "XLDVorbisOutput" */;
+			buildPhases = (
+				DB8E103C181855B90099CBC4 /* Sources */,
+				DB8E103D181855B90099CBC4 /* Frameworks */,
+				DB8E103E181855B90099CBC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XLDVorbisOutput;
+			productName = XLDVorbisOutput;
+			productReference = DB8E1040181855B90099CBC4 /* XLDVorbisOutput.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB8E1033181855640099CBC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = DB8E1036181855640099CBC4 /* Build configuration list for PBXProject "XLDVorbisOutput" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB8E1032181855640099CBC4;
+			productRefGroup = DB8E1041181855B90099CBC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB8E103F181855B90099CBC4 /* XLDVorbisOutput */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB8E103E181855B90099CBC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8E1055181855FD0099CBC4 /* XLDVorbisOutput.xib in Resources */,
+				DB8E104E181855B90099CBC4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB8E103C181855B90099CBC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8E105D181856090099CBC4 /* XLDVorbisOutput.m in Sources */,
+				DB8E105E181856090099CBC4 /* XLDVorbisOutputTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB8E104C181855B90099CBC4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8E104D181855B90099CBC4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB8E1053181855FD0099CBC4 /* XLDVorbisOutput.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8E1054181855FD0099CBC4 /* en */,
+			);
+			name = XLDVorbisOutput.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB8E1037181855640099CBC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DB8E1038181855640099CBC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DB8E1051181855B90099CBC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XLDVorbisOutput/XLDVorbisOutput-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "XLDVorbisOutput/XLDVorbisOutput-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		DB8E1052181855B90099CBC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XLDVorbisOutput/XLDVorbisOutput-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "XLDVorbisOutput/XLDVorbisOutput-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB8E1036181855640099CBC4 /* Build configuration list for PBXProject "XLDVorbisOutput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8E1037181855640099CBC4 /* Debug */,
+				DB8E1038181855640099CBC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8E1050181855B90099CBC4 /* Build configuration list for PBXNativeTarget "XLDVorbisOutput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8E1051181855B90099CBC4 /* Debug */,
+				DB8E1052181855B90099CBC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB8E1033181855640099CBC4 /* Project object */;
+}
