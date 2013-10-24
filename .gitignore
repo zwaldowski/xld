@@ -16,3 +16,6 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
+
+# Vendor sourcetrees
+Vendor/*/*-src/
