@@ -9,6 +9,20 @@
 #import "XLDCustomClasses.h"
 #import "XLDTrack.h"
 #import <sys/sysctl.h>
+#import <objc/runtime.h>
+
+static void XLDSwizzle(Class cls, SEL oldSel, SEL newSel, BOOL isClassMethod) {
+	if (isClassMethod) cls = object_getClass(cls);
+	
+	Method origMethod = class_getInstanceMethod(cls, oldSel);
+	Method newMethod = class_getInstanceMethod(cls, newSel);
+	
+	if (class_addMethod(cls, oldSel, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+		class_replaceMethod(cls, newSel, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+	else
+		method_exchangeImplementations(origMethod, newMethod);
+}
+
 
 #define NSAppKitVersionNumber10_4 824
 
@@ -688,11 +702,19 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 
 @end
 
-@implementation XLDBundle
-- (NSDictionary *)infoDictionary
+@implementation NSBundle (XLDBundle)
+
++ (void)xld_performCmdLineSwizzle
+{
+	@autoreleasepool {
+		XLDSwizzle([NSBundle class], @selector(infoDictionary), @selector(xld_infoDictionary), NO);
+	}
+}
+
+- (NSDictionary *)xld_infoDictionary
 {
 	//NSLog(@"infoDictionary");
-	id dic = [super infoDictionary];
+	id dic = [self xld_infoDictionary];
 	//NSDictionary *newDic = [[NSDictionary alloc] initWithDictionary:dic];
 	if([dic respondsToSelector:@selector(setBool:forKey:)]) [dic setBool:YES forKey:@"LSUIElement"];
 	return dic;

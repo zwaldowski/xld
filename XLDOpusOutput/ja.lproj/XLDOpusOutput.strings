@@ -1,0 +1,93 @@
+
+/* Class = "NSTextFieldCell"; title = "Encoder Mode :"; ObjectID = "3"; */
+"3.title" = "モード :";
+
+/* Class = "NSTextFieldCell"; title = "Bitrate :"; ObjectID = "5"; */
+"5.title" = "ビットレート :";
+
+/* Class = "NSTextFieldCell"; title = "Frame Size :"; ObjectID = "7"; */
+"7.title" = "Frame Size :";
+
+/* Class = "NSMenuItem"; title = "VBR"; ObjectID = "11"; */
+"11.title" = "VBR";
+
+/* Class = "NSMenuItem"; title = "Constrained VBR"; ObjectID = "12"; */
+"12.title" = "Constrained VBR";
+
+/* Class = "NSMenuItem"; title = "CBR"; ObjectID = "13"; */
+"13.title" = "CBR";
+
+/* Class = "NSComboBoxCell"; title = "96"; ObjectID = "17"; */
+"17.title" = "96";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[0] = "8"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[0]" = "8";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[1] = "16"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[1]" = "16";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[2] = "24"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[2]" = "24";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[3] = "32"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[3]" = "32";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[4] = "48"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[4]" = "48";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[5] = "64"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[5]" = "64";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[6] = "80"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[6]" = "80";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[7] = "96"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[7]" = "96";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[8] = "112"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[8]" = "112";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[9] = "128"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[9]" = "128";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[10] = "160"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[10]" = "160";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[11] = "192"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[11]" = "192";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[12] = "224"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[12]" = "224";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[13] = "256"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[13]" = "256";
+
+/* Class = "NSComboBoxCell"; 17.ibShadowedObjectValues[14] = "320"; ObjectID = "17"; */
+"17.ibShadowedObjectValues[14]" = "320";
+
+/* Class = "NSTextFieldCell"; title = "kbps"; ObjectID = "19"; */
+"19.title" = "kbps";
+
+/* Class = "NSMenuItem"; title = "2.5 ms (Lowest delay)"; ObjectID = "23"; */
+"23.title" = "2.5 ms (最小遅延)";
+
+/* Class = "NSMenuItem"; title = "5 ms"; ObjectID = "24"; */
+"24.title" = "5 ms";
+
+/* Class = "NSMenuItem"; title = "10 ms"; ObjectID = "25"; */
+"25.title" = "10 ms";
+
+/* Class = "NSMenuItem"; title = "20 ms (Standard)"; ObjectID = "26"; */
+"26.title" = "20 ms (標準)";
+
+/* Class = "NSMenuItem"; title = "40 ms"; ObjectID = "27"; */
+"27.title" = "40 ms";
+
+/* Class = "NSMenuItem"; title = "60 ms"; ObjectID = "28"; */
+"28.title" = "60 ms";
+
+/* Class = "NSTextFieldCell"; title = "Powered by "; ObjectID = "30"; */
+"30.title" = "Powered by ";
+
+/* Class = "NSMenuItem"; title = "Variable (Experimental)"; ObjectID = "37"; */
+"37.title" = "Variable (Experimental)";

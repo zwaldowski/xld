@@ -1,0 +1,60 @@
+
+/* Class = "NSMenuItem"; title = "VBR (Constrained)"; ObjectID = "57"; */
+"57.title" = "VBR (制約付き)";
+
+/* Class = "NSMenuItem"; title = "CBR"; ObjectID = "58"; */
+"58.title" = "CBR";
+
+/* Class = "NSMenuItem"; title = "ABR"; ObjectID = "59"; */
+"59.title" = "ABR";
+
+/* Class = "NSMenuItem"; title = "Medium"; ObjectID = "66"; */
+"66.title" = "標準";
+
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "67"; */
+"67.title" = "低";
+
+/* Class = "NSMenuItem"; title = "Min"; ObjectID = "68"; */
+"68.title" = "最低";
+
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "69"; */
+"69.title" = "高";
+
+/* Class = "NSMenuItem"; title = "Max"; ObjectID = "70"; */
+"70.title" = "最高";
+
+/* Class = "NSMenuItem"; title = "Auto"; ObjectID = "99"; */
+"99.title" = "Auto";
+
+/* Class = "NSTextFieldCell"; title = "Powered by QuickTime & CoreAudio"; ObjectID = "119"; */
+"119.title" = "Powered by QuickTime & CoreAudio";
+
+/* Class = "NSTextFieldCell"; title = "Mode"; ObjectID = "125"; */
+"125.title" = "モード";
+
+/* Class = "NSTextFieldCell"; title = "Encoder quality"; ObjectID = "127"; */
+"127.title" = "エンコーダの精度";
+
+/* Class = "NSTextFieldCell"; title = "Target bitrate"; ObjectID = "128"; */
+"128.title" = "目標ビットレート";
+
+/* Class = "NSTextFieldCell"; title = "Target quality"; ObjectID = "129"; */
+"129.title" = "目標品質";
+
+/* Class = "NSButtonCell"; title = "Add gapless information for iTunes"; ObjectID = "130"; */
+"130.title" = "iTunes 用のギャップレス再生情報を付加";
+
+/* Class = "NSButtonCell"; title = "Write accurate bitrate information"; ObjectID = "131"; */
+"131.title" = "正確なビットレートを書き込む";
+
+/* Class = "NSTextFieldCell"; title = "Sample Rate"; ObjectID = "132"; */
+"132.title" = "サンプルレート";
+
+/* Class = "NSButtonCell"; title = "Encode with HE-AAC"; ObjectID = "134"; */
+"134.title" = "HE-AAC でエンコードする";
+
+/* Class = "NSButtonCell"; title = "Force mono encoding"; ObjectID = "135"; */
+"135.title" = "強制的にモノラルでエンコードする";
+
+/* Class = "NSButtonCell"; title = "Embed cue sheet as a chapter"; ObjectID = "137"; */
+"137.title" = "Cue シートをチャプタとして埋め込む";

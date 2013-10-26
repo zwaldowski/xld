@@ -1,0 +1,63 @@
+
+/* Class = "NSMenuItem"; title = "Save as a single file (+cue)"; ObjectID = "5"; */
+"5.title" = "儲存為單一檔案 (+cue)";
+
+/* Class = "NSMenuItem"; title = "Exclude pre-gap (incompatible with AccurateRip)"; ObjectID = "6"; */
+"6.title" = "不包含音軌間隙 (不相容於 AccurateRip)";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap except for HTOA"; ObjectID = "7"; */
+"7.title" = "除了 HTOA 外包含音軌間隙";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap for all tracks"; ObjectID = "8"; */
+"8.title" = "所有音軌包含軌道間隙";
+
+/* Class = "NSMenuItem"; title = "Check Selected Items"; ObjectID = "9"; */
+"9.title" = "勾選所選項目";
+
+/* Class = "NSMenuItem"; title = "Uncheck Selected Items"; ObjectID = "10"; */
+"10.title" = "取消勾選所選項目";
+
+/* Class = "NSMenuItem"; title = "Edit Metadata..."; ObjectID = "12"; */
+"12.title" = "編輯中繼資料⋯";
+
+/* Class = "NSMenuItem"; title = "Check All Items"; ObjectID = "14"; */
+"14.title" = "勾選所有項目";
+
+/* Class = "NSMenuItem"; title = "Uncheck All Items"; ObjectID = "15"; */
+"15.title" = "取消勾選所有項目";
+
+/* Class = "NSTableColumn"; headerCell.title = "Track"; ObjectID = "33"; */
+"33.headerCell.title" = "音軌";
+
+/* Class = "NSTableColumn"; headerCell.title = "Title"; ObjectID = "34"; */
+"34.headerCell.title" = "標題";
+
+/* Class = "NSTableColumn"; headerCell.title = "Artist"; ObjectID = "35"; */
+"35.headerCell.title" = "演出者";
+
+/* Class = "NSTableColumn"; headerCell.title = "Length"; ObjectID = "36"; */
+"36.headerCell.title" = "長度";
+
+/* Class = "NSTableColumn"; headerCell.title = "Pregap"; ObjectID = "37"; */
+"37.headerCell.title" = "軌道間隙";
+
+/* Class = "NSTextFieldCell"; title = "AccurateRip:"; ObjectID = "53"; */
+"53.title" = "AccurateRip:";
+
+/* Class = "NSTextFieldCell"; title = "YES"; ObjectID = "54"; */
+"54.title" = "是";
+
+/* Class = "NSMenuItem"; title = "Save Image As..."; ObjectID = "56"; */
+"56.title" = "圖片儲存為⋯";
+
+/* Class = "NSMenuItem"; title = "Load Image..."; ObjectID = "57"; */
+"57.title" = "載入圖片⋯";
+
+/* Class = "NSMenuItem"; title = "Clear Image"; ObjectID = "84"; */
+"84.title" = "清除圖片";
+
+/* Class = "NSButtonCell"; title = "Verify"; ObjectID = "87"; */
+"87.title" = "Verify";
+
+/* Class = "NSTextFieldCell"; title = "0:0:0 Total"; ObjectID = "91"; */
+"91.title" = "0:0:0 Total";

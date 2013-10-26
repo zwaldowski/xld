@@ -1,12 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import "XLDMP3Decoder.h"
-#define LIBID3_TAG_SUPPORT 0
-#if LIBID3_TAG_SUPPORT
-#import <id3tag.h>
-#else
-#import <XLDID3/id3lib.h>
-#endif
+#import <XLDID3/XLDID3.h>
 
 #define XLD_METADATA_TITLE		@"Title"
 #define XLD_METADATA_ARTIST		@"Artist"

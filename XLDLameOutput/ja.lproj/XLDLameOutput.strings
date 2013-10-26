@@ -1,0 +1,81 @@
+
+/* Class = "NSBox"; title = "VBR (equivalent to -V n --vbr-new[old])"; ObjectID = "6"; */
+"6.title" = "VBR (-V n --vbr-new[old] と同等)";
+
+/* Class = "NSMenuItem"; title = "Old"; ObjectID = "24"; */
+"24.title" = "Old";
+
+/* Class = "NSMenuItem"; title = "New (faster)"; ObjectID = "25"; */
+"25.title" = "New (高速)";
+
+/* Class = "NSBox"; title = "CBR (equivalent to -b n)"; ObjectID = "30"; */
+"30.title" = "CBR (-b n と同等)";
+
+/* Class = "NSMenuItem"; title = "Normal (-q 5)"; ObjectID = "42"; */
+"42.title" = "標準 (-q 5)";
+
+/* Class = "NSMenuItem"; title = "Default (-q 3)"; ObjectID = "43"; */
+"43.title" = "デフォルト (-q 3)";
+
+/* Class = "NSMenuItem"; title = "Fast (-q 7)"; ObjectID = "44"; */
+"44.title" = "速度優先 (-q 7)";
+
+/* Class = "NSBox"; title = "ABR (equivalent to --abr n)"; ObjectID = "51"; */
+"51.title" = "ABR (--abr n と同等)";
+
+/* Class = "NSMenuItem"; title = "VBR (recommended)"; ObjectID = "67"; */
+"67.title" = "VBR (推奨)";
+
+/* Class = "NSMenuItem"; title = "ABR"; ObjectID = "68"; */
+"68.title" = "ABR";
+
+/* Class = "NSMenuItem"; title = "CBR"; ObjectID = "69"; */
+"69.title" = "CBR";
+
+/* Class = "NSMenuItem"; title = "High (-q 2)"; ObjectID = "72"; */
+"72.title" = "品質優先 (-q 2)";
+
+/* Class = "NSMenuItem"; title = "Stereo"; ObjectID = "76"; */
+"76.title" = "Stereo";
+
+/* Class = "NSMenuItem"; title = "Joint Stereo"; ObjectID = "77"; */
+"77.title" = "Joint Stereo";
+
+/* Class = "NSMenuItem"; title = "Auto (recommended)"; ObjectID = "78"; */
+"78.title" = "自動 (推奨)";
+
+/* Class = "NSMenuItem"; title = "Auto"; ObjectID = "102"; */
+"102.title" = "自動";
+
+/* Class = "NSMenuItem"; title = "Mono"; ObjectID = "108"; */
+"108.title" = "Mono";
+
+/* Class = "NSTextFieldCell"; title = "VBR method :"; ObjectID = "113"; */
+"113.title" = "使用メソッド :";
+
+/* Class = "NSTextFieldCell"; title = "Target Quality (LOWER is BETTER) :"; ObjectID = "114"; */
+"114.title" = "目標品質 (小さいほど高品質) :";
+
+/* Class = "NSTextFieldCell"; title = "Approx."; ObjectID = "122"; */
+"122.title" = "目安";
+
+/* Class = "NSTextFieldCell"; title = "Powered by LAME version"; ObjectID = "125"; */
+"125.title" = "Powered by LAME version";
+
+/* Class = "NSTextFieldCell"; title = "Overall Quality :"; ObjectID = "127"; */
+"127.title" = "エンコード品質 :";
+
+/* Class = "NSButtonCell"; title = "Perform ReplayGain calculation"; ObjectID = "130"; */
+"130.title" = "ReplayGainを計算する";
+
+/* Class = "NSTextFieldCell"; title = "Encoding Mode :"; ObjectID = "132"; */
+"132.title" = "エンコード方式 :";
+
+/* Class = "NSTextFieldCell"; title = "Stereo Mode :"; ObjectID = "133"; */
+"133.title" = "ステレオモード :";
+
+/* Class = "NSTextFieldCell"; title = "Sampling Frequency :"; ObjectID = "135"; */
+"135.title" = "サンプリング周波数 :";
+
+/* Class = "NSButtonCell"; title = "Append a TLEN (track length) tag"; ObjectID = "137"; */
+"137.title" = "TLEN (トラックの長さ) タグを付加する";

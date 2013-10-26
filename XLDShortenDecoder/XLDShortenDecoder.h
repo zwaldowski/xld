@@ -6,15 +6,9 @@
 //  Copyright 2009 tmkk. All rights reserved.
 //
 
-typedef enum {
-	XLDNoCueSheet = 0,
-	XLDTrackTypeCueSheet,
-	XLDTextTypeCueSheet
-} XLDEmbeddedCueSheetType;
-
 #import <Cocoa/Cocoa.h>
+#import <Shorten/decode.h>
 #import "XLDDecoder.h"
-#import "decode.h"
 
 @interface XLDShortenDecoder : NSObject <XLDDecoder>
 {

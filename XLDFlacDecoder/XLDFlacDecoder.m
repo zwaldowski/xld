@@ -1,7 +1,5 @@
 #import <Foundation/Foundation.h>
 
-typedef int64_t xldoffset_t;
-
 #import "XLDFlacDecoder.h"
 #import "XLDTrack.h"
 #import <unistd.h>

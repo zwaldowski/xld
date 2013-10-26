@@ -1,0 +1,63 @@
+
+/* Class = "NSMenuItem"; title = "Save as a single file (+cue)"; ObjectID = "5"; */
+"5.title" = "Salva come unico file (+cue)";
+
+/* Class = "NSMenuItem"; title = "Exclude pre-gap (incompatible with AccurateRip)"; ObjectID = "6"; */
+"6.title" = "Escludi il pre-gap (non compatibile con AccurateRip)";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap except for HTOA"; ObjectID = "7"; */
+"7.title" = "Includi il pre-gap tranne che per HTOA [Hidden Track One Audio]";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap for all tracks"; ObjectID = "8"; */
+"8.title" = "Includi il pre-gap per tutte le tracce";
+
+/* Class = "NSMenuItem"; title = "Check Selected Items"; ObjectID = "9"; */
+"9.title" = "Attiva gli elementi selezionati";
+
+/* Class = "NSMenuItem"; title = "Uncheck Selected Items"; ObjectID = "10"; */
+"10.title" = "Disattiva gli elementi seleziona";
+
+/* Class = "NSMenuItem"; title = "Edit Metadata..."; ObjectID = "12"; */
+"12.title" = "Modifica i metadati…";
+
+/* Class = "NSMenuItem"; title = "Check All Items"; ObjectID = "14"; */
+"14.title" = "Attiva tutto";
+
+/* Class = "NSMenuItem"; title = "Uncheck All Items"; ObjectID = "15"; */
+"15.title" = "Disattiva tutto";
+
+/* Class = "NSTableColumn"; headerCell.title = "Track"; ObjectID = "33"; */
+"33.headerCell.title" = "Traccia";
+
+/* Class = "NSTableColumn"; headerCell.title = "Title"; ObjectID = "34"; */
+"34.headerCell.title" = "Titolo";
+
+/* Class = "NSTableColumn"; headerCell.title = "Artist"; ObjectID = "35"; */
+"35.headerCell.title" = "Artista";
+
+/* Class = "NSTableColumn"; headerCell.title = "Length"; ObjectID = "36"; */
+"36.headerCell.title" = "Durata";
+
+/* Class = "NSTableColumn"; headerCell.title = "Pregap"; ObjectID = "37"; */
+"37.headerCell.title" = "Pre-gap";
+
+/* Class = "NSTextFieldCell"; title = "AccurateRip:"; ObjectID = "53"; */
+"53.title" = "AccurateRip:";
+
+/* Class = "NSTextFieldCell"; title = "YES"; ObjectID = "54"; */
+"54.title" = "YES";
+
+/* Class = "NSMenuItem"; title = "Save Image As..."; ObjectID = "56"; */
+"56.title" = "Salva questa immagine...";
+
+/* Class = "NSMenuItem"; title = "Load Image..."; ObjectID = "57"; */
+"57.title" = "Imposta immagine...";
+
+/* Class = "NSMenuItem"; title = "Clear Image"; ObjectID = "84"; */
+"84.title" = "Elimina immagine";
+
+/* Class = "NSButtonCell"; title = "Verify"; ObjectID = "87"; */
+"87.title" = "Verifica";
+
+/* Class = "NSTextFieldCell"; title = "0:0:0 Total"; ObjectID = "91"; */
+"91.title" = "0:0:0 Totale";

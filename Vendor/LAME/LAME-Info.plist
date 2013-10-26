@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>org.mp3dev.lame</string>
+	<string>org.mp3dev.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -22,9 +22,9 @@
 	<string>LAMh</string>
 	<key>CFBundleVersion</key>
 	<string>3.99.5</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 The LAME Project. Licensed under LGPL.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2013 The LAME Project. Licensed under LGPL.</string>
 </dict>
 </plist>

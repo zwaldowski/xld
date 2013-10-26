@@ -1,13 +1,9 @@
 
-typedef enum {
-	XLDNoCueSheet = 0,
-	XLDTrackTypeCueSheet,
-	XLDTextTypeCueSheet
-} XLDEmbeddedCueSheetType;
 
-#import "All.h"
-#import "MACLib.h"
+#import <MAC/MAC.h>
 #import "XLDDecoder.h"
+
+using namespace APE;
 
 #define XLD_METADATA_TITLE		@"Title"
 #define XLD_METADATA_ARTIST		@"Artist"

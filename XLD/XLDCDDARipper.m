@@ -10,7 +10,6 @@
 #import <fcntl.h>
 #import "XLDCDDARipper.h"
 #import "XLDAccurateRipDB.h"
-#import "paranoia/cachetest.c"
 
 char *callback_msg[] = {
 	"PARANOIA_CB_READ",           
@@ -28,9 +27,9 @@ char *callback_msg[] = {
 	"PARANOIA_CB_READERR"         
 };
 
-static paranoia_cb_mode_t callback_result; 
+static int callback_result;
 
-void paranoia_callback(long int n, paranoia_cb_mode_t ret)
+void paranoia_callback(long int n, int ret)
 {
 	//if((ret != PARANOIA_CB_READ) && (ret != PARANOIA_CB_VERIFY) && (ret != PARANOIA_CB_OVERLAP)) NSLog(@"callback: %d (%s)\n",n,callback_msg[ret]);
 	if(ret == PARANOIA_CB_FIXUP_EDGE) callback_result |= 0x1;

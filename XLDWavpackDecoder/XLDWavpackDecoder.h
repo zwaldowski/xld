@@ -1,12 +1,7 @@
 
-typedef enum {
-	XLDNoCueSheet = 0,
-	XLDTrackTypeCueSheet,
-	XLDTextTypeCueSheet
-} XLDEmbeddedCueSheetType;
-
-#import <wavpack/wavpack.h>
 #import "XLDDecoder.h"
+#import <wavpack/wavpack.h>
+
 /*
 typedef unsigned char	uchar;
 

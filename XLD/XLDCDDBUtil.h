@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <cddb/cddb.h>
+#import <CDDB/cddb.h>
 
 enum
 {

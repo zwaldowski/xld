@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "XLDLibsndfileDecoder.h"
-#import <XLDID3/id3lib.h>
+#import <XLDID3/XLDID3.h>
 
 #ifdef _BIG_ENDIAN
 #define SWAP32(n) (n)

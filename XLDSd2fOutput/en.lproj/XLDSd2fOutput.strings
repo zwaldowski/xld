@@ -1,0 +1,14 @@
+/* Class = "NSMenuItem"; title = "24 bit"; ObjectID = "10"; */
+"10.title" = "24 bit";
+
+/* Class = "NSMenuItem"; title = "Same as original"; ObjectID = "11"; */
+"11.title" = "Same as original";
+
+/* Class = "NSMenuItem"; title = "16 bit"; ObjectID = "14"; */
+"14.title" = "16 bit";
+
+/* Class = "NSMenuItem"; title = "8 bit"; ObjectID = "15"; */
+"15.title" = "8 bit";
+
+/* Class = "NSTextFieldCell"; title = "Bit depth :"; ObjectID = "24"; */
+"24.title" = "Bit depth:";

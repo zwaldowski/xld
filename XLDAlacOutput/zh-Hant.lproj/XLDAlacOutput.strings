@@ -1,0 +1,66 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "8"; */
+"8.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "48000 Hz"; ObjectID = "9"; */
+"9.title" = "48000 Hz";
+
+/* Class = "NSMenuItem"; title = "24000 Hz"; ObjectID = "11"; */
+"11.title" = "24000 Hz";
+
+/* Class = "NSMenuItem"; title = "8000 Hz"; ObjectID = "12"; */
+"12.title" = "8000 Hz";
+
+/* Class = "NSMenuItem"; title = "Same as original"; ObjectID = "13"; */
+"13.title" = "與原始檔相同";
+
+/* Class = "NSMenuItem"; title = "12000 Hz"; ObjectID = "14"; */
+"14.title" = "12000 Hz";
+
+/* Class = "NSMenuItem"; title = "32000 Hz"; ObjectID = "15"; */
+"15.title" = "32000 Hz";
+
+/* Class = "NSMenuItem"; title = "22050 Hz"; ObjectID = "16"; */
+"16.title" = "22050 Hz";
+
+/* Class = "NSMenuItem"; title = "44100 Hz"; ObjectID = "17"; */
+"17.title" = "44100 Hz";
+
+/* Class = "NSMenuItem"; title = "11025 Hz"; ObjectID = "18"; */
+"18.title" = "11025 Hz";
+
+/* Class = "NSMenuItem"; title = "16000 Hz"; ObjectID = "19"; */
+"19.title" = "16000 Hz";
+
+/* Class = "NSMenuItem"; title = "64000 Hz"; ObjectID = "21"; */
+"21.title" = "64000 Hz";
+
+/* Class = "NSMenuItem"; title = "88200 Hz"; ObjectID = "22"; */
+"22.title" = "88200 Hz";
+
+/* Class = "NSMenuItem"; title = "96000 Hz"; ObjectID = "23"; */
+"23.title" = "96000 Hz";
+
+/* Class = "NSTextFieldCell"; title = "Sample Rate"; ObjectID = "30"; */
+"30.title" = "取樣頻率";
+
+/* Class = "NSTextFieldCell"; title = "Powered by QuickTime & CoreAudio"; ObjectID = "32"; */
+"32.title" = "使用 QuickTime & CoreAudio";
+
+/* Class = "NSButtonCell"; title = "Embed cue sheet as a chapter"; ObjectID = "34"; */
+"36.title" = "Embed cue sheet as a chapter";
+
+/* Class = "NSTextFieldCell"; title = "Bit Depth"; ObjectID = "37"; */
+"37.title" = "Bit Depth";
+
+/* Class = "NSMenuItem"; title = "Same as original"; ObjectID = "41"; */
+"41.title" = "與原始檔相同";
+
+/* Class = "NSMenuItem"; title = "16 bit"; ObjectID = "42"; */
+"42.title" = "16 bit";
+
+/* Class = "NSMenuItem"; title = "24 bit"; ObjectID = "43"; */
+"43.title" = "24 bit";
+
+/* Class = "NSMenuItem"; title = "32 bit"; ObjectID = "44"; */
+"44.title" = "32 bit";

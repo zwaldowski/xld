@@ -1,0 +1,36 @@
+
+/* Class = "NSBox"; title = "Compression Level"; ObjectID = "12"; */
+"12.title" = "压缩等级";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "34"; */
+"34.title" = "较低";
+
+/* Class = "NSTextFieldCell"; title = "High"; ObjectID = "35"; */
+"35.title" = "较高";
+
+/* Class = "NSTextFieldCell"; title = "Powered by FLAC 1.3.0"; ObjectID = "36"; */
+"36.title" = "Powered by FLAC 1.3.0";
+
+/* Class = "NSTextFieldCell"; title = "Padding :"; ObjectID = "39"; */
+"39.title" = "填充 :";
+
+/* Class = "NSButtonCell"; title = "OggFLAC"; ObjectID = "40"; */
+"40.title" = "OggFLAC";
+
+/* Class = "NSButtonCell"; title = "Allow to embed cue sheet"; ObjectID = "41"; */
+"41.title" = "允许嵌入式 Cue Sheet";
+
+/* Class = "NSButtonCell"; title = "Set 'OggS' filetype"; ObjectID = "42"; */
+"42.title" = "Set 'OggS' filetype";
+
+/* Class = "NSTextFieldCell"; title = "Normal"; ObjectID = "44"; */
+"44.title" = "正常";
+
+/* Class = "NSTextFieldCell"; title = "tukey(0.5);flattop"; ObjectID = "47"; */
+"47.title" = "tukey(0.5);flattop";
+
+/* Class = "NSButtonCell"; title = "Custom Apodization Functions"; ObjectID = "50"; */
+"50.title" = "Custom Apodization Functions";
+
+/* Class = "NSButtonCell"; title = "Allow to write ReplayGain tags"; ObjectID = "55"; */
+"55.title" = "Allow to write ReplayGain tags";

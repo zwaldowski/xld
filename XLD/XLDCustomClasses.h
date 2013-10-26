@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface XLDView : NSView {
 	int tag;
 }
@@ -128,8 +127,10 @@
 @end
 #endif
 
-@interface XLDBundle : NSBundle {
-}
+@interface NSBundle (XLDBundle)
+
++ (void)xld_performCmdLineSwizzle;
+
 @end
 
 #if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_5

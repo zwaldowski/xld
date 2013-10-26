@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import <MAC/MAC.h>
+#import <MAC/APETag.h>
 #import "XLDApeDecoder.h"
-#import "APETag.h"
 
 extern "C"	{
 	int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length);
@@ -24,9 +25,8 @@ int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length)
 	}
 	fclose(fp);
 	if(memcmp(header,"ID3",3) && memcmp(header,"MAC",3)) return NO;
-	
 	int errnum = -1;
-	IAPEDecompress *mac_tmp = CreateIAPEDecompress(path, &errnum);
+	IAPEDecompress *mac_tmp = CreateIAPEDecompress((const wchar_t *)path, &errnum);
 	if(errnum != 0 || !mac_tmp) return NO;
 	delete(mac_tmp);
 	return YES;
@@ -56,7 +56,7 @@ int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length)
 - (BOOL)openFile:(char *)path
 {
 	int errnum = -1;
-	mac = CreateIAPEDecompress(path, &errnum);
+	mac = CreateIAPEDecompress((const wchar_t *)path, &errnum);
 	if(errnum != 0 || !mac) {
 		if(mac) delete mac;
 		mac = NULL;

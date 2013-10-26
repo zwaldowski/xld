@@ -161,7 +161,7 @@ static void appendNumericTag(NSMutableData *tagData, const char *atomID, NSNumbe
 {
 	task = [[NSTask alloc] init];
 	[task setStandardInput:[NSPipe pipe]];
-	[task setLaunchPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"aacplusenc" ofType:nil inDirectory:nil]];
+	[task setLaunchPath:[[NSBundle bundleForClass:[self class]] pathForAuxiliaryExecutable:@"aacplusenc"]];
 	[task setCurrentDirectoryPath:[str stringByDeletingLastPathComponent]];
 	NSMutableArray *args = [NSMutableArray arrayWithObjects:@"-",str,[NSString stringWithFormat:@"%d",[[configurations objectForKey:@"Bitrate"] intValue]],@"--raw",[NSString stringWithFormat:@"%d",format.samplerate],[NSString stringWithFormat:@"%d",format.channels],[NSString stringWithFormat:@"%d",format.bps<<3],nil];
 	[task setArguments:args];

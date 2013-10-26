@@ -8,8 +8,8 @@
 //  Access to AccurateRip is regulated, see  http://www.accuraterip.com/3rdparty-access.htm for details.
 
 #import <Cocoa/Cocoa.h>
-#import "XLDCDDABackend.h"
-#import "paranoia/cdda_paranoia.h"
+#import <Paranoia/XLDCDDABackend.h>
+#import <Paranoia/cdda_paranoia.h>
 #import "XLDDecoder.h"
 #import "XLDCDDAResult.h"
 #import "XLDSecureRipperEngine.h"
@@ -28,7 +28,7 @@ typedef struct
 	BOOL error;
 	NSString *srcPath;
 	xld_cdread_t cdread;
-	cdrom_paranoia_t* p_paranoia;
+	cdrom_paranoia* p_paranoia;
 	int offsetCorrectionValue;
 	int currentLSN;
 	short *cddaBuffer;

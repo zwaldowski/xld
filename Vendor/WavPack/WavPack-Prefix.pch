@@ -1,0 +1,32 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
+
+
+#define PACKAGE_NAME "wavpack"
+#define PACKAGE_TARNAME "wavpack"
+#define PACKAGE_VERSION "4.60.1"
+#define PACKAGE_STRING "wavpack 4.60.1"
+#define PACKAGE_BUGREPORT "bryant@wavpack.com"
+#define LIBWAVPACK_MAJOR 4
+#define LIBWAVPACK_MINOR 60
+#define LIBWAVPACK_MICRO 1
+#define LIBWAVPACK_VERSION_STRING "4.60.1"
+#define VERSION_OS "Darwin"
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_DLFCN_H 1
+#define STDC_HEADERS 1

@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDCDDABackend.h"
+#import <Paranoia/XLDCDDABackend.h>
 
 typedef enum
 {

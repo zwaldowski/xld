@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "XLDOutputTask.h"
-#import <sndfile.h>
+#import <sndfile/sndfile.h>
 #import <AudioToolbox/AudioToolbox.h>
 
 #define XLD_METADATA_TITLE		@"Title"

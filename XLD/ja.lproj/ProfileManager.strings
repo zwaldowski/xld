@@ -1,0 +1,6 @@
+
+/* Class = "NSPanel"; title = "Profile Manager"; ObjectID = "1"; */
+"1.title" = "プロファイルを管理";
+
+/* Class = "NSButtonCell"; title = "Remove"; ObjectID = "19"; */
+"19.title" = "削除";

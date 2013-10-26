@@ -11,7 +11,9 @@
 #import "XLDTrack.h"
 #import "XLDAccurateRipDB.h"
 #import "XLDCustomClasses.h"
+#ifdef XLD_LOG_CHECKER
 #import "XLDLogChecker.h"
+#endif
 
 static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
@@ -813,10 +815,12 @@ static BOOL dumpAccurateRipLog(NSMutableString *out, cddaRipResult *result)
 	
 	[out appendString:@"End of status report\n"];
 	
+#ifdef XLD_LOG_CHECKER
 	Class logChecker = (Class)objc_lookUpClass("XLDLogChecker");
 	if(logChecker) {
 		[logChecker appendSignature:out];
 	}
+#endif
 	
 	return [out autorelease];
 }

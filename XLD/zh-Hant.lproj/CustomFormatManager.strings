@@ -1,0 +1,18 @@
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "20"; */
+"20.title" = "新增";
+
+/* Class = "NSButtonCell"; title = "Edit"; ObjectID = "22"; */
+"22.title" = "編輯";
+
+/* Class = "NSButtonCell"; title = "Remove"; ObjectID = "24"; */
+"24.title" = "移除";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "38"; */
+"38.title" = "好";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "42"; */
+"42.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "52"; */
+"52.title" = "好";

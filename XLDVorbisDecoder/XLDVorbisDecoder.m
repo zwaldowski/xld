@@ -1,7 +1,5 @@
 #import <Foundation/Foundation.h>
 
-typedef int64_t xldoffset_t;
-
 #import <openssl/bio.h>
 #import <openssl/evp.h>
 #import "XLDVorbisDecoder.h"

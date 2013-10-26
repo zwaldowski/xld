@@ -1,0 +1,45 @@
+
+/* Class = "NSMenuItem"; title = "Lossless"; ObjectID = "11"; */
+"11.title" = "Verlustfrei";
+
+/* Class = "NSMenuItem"; title = "Lossy"; ObjectID = "12"; */
+"12.title" = "Mit Verlust";
+
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "17"; */
+"17.title" = "Hoch";
+
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "18"; */
+"18.title" = "Niedrig";
+
+/* Class = "NSMenuItem"; title = "Normal"; ObjectID = "19"; */
+"19.title" = "Normal";
+
+/* Class = "NSMenuItem"; title = "Very High"; ObjectID = "36"; */
+"36.title" = "Beste";
+
+/* Class = "NSButtonCell"; title = "Create correction file (.wvc)"; ObjectID = "50"; */
+"50.title" = "Erstelle Korrekturdatei (.wvc)";
+
+/* Class = "NSButtonCell"; title = "Extra encode processing"; ObjectID = "52"; */
+"52.title" = "Zusätzlicher Kodier Prozess";
+
+/* Class = "NSTextFieldCell"; title = "Encoding Mode :"; ObjectID = "54"; */
+"54.title" = "Kodiermodus:";
+
+/* Class = "NSTextFieldCell"; title = "Target Bitrate :"; ObjectID = "55"; */
+"55.title" = "Target Bitrate :";
+
+/* Class = "NSTextFieldCell"; title = "Compression Ratio :"; ObjectID = "56"; */
+"56.title" = "Kompression:";
+
+/* Class = "NSTextFieldCell"; title = "Fast"; ObjectID = "60"; */
+"60.title" = "Schnell";
+
+/* Class = "NSTextFieldCell"; title = "Slow"; ObjectID = "61"; */
+"61.title" = "Langsam";
+
+/* Class = "NSButtonCell"; title = "Force use of dynamic noise shaping"; ObjectID = "62"; */
+"62.title" = "Erzwinge dynamische Rausch Umformung";
+
+/* Class = "NSButtonCell"; title = "Allow to embed cue sheet"; ObjectID = "63"; */
+"63.title" = "Cue Sheet einbetten";

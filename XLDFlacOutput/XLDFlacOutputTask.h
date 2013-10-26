@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "XLDOutputTask.h"
-#import <FLAC/all.h>
+#import <FLAC/FLAC.h>
 
 #define XLD_METADATA_TITLE		@"Title"
 #define XLD_METADATA_ARTIST		@"Artist"

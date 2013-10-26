@@ -1,0 +1,36 @@
+
+/* Class = "NSBox"; title = "Compression Level"; ObjectID = "12"; */
+"12.title" = "圧縮レベル";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "34"; */
+"34.title" = "無圧縮";
+
+/* Class = "NSTextFieldCell"; title = "High"; ObjectID = "35"; */
+"35.title" = "高";
+
+/* Class = "NSTextFieldCell"; title = "Powered by FLAC 1.3.0"; ObjectID = "36"; */
+"36.title" = "Powered by FLAC 1.3.0";
+
+/* Class = "NSTextFieldCell"; title = "Padding :"; ObjectID = "39"; */
+"39.title" = "パディング :";
+
+/* Class = "NSButtonCell"; title = "OggFLAC"; ObjectID = "40"; */
+"40.title" = "OggFLAC";
+
+/* Class = "NSButtonCell"; title = "Allow to embed cue sheet"; ObjectID = "41"; */
+"41.title" = "Cue シートの埋め込みを許可する";
+
+/* Class = "NSButtonCell"; title = "Set 'OggS' filetype"; ObjectID = "42"; */
+"42.title" = "'OggS' ファイルタイプを付加する";
+
+/* Class = "NSTextFieldCell"; title = "Normal"; ObjectID = "44"; */
+"44.title" = "標準";
+
+/* Class = "NSTextFieldCell"; title = "tukey(0.5);flattop"; ObjectID = "47"; */
+"47.title" = "tukey(0.5);flattop";
+
+/* Class = "NSButtonCell"; title = "Custom Apodization Functions"; ObjectID = "50"; */
+"50.title" = "カスタム窓関数を使う";
+
+/* Class = "NSButtonCell"; title = "Allow to write ReplayGain tags"; ObjectID = "55"; */
+"55.title" = "ReplayGain タグの書き込みを許可する";

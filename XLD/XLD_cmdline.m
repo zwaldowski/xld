@@ -2,7 +2,7 @@
 # define FloatToUnsigned(f)	((unsigned long)(((long)((f) - 2147483648.0)) + 2147483647L + 1))
 
 #import <Foundation/Foundation.h>
-#import <sndfile.h>
+#import <sndfile/sndfile.h>
 #import <unistd.h>
 #import <sys/stat.h>
 #import <getopt.h>
@@ -17,7 +17,6 @@
 #import "XLDPluginManager.h"
 #import "XLDDefaultOutputTask.h"
 #import "XLDProfileManager.h"
-#import "XLDLogChecker.h"
 
 /*
 static OSStatus (*_LSSetApplicationInformationItem)(int, CFTypeRef asn, CFStringRef key, CFStringRef value, CFDictionaryRef *info) = NULL;
@@ -245,6 +244,7 @@ static void usage(void)
 
 static int checkLogfile(char *file)
 {
+#ifdef XLD_LOG_CHECKER
 	Class logChecker = (Class)objc_lookUpClass("XLDLogChecker");
 	if(logChecker) {
 		NSData *dat = [NSData dataWithContentsOfFile:[NSString stringWithUTF8String:file]];
@@ -281,11 +281,12 @@ static int checkLogfile(char *file)
 		else fprintf(stderr,"error: cannot open file\n");
 		return -1;
 	}
+#endif
 	fprintf(stderr,"error: logchecker plugin not loaded\n");
 	return -1;
 }
 
-int cmdline_main(int argc, char *argv[])
+int cmdline_main(int argc, const char *argv[])
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	unsigned int sf_format = SF_FORMAT_WAV;

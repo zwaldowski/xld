@@ -1,0 +1,63 @@
+
+/* Class = "NSMenuItem"; title = "VBR (Constrained)"; ObjectID = "57"; */
+"57.title" = "VBR (強制)";
+
+/* Class = "NSMenuItem"; title = "CBR"; ObjectID = "58"; */
+"58.title" = "CBR";
+
+/* Class = "NSMenuItem"; title = "ABR"; ObjectID = "59"; */
+"59.title" = "ABR";
+
+/* Class = "NSMenuItem"; title = "True VBR"; ObjectID = "60"; */
+"60.title" = "真實 VBR";
+
+/* Class = "NSMenuItem"; title = "Medium"; ObjectID = "66"; */
+"66.title" = "中";
+
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "67"; */
+"67.title" = "低";
+
+/* Class = "NSMenuItem"; title = "Min"; ObjectID = "68"; */
+"68.title" = "最低";
+
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "69"; */
+"69.title" = "高";
+
+/* Class = "NSMenuItem"; title = "Max"; ObjectID = "70"; */
+"70.title" = "Max";
+
+/* Class = "NSMenuItem"; title = "Auto"; ObjectID = "99"; */
+"70.title" = "最高";
+
+/* Class = "NSTextFieldCell"; title = "Powered by QuickTime & CoreAudio"; ObjectID = "119"; */
+"119.title" = "使用 QuickTime & CoreAudio";
+
+/* Class = "NSTextFieldCell"; title = "Mode"; ObjectID = "125"; */
+"125.title" = "模式：";
+
+/* Class = "NSTextFieldCell"; title = "Encoder quality"; ObjectID = "127"; */
+"127.title" = "編碼品質：";
+
+/* Class = "NSTextFieldCell"; title = "Target bitrate"; ObjectID = "128"; */
+"128.title" = "目標位元率：";
+
+/* Class = "NSTextFieldCell"; title = "Target quality"; ObjectID = "129"; */
+"129.title" = "目標品質：";
+
+/* Class = "NSButtonCell"; title = "Add gapless information for iTunes"; ObjectID = "130"; */
+"130.title" = "新增 iTunes 的無間隙資訊";
+
+/* Class = "NSButtonCell"; title = "Write accurate bitrate information"; ObjectID = "131"; */
+"131.title" = "寫入精確的位元率資訊";
+
+/* Class = "NSTextFieldCell"; title = "Sample Rate"; ObjectID = "132"; */
+"132.title" = "取樣頻率：";
+
+/* Class = "NSButtonCell"; title = "Encode with HE-AAC"; ObjectID = "134"; */
+"134.title" = "以 HE-AAC 編碼";
+
+/* Class = "NSButtonCell"; title = "Force mono encoding"; ObjectID = "135"; */
+"135.title" = "強制單聲道編碼";
+
+/* Class = "NSButtonCell"; title = "Embed cue sheet as a chapter"; ObjectID = "137"; */
+"137.title" = "Embed cue sheet as a chapter";

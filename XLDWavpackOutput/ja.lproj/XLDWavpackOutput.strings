@@ -1,0 +1,45 @@
+
+/* Class = "NSMenuItem"; title = "Lossless"; ObjectID = "11"; */
+"11.title" = "可逆";
+
+/* Class = "NSMenuItem"; title = "Lossy"; ObjectID = "12"; */
+"12.title" = "非可逆";
+
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "17"; */
+"17.title" = "高";
+
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "18"; */
+"18.title" = "低";
+
+/* Class = "NSMenuItem"; title = "Normal"; ObjectID = "19"; */
+"19.title" = "標準";
+
+/* Class = "NSMenuItem"; title = "Very High"; ObjectID = "36"; */
+"36.title" = "最高";
+
+/* Class = "NSButtonCell"; title = "Create correction file (.wvc)"; ObjectID = "50"; */
+"50.title" = "可逆差分ファイル (.wvc) を作成";
+
+/* Class = "NSButtonCell"; title = "Extra encode processing"; ObjectID = "52"; */
+"52.title" = "圧縮率向上のための処理を行う";
+
+/* Class = "NSTextFieldCell"; title = "Encoding Mode :"; ObjectID = "54"; */
+"54.title" = "圧縮モード :";
+
+/* Class = "NSTextFieldCell"; title = "Target Bitrate :"; ObjectID = "55"; */
+"55.title" = "目標ビットレート :";
+
+/* Class = "NSTextFieldCell"; title = "Compression Ratio :"; ObjectID = "56"; */
+"56.title" = "圧縮率 :";
+
+/* Class = "NSTextFieldCell"; title = "Fast"; ObjectID = "60"; */
+"60.title" = "高速";
+
+/* Class = "NSTextFieldCell"; title = "Slow"; ObjectID = "61"; */
+"61.title" = "低速";
+
+/* Class = "NSButtonCell"; title = "Force use of dynamic noise shaping"; ObjectID = "62"; */
+"62.title" = "常に動的ノイズシェーピングを使用";
+
+/* Class = "NSButtonCell"; title = "Allow to embed cue sheet"; ObjectID = "63"; */
+"63.title" = "Cue シートの埋め込みを許可する";

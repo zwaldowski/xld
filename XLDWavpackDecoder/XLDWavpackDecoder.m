@@ -28,10 +28,7 @@ int WavpackGetTagItemIndexed (WavpackContext *wpc, int index, char *item, int si
 
 + (BOOL)canLoadThisBundle
 {
-	if (floor(NSAppKitVersionNumber) <= 620 ) {
-		return NO;
-	}
-	else return YES;
+	return YES;
 }
 
 - (id)init

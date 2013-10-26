@@ -1,9 +1,3 @@
-typedef enum {
-	XLDNoCueSheet = 0,
-	XLDTrackTypeCueSheet,
-	XLDTextTypeCueSheet
-} XLDEmbeddedCueSheetType;
-
 #import <AudioToolbox/AudioToolbox.h>
 #import "XLDDecoder.h"
 

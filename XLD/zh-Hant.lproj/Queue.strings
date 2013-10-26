@@ -1,0 +1,6 @@
+
+/* Class = "NSPanel"; title = "Progress"; ObjectID = "9"; */
+"9.title" = "進度";
+
+/* Class = "NSMenuItem"; title = "Cancel All Tasks"; ObjectID = "27"; */
+"27.title" = "取消所有工作";

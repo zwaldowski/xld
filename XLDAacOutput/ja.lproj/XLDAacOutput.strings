@@ -1,0 +1,33 @@
+
+/* Class = "NSBox"; title = "MPEG-4 AAC Settings"; ObjectID = "6"; */
+"6.title" = "MPEG-4 AAC 設定";
+
+/* Class = "NSMenuItem"; title = "Medium"; ObjectID = "16"; */
+"16.title" = "標準";
+
+/* Class = "NSMenuItem"; title = "High"; ObjectID = "17"; */
+"17.title" = "高";
+
+/* Class = "NSMenuItem"; title = "Max"; ObjectID = "18"; */
+"18.title" = "最高";
+
+/* Class = "NSMenuItem"; title = "Low"; ObjectID = "22"; */
+"22.title" = "低";
+
+/* Class = "NSMenuItem"; title = "Min"; ObjectID = "23"; */
+"23.title" = "最低";
+
+/* Class = "NSButtonCell"; title = "VBR"; ObjectID = "35"; */
+"35.title" = "VBR";
+
+/* Class = "NSTextFieldCell"; title = "Bitrate"; ObjectID = "37"; */
+"37.title" = "ビットレート";
+
+/* Class = "NSTextFieldCell"; title = "Quality"; ObjectID = "38"; */
+"39.title" = "品質";
+
+/* Class = "NSButtonCell"; title = "Add gapless information for iTunes"; ObjectID = "39"; */
+"39.title" = "iTunes 用のギャップレス情報を付加";
+
+/* Class = "NSTextFieldCell"; title = "Powered by QuickTime & CoreAudio"; ObjectID = "40"; */
+"40.title" = "Powered by QuickTime & CoreAudio";

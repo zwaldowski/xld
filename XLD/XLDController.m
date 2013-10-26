@@ -27,14 +27,16 @@
 #import "XLDDDPParser.h"
 #import "XLDCustomClasses.h"
 #import "XLDCustomFormatManager.h"
-#import "XLDCDDABackend.h"
+#import <Paranoia/XLDCDDABackend.h>
 #import "XLDMultipleFileWrappedDecoder.h"
 #import "XLDProfileManager.h"
 #import "XLDDiscView.h"
 #import "XLDCoverArtSearcher.h"
 #import "XLDShadowedImageView.h"
 #import "XLDPluginManager.h"
+#ifdef XLD_LOG_CHECKER
 #import "XLDLogChecker.h"
+#endif
 #import "XLDRenamer.h"
 #import "XLDLMAXMLLoader.h"
 

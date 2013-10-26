@@ -1,0 +1,54 @@
+
+/* Class = "NSMenuItem"; title = "24 bit"; ObjectID = "10"; */
+"10.title" = "24 bit";
+
+/* Class = "NSMenuItem"; title = "Same as original"; ObjectID = "11"; */
+"11.title" = "Come l'originale";
+
+/* Class = "NSMenuItem"; title = "32 bit"; ObjectID = "12"; */
+"12.title" = "32 bit";
+
+/* Class = "NSMenuItem"; title = "16 bit"; ObjectID = "14"; */
+"14.title" = "16 bit";
+
+/* Class = "NSMenuItem"; title = "8 bit"; ObjectID = "15"; */
+"15.title" = "8 bit";
+
+/* Class = "NSButtonCell"; title = "Floating point"; ObjectID = "23"; */
+"23.title" = "In virgola mobile";
+
+/* Class = "NSTextFieldCell"; title = "Bit depth :"; ObjectID = "24"; */
+"24.title" = "Profondità di bit :";
+
+/* Class = "NSTextFieldCell"; title = "(For INFO chunk)"; ObjectID = "32"; */
+"32.title" = "(For INFO chunk)";
+
+/* Class = "NSTextFieldCell"; title = "Encoding :"; ObjectID = "33"; */
+"33.title" = "Encoding :";
+
+/* Class = "NSMenuItem"; title = "System Default"; ObjectID = "36"; */
+"36.title" = "System Default";
+
+/* Class = "NSMenuItem"; title = "Latin-1"; ObjectID = "37"; */
+"37.title" = "Latin-1";
+
+/* Class = "NSMenuItem"; title = "UTF-8"; ObjectID = "38"; */
+"38.title" = "UTF-8";
+
+/* Class = "NSButtonCell"; title = "Write tags"; ObjectID = "39"; */
+"39.title" = "Write tags";
+
+/* Class = "NSButtonCell"; title = "Both"; ObjectID = "40"; */
+"40.title" = "Both";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "41"; */
+"41.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "id3 chunk"; ObjectID = "42"; */
+"42.title" = "id3 chunk";
+
+/* Class = "NSButtonCell"; title = "INFO chunk"; ObjectID = "43"; */
+"43.title" = "INFO chunk";
+
+/* Class = "NSTextFieldCell"; title = "Format :"; ObjectID = "44"; */
+"44.title" = "Format :";

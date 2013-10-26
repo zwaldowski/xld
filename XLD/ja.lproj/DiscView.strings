@@ -1,0 +1,63 @@
+
+/* Class = "NSMenuItem"; title = "Save as a single file (+cue)"; ObjectID = "5"; */
+"5.title" = "一つのファイル (+cue) として保存";
+
+/* Class = "NSMenuItem"; title = "Exclude pre-gap (incompatible with AccurateRip)"; ObjectID = "6"; */
+"6.title" = "プリギャップを取り除く (AccurateRip と非互換)";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap except for HTOA"; ObjectID = "7"; */
+"7.title" = "トラック1以外のプリギャップを含める";
+
+/* Class = "NSMenuItem"; title = "Include pre-gap for all tracks"; ObjectID = "8"; */
+"8.title" = "すべてのトラックのプリギャップを含める";
+
+/* Class = "NSMenuItem"; title = "Check Selected Items"; ObjectID = "9"; */
+"9.title" = "選択項目をチェック";
+
+/* Class = "NSMenuItem"; title = "Uncheck Selected Items"; ObjectID = "10"; */
+"10.title" = "選択項目のチェックを外す";
+
+/* Class = "NSMenuItem"; title = "Edit Metadata..."; ObjectID = "12"; */
+"12.title" = "タグを編集...";
+
+/* Class = "NSMenuItem"; title = "Check All Items"; ObjectID = "14"; */
+"14.title" = "すべての項目をチェック";
+
+/* Class = "NSMenuItem"; title = "Uncheck All Items"; ObjectID = "15"; */
+"15.title" = "すべての項目のチェックを外す";
+
+/* Class = "NSTableColumn"; headerCell.title = "Track"; ObjectID = "33"; */
+"33.headerCell.title" = "トラック";
+
+/* Class = "NSTableColumn"; headerCell.title = "Title"; ObjectID = "34"; */
+"34.headerCell.title" = "タイトル";
+
+/* Class = "NSTableColumn"; headerCell.title = "Artist"; ObjectID = "35"; */
+"35.headerCell.title" = "アーティスト";
+
+/* Class = "NSTableColumn"; headerCell.title = "Length"; ObjectID = "36"; */
+"36.headerCell.title" = "長さ";
+
+/* Class = "NSTableColumn"; headerCell.title = "Pregap"; ObjectID = "37"; */
+"37.headerCell.title" = "ギャップ";
+
+/* Class = "NSTextFieldCell"; title = "AccurateRip:"; ObjectID = "53"; */
+"53.title" = "AccurateRip:";
+
+/* Class = "NSTextFieldCell"; title = "YES"; ObjectID = "54"; */
+"54.title" = "YES";
+
+/* Class = "NSMenuItem"; title = "Save Image As..."; ObjectID = "56"; */
+"56.title" = "画像を保存...";
+
+/* Class = "NSMenuItem"; title = "Load Image..."; ObjectID = "57"; */
+"57.title" = "画像を読み込む...";
+
+/* Class = "NSMenuItem"; title = "Clear Image"; ObjectID = "84"; */
+"84.title" = "画像を削除";
+
+/* Class = "NSButtonCell"; title = "Verify"; ObjectID = "87"; */
+"87.title" = "検証";
+
+/* Class = "NSTextFieldCell"; title = "0:0:0 Total"; ObjectID = "91"; */
+"91.title" = "合計 0:0:0";
