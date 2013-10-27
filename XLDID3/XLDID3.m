@@ -134,7 +134,7 @@ static NSString *getTextFrame23(NSData *dat, int *pos)
 {
 	NSString *str = nil;
 	int length = getInt(dat,pos);
-	int flag = getShort(dat,pos);
+	getShort(dat,pos); // int flag
 	int encoding = getByte(dat,pos);
 	length -= 1;
 	if(encoding == 0 || encoding == 1) {
@@ -180,7 +180,7 @@ static NSString *getCommentFrame23(NSData *dat, int *pos, NSString **desc)
 {
 	NSString *str = nil;
 	int length = getInt(dat,pos);
-	int flag = getShort(dat,pos);
+	getShort(dat,pos); // int flag
 	int encoding = getByte(dat,pos);
 	*pos += 3;
 	length -= 4;
@@ -199,7 +199,7 @@ static NSString *getCommentFrame23(NSData *dat, int *pos, NSString **desc)
 static NSData *getAPICFrame23(NSData *dat, int *pos, int *imgType)
 {
 	int length = getInt(dat,pos);
-	int flag = getShort(dat,pos);
+	getShort(dat,pos); // int flag
 	int encoding = getByte(dat,pos);
 	length -= 1;
 	int read;
@@ -219,7 +219,7 @@ static NSString *getTxxxFrame23(NSData *dat, int *pos, NSString **desc)
 {
 	NSString *str = nil;
 	int length = getInt(dat,pos);
-	int flag = getShort(dat,pos);
+	getShort(dat,pos); // int flag
 	int encoding = getByte(dat,pos);
 	length -= 1;
 	if(encoding == 0 || encoding == 1) {
@@ -238,7 +238,7 @@ static NSString *getUFIDFrame23(NSData *dat, int *pos, NSString **desc)
 {
 	NSString *str = nil;
 	int length = getInt(dat,pos);
-	int flag = getShort(dat,pos);
+	getShort(dat,pos); // int flag
 	int read;
 	NSString *tmp = getCommentDesc23(dat,pos,0,&read);
 	if(desc) *desc = tmp;

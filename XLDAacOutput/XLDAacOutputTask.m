@@ -26,7 +26,7 @@ typedef int64_t xldoffset_t;
 
 static void appendUserDefinedComment(NSMutableData *tagData, NSString *tagIdentifier, NSString *commentStr)
 {
-	unsigned int tmp;
+	uint32_t tmp;
 	unsigned char tmp3;
 	NSData *commentData = [commentStr dataUsingEncoding:NSUTF8StringEncoding];
 	NSData *tagIdentifierData = [tagIdentifier dataUsingEncoding:NSUTF8StringEncoding];
@@ -258,8 +258,8 @@ static void appendNumericTag(NSMutableData *tagData, const char *atomID, NSNumbe
 	
 	if(addTag || addGaplessInfo) {
 		BOOL added = NO;
-		int tmp;
-		short tmp2;
+		int32_t tmp;
+		int16_t tmp2;
 		char atomID[4];
 		
 		/* udta atom */
