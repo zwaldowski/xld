@@ -278,7 +278,7 @@ static void appendCommentTag(NSMutableData *tagData, char *field, char *lang, NS
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION]) {
 			if([[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION] boolValue]) {
 				added = YES;
-				appendTextTag(tagData, "TCMP", [NSString stringWithString:@"1"], 0);
+				appendTextTag(tagData, "TCMP", @"1", 0);
 			}
 		}
 		
@@ -291,28 +291,28 @@ static void appendCommentTag(NSMutableData *tagData, char *field, char *lang, NS
 		/* COMM (gapless album) */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM] && [[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM] boolValue]) {
 			added = YES;
-			appendCommentTag(tagData, "COMM", "eng", [NSString stringWithString:@"iTunPGAP"], [NSString stringWithString:@"1"], 0);
+			appendCommentTag(tagData, "COMM", "eng", @"iTunPGAP", @"1", 0);
 		}
 		
 		/* COMM */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT]) {
 			added = YES;
-			appendCommentTag(tagData, "COMM", "eng", [NSString stringWithString:@""], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT], 1);
+			appendCommentTag(tagData, "COMM", "eng", @"", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT], 1);
 		}
 		
 		/* USLT */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_LYRICS]) {
 			added = YES;
-			appendCommentTag(tagData, "USLT", "eng", [NSString stringWithString:@""], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_LYRICS], 1);
+			appendCommentTag(tagData, "USLT", "eng", @"", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_LYRICS], 1);
 		}
 		
 		/* COMM (iTunes_CDDB_1) */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]) {
 			added = YES;
-			appendCommentTag(tagData, "COMM", "eng", [NSString stringWithString:@"iTunes_CDDB_1"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2], 0);
+			appendCommentTag(tagData, "COMM", "eng", @"iTunes_CDDB_1", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2], 0);
 			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK]) {
 				NSString *str = [[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK] stringValue];
-				appendCommentTag(tagData, "COMM", "eng", [NSString stringWithString:@"iTunes_CDDB_TrackNumber"], str, 0);
+				appendCommentTag(tagData, "COMM", "eng", @"iTunes_CDDB_TrackNumber", str, 0);
 			}
 		}
 		
@@ -334,57 +334,57 @@ static void appendCommentTag(NSMutableData *tagData, char *field, char *lang, NS
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Album Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Album Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Artist Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Album Artist Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Album Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Disc Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Disc Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicIP PUID"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicIP PUID", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Album Status"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS], 1);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Album Status", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS], 1);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Album Type"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE], 1);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Album Type", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE], 1);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Album Release Country"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY], 1);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Album Release Country", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY], 1);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Release Group Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Release Group Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MusicBrainz Work Id"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MusicBrainz Work Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID], 0);
 		}
 		
 		/* Timecode related tags */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"SMPTE_TIMECODE_START"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"SMPTE_TIMECODE_START", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"SMPTE_TIMECODE_DURATION"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"SMPTE_TIMECODE_DURATION", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION], 0);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]) {
 			added = YES;
-			appendCommentTag(tagData, "TXXX", NULL, [NSString stringWithString:@"MEDIA_FPS"], [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS], 0);
+			appendCommentTag(tagData, "TXXX", NULL, @"MEDIA_FPS", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS], 0);
 		}
 		
 		/* APIC */

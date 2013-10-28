@@ -1610,7 +1610,7 @@ last:
 	samplerate = [decoder samplerate];
 	totalFrames = [decoder totalFrames];
 	writable = ((samplerate == 44100) && (![decoder isFloat]) && ![file hasPrefix:@"/dev/disk"]);
-	representedFilename = [file hasPrefix:@"/dev/disk"] ? [[[NSString stringWithString:@"/Volumes"] stringByAppendingPathComponent:mountNameFromBSDName([file UTF8String])] retain] : [file retain];
+	representedFilename = [file hasPrefix:@"/dev/disk"] ? [[@"/Volumes" stringByAppendingPathComponent:mountNameFromBSDName([file UTF8String])] retain] : [file retain];
 	
 	fileToDecode = [file retain];
 	title = [[[[file lastPathComponent] stringByDeletingPathExtension] precomposedStringWithCanonicalMapping] retain];
