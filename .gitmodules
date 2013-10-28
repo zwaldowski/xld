@@ -1,6 +1,6 @@
 [submodule "Vendor/Sparkle"]
 	path = Vendor/Sparkle
 	url = https://github.com/zwaldowski/Sparkle.git
-[submodule "Vendor/aacplusenc"]
-	path = Vendor/aacplusenc
+[submodule "aacplusenc"]
+	path = Vendor/aacplusenc/aacplusenc-src
 	url = https://github.com/teknoraver/aacplusenc.git
