@@ -10,12 +10,6 @@
 #import "XLDAacOutputTask.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-APPKIT_EXTERN const double NSAppKitVersionNumber;
-#define NSAppKitVersionNumber10_0 577
-#define NSAppKitVersionNumber10_1 620
-#define NSAppKitVersionNumber10_2 663
-#define NSAppKitVersionNumber10_3 743
-
 @implementation XLDAacOutput
 
 + (NSString *)pluginName
@@ -27,7 +21,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 {
 	long version = 0;
 	Gestalt(gestaltQuickTime,&version);
-	if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_3 || version >= 0x07210000) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_3 || version >= 0x07210000) {
 		return NO;
 	}
 	else return YES;

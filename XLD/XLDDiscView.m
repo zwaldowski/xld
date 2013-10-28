@@ -19,8 +19,6 @@
 #import "XLDDiscBurner.h"
 #import "XLDMultipleFileWrappedDecoder.h"
 
-#define NSAppKitVersionNumber10_4 824
-
 static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	int min = frames/samplerate/60;
@@ -41,7 +39,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	[NSBundle loadNibNamed:@"DiscView" owner:self];
 	
 	[o_selectorTable registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType,nil]];
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		[o_selectorTable setBackgroundColor:[NSColor colorWithCalibratedRed:0.9 green:0.93 blue:0.97 alpha:1.0]];
 		[o_window setBackgroundColor:[NSColor colorWithCalibratedRed:0.93 green:0.93 blue:0.93 alpha:1.0]];
 	}
@@ -61,7 +59,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	parserArray = [[NSMutableArray alloc] init];
 	
 	o_extractionMode = [[NSPopUpButton alloc] init];
-	if(floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber10_4) {
 		[o_extractionMode setBezelStyle:NSTexturedRoundedBezelStyle];
 	}
 	[[o_extractionMode cell] setArrowPosition:NSPopUpArrowAtBottom];

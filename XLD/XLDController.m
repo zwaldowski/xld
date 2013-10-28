@@ -1308,15 +1308,14 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	if(device && !driveIsBusy && !openingFiles && ([o_autoMountDisc state] == NSOnState)) automount = YES;
 	OSErr	result = noErr;
     ItemCount	volumeIndex;
-    long	systemVersion;
+	double version;
 	
 	int i,n=0;
 	for(i=[o_openCDDA numberOfItems]-3;i>=0;i--) {
 		[o_openCDDA removeItemAtIndex:i];
 	}
 	
-    if (Gestalt(gestaltSystemVersion, &systemVersion) != noErr)
-        systemVersion = 0;
+	version = floor(NSFoundationVersionNumber);
     
     for (volumeIndex = 1; result == noErr || result != nsvErr; volumeIndex++)
 	{
@@ -1336,7 +1335,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 		
         if (result == noErr)
 		{
-            if ((systemVersion >= 0x00001000 && systemVersion < 0x00001010 &&
+            if ((version >= NSFoundationVersionNumber10_0 &&
 				 volumeInfo.signature == kAudioCDFilesystemID) ||
                 volumeInfo.filesystemID == kAudioCDFilesystemID) // It's an audio CD
             {

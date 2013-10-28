@@ -11,8 +11,6 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <sys/sysctl.h>
 
-#define NSAppKitVersionNumber10_4 824
-
 @implementation XLDMusicBrainzRelease
 
 + (NSURL *)coverURLFromReleaseID:(NSString *)releaseid
@@ -23,7 +21,7 @@
 	CFURLRef url = CFURLCreateWithString(NULL, (CFStringRef)[NSString stringWithFormat:@"http://coverartarchive.org/release/%@/front",releaseid], NULL);
 	//NSLog(@"%@",[(NSURL*)url description]);
 	CFHTTPMessageRef httpRequest = CFHTTPMessageCreateRequest(NULL, CFSTR("HEAD"), url, kCFHTTPVersion1_1);
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		int sels[2] = { CTL_KERN , KERN_OSRELEASE };
 		char darwin[32];
 		size_t size = 32;

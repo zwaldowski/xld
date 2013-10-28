@@ -12,10 +12,6 @@
 #import "XLDController.h"
 #import "XLDCustomClasses.h"
 
-#ifndef NSAppKitVersionNumber10_4
-#define NSAppKitVersionNumber10_4 824
-#endif
-
 typedef void * CGSConnection;
 extern OSStatus CGSNewConnection(const void **attributes, CGSConnection * id);
 
@@ -54,7 +50,7 @@ extern OSStatus CGSNewConnection(const void **attributes, CGSConnection * id);
 	[NSBundle loadNibNamed:@"CoverArtSearcher" owner:self];
 	views = [[NSMutableArray alloc] init];
 	[o_scrollView setDrawsBackground:NO];
-	if(floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber10_4) {
 		[o_window setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.7]];
 	}
 	else {
@@ -539,7 +535,7 @@ extern OSStatus CGSNewConnection(const void **attributes, CGSConnection * id);
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
 {
-	if(!decorated && floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) {
+	if(!decorated && floor(NSFoundationVersionNumber) > NSFoundationVersionNumber10_4) {
 		[self enableBlurForWindow:o_window];
 		decorated = YES;
 	}

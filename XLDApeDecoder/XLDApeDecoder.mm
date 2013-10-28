@@ -34,7 +34,7 @@ int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length)
 
 + (BOOL)canLoadThisBundle
 {
-	if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_2 ) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_2) {
 		return NO;
 	}
 	else return YES;

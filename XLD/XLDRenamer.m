@@ -7,7 +7,6 @@
 //
 
 #import "XLDRenamer.h"
-#define NSAppKitVersionNumber10_4 824
 
 @implementation XLDRenamer
 
@@ -158,7 +157,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	[self savePrefs];
 	[self updateHelperStrings];
 end:
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		[self performSelector:@selector(forceEndEditing:) withObject:o_renameList afterDelay: 0];
 	}
 }

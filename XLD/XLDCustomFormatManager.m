@@ -8,8 +8,6 @@
 #import "XLDCustomFormatManager.h"
 #import "XLDoutput.h"
 
-#define NSAppKitVersionNumber10_4 824
-
 @implementation XLDCustomFormatManager
 
 - (id)initWithOutputArray:(NSArray *)arr delegate:(id)del
@@ -327,7 +325,7 @@
 			}
 		}
 		[[configurationArray objectAtIndex:row] setObject:object forKey:@"ConfigName"];
-		if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+		if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 			[self performSelector:@selector(forceEndEditing:) withObject:o_tableView afterDelay: 0];
 		}
 	}

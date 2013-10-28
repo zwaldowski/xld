@@ -19,7 +19,7 @@
 
 + (BOOL)canLoadThisBundle
 {
-	if (floor(NSAppKitVersionNumber) <= 620 ) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_1) {
 		return NO;
 	}
 	else return YES;

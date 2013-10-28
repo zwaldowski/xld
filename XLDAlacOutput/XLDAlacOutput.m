@@ -9,12 +9,6 @@
 #import "XLDAlacOutput.h"
 #import "XLDAlacOutputTask.h"
 
-APPKIT_EXTERN const double NSAppKitVersionNumber;
-#define NSAppKitVersionNumber10_0 577
-#define NSAppKitVersionNumber10_1 620
-#define NSAppKitVersionNumber10_2 663
-#define NSAppKitVersionNumber10_3 743
-
 @implementation XLDAlacOutput
 
 + (NSString *)pluginName
@@ -24,7 +18,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 
 + (BOOL)canLoadThisBundle
 {
-	if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_3 ) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_3 ) {
 		return NO;
 	}
 	else return YES;

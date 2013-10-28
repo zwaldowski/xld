@@ -156,14 +156,6 @@ static void appendNumericTag(NSMutableData *tagData, const char *atomID, NSNumbe
 	
 	inputFormat.mSampleRate = (Float64)format.samplerate;
 	inputFormat.mFormatID = kAudioFormatLinearPCM;
-	
-#ifdef _BIG_ENDIAN
-	if(format.isFloat && (format.channels < 3)) kAudioFormatFlagIsFloat|kAudioFormatFlagIsBigEndian|kAudioFormatFlagIsPacked;
-	else inputFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger|kAudioFormatFlagIsBigEndian|kAudioFormatFlagIsPacked;
-#else
-	if(format.isFloat && (format.channels < 3)) kAudioFormatFlagIsFloat|kAudioFormatFlagIsPacked;
-	else inputFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger|kAudioFormatFlagIsPacked;
-#endif
 	inputFormat.mFramesPerPacket = 1;
 	inputFormat.mBytesPerFrame = 4 * format.channels;
 	inputFormat.mBytesPerPacket = inputFormat.mBytesPerFrame;

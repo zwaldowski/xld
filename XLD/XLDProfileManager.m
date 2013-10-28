@@ -11,7 +11,6 @@
 
 #define TableRowType @"row"
 #define TableRowTypes [NSArray arrayWithObjects:@"row",nil]
-#define NSAppKitVersionNumber10_4 824
 
 @implementation XLDProfileManager
 
@@ -168,7 +167,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	[[configurationArray objectAtIndex:row] setObject:object forKey:@"XLDProfileManager_ProfileName"];
 	[delegate updateProfileMenuFromNames:[self profileNames]];
 	[self savePrefs];
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		[self performSelector:@selector(forceEndEditing:) withObject:o_tableView afterDelay: 0];
 	}
 }

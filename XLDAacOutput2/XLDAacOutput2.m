@@ -11,14 +11,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <dlfcn.h>
 
-APPKIT_EXTERN const double NSAppKitVersionNumber;
-#define NSAppKitVersionNumber10_0 577
-#define NSAppKitVersionNumber10_1 620
-#define NSAppKitVersionNumber10_2 663
-#define NSAppKitVersionNumber10_3 743
-#define NSAppKitVersionNumber10_4 824
-#define NSAppKitVersionNumber10_5 949
-
 @implementation XLDAacOutput2
 
 + (NSString *)pluginName
@@ -30,7 +22,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 {
 	long version = 0;
 	Gestalt(gestaltQuickTime,&version);
-	if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_3 || version < 0x07210000) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_3 || version < 0x07210000) {
 		return NO;
 	}
 	else return YES;
@@ -45,10 +37,10 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 	[o_samplerate setAutoenablesItems:NO];
 	long version = 0;
 	Gestalt(gestaltQuickTime,&version);
-	if(version < 0x07630000 || floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(version < 0x07630000 || floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		isSBRAvailable = NO;
 	}
-	else if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_5) {
+	else if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_5) {
 		isSBRAvailable = NO;
 		ComponentDescription cd;
 		cd.componentType = kAudioEncoderComponentType;
@@ -67,7 +59,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 		}
 	}
 	else isSBRAvailable = YES;
-	if(version < 0x07630000 || floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(version < 0x07630000 || floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		isNewVBR = NO;
 		[o_vbrQuality setIntValue:90];
 		[o_field12 setIntValue:90];
@@ -93,8 +85,6 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 	}*/
 	
 	[self modeChanged:self];
-	
-	//if(floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) [o_accurateBitrate setEnabled:NO];
 	
 	return self;
 }
@@ -325,13 +315,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 {
 	return (unsigned int)[o_vbrQuality intValue];
 }
-/*
-- (BOOL)writeAccurateBitrate
-{
-	if(floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) return NO;
-	else return ([o_accurateBitrate state] == NSOnState) ? YES : NO;
-}
-*/
+
 - (unsigned int)bitrateToWrite
 {
 	if(([o_accurateBitrate state] == NSOnState) || ([o_encodeMode indexOfSelectedItem] == 3)) return 0;

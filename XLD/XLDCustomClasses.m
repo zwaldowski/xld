@@ -23,9 +23,6 @@ static void XLDSwizzle(Class cls, SEL oldSel, SEL newSel, BOOL isClassMethod) {
 		method_exchangeImplementations(origMethod, newMethod);
 }
 
-
-#define NSAppKitVersionNumber10_4 824
-
 static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	int min = frames/samplerate/60;
@@ -615,7 +612,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 @implementation XLDAdaptiveTexturedWindow
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)windowStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)deferCreation
 {
-	if(floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber10_4) {
 		windowStyle |= NSTexturedBackgroundWindowMask;
 	}
 	else {
@@ -648,7 +645,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	NSURLResponse *resp;
 	NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		int sels[2] = { CTL_KERN , KERN_OSRELEASE };
 		char darwin[32];
 		size_t size = 32;
@@ -663,7 +660,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	NSURLResponse *resp;
 	NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-	if(floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_4) {
+	if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_4) {
 		int sels[2] = { CTL_KERN , KERN_OSRELEASE };
 		char darwin[32];
 		size_t size = 32;

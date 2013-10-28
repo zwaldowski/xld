@@ -155,7 +155,7 @@ NSData *getBinaryFromFrame(struct id3_frame *frame)
 
 + (BOOL)canLoadThisBundle
 {
-	if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_3 ) {
+	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber10_3 ) {
 		return NO;
 	}
 	else return YES;
