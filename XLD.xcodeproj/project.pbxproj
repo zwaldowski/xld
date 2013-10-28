@@ -75,16 +75,9 @@
 		DB1336F0181C4DD900FD756C /* sndfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369C181C4AD100FD756C /* sndfile.framework */; };
 		DB133709181C4DE900FD756C /* Ogg.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13368E181C4AD100FD756C /* Ogg.framework */; };
 		DB13370A181C4DE900FD756C /* FLAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133692181C4AD100FD756C /* FLAC.framework */; };
-		DB13370B181C4DE900FD756C /* LAME.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133694181C4AD100FD756C /* LAME.framework */; };
 		DB13370C181C4DE900FD756C /* Vorbis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133690181C4AD100FD756C /* Vorbis.framework */; };
-		DB13370D181C4DE900FD756C /* MAC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133696181C4AD100FD756C /* MAC.framework */; };
-		DB13370E181C4DE900FD756C /* Opus.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133698181C4AD100FD756C /* Opus.framework */; };
 		DB13370F181C4DE900FD756C /* WavPack.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369A181C4AD100FD756C /* WavPack.framework */; };
 		DB133710181C4DE900FD756C /* sndfile.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369C181C4AD100FD756C /* sndfile.framework */; };
-		DB133711181C4DE900FD756C /* Shorten.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369E181C4AD100FD756C /* Shorten.framework */; };
-		DB133712181C4DE900FD756C /* libavcodec.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB1336A0181C4AD100FD756C /* libavcodec.framework */; };
-		DB133713181C4DE900FD756C /* libavutil.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB1336A2181C4AD100FD756C /* libavutil.framework */; };
-		DB133714181C4DE900FD756C /* libavformat.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB1336A4181C4AD100FD756C /* libavformat.framework */; };
 		DB133715181C4DE900FD756C /* fftw3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB1336A8181C4AD100FD756C /* fftw3.framework */; };
 		DB13376E181C4EBA00FD756C /* XLDAccurateRipChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133717181C4EB900FD756C /* XLDAccurateRipChecker.m */; };
 		DB13376F181C4EBA00FD756C /* XLDAccurateRipDB.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133719181C4EB900FD756C /* XLDAccurateRipDB.m */; };
@@ -139,6 +132,40 @@
 		DB5F350F1819AC63001BF71D /* lpc.c in Sources */ = {isa = PBXBuildFile; fileRef = DB5F35091819AC63001BF71D /* lpc.c */; };
 		DB5F35101819AC63001BF71D /* resample.c in Sources */ = {isa = PBXBuildFile; fileRef = DB5F350C1819AC63001BF71D /* resample.c */; };
 		DB61B8671819AB880084D8FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB61B8651819AB880084D8FB /* InfoPlist.strings */; };
+		DB6E7F3B181EA7BC009AAFFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
+		DB6E7F41181EA7BC009AAFFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB6E7F3F181EA7BC009AAFFE /* InfoPlist.strings */; };
+		DB6E7F45181EA7BC009AAFFE /* XLDPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */; };
+		DB6E7F67181EA80B009AAFFE /* XLDDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E7F68181EA80B009AAFFE /* XLDOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F64181EA80B009AAFFE /* XLDOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E7F69181EA80B009AAFFE /* XLDOutputTask.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E7F6A181EA80B009AAFFE /* XLDTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F66181EA80B009AAFFE /* XLDTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6E7F6E181EA861009AAFFE /* XLDPlugins.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F6F181EA874009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F74181EA885009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F77181EA88F009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F7A181EA897009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F7D181EA89D009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F80181EA8A4009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F83181EA8AD009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F86181EA8B5009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F89181EA8BC009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F8C181EA8C2009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F8F181EA8C8009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F92181EA8D1009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F95181EA8D7009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F98181EA8DF009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F9B181EA8E7009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7F9E181EA8EE009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7FA1181EA8F8009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7FA4181EA900009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7FA7181EA908009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7FAA181EA911009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DB6E7FAC181EA964009AAFFE /* libavcodec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB1336A0181C4AD100FD756C /* libavcodec.framework */; };
+		DB6E7FAD181EA964009AAFFE /* libavutil.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB1336A2181C4AD100FD756C /* libavutil.framework */; };
+		DB6E7FAE181EA964009AAFFE /* libavformat.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB1336A4181C4AD100FD756C /* libavformat.framework */; };
+		DB6E7FB0181EA986009AAFFE /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBEE198D1819B26C00AF3AE6 /* Sparkle.framework */; };
+		DB74B27C181EAA6D00C76D60 /* LAME.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB133694181C4AD100FD756C /* LAME.framework */; };
+		DB74B27E181EAA9C00C76D60 /* Opus.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB133698181C4AD100FD756C /* Opus.framework */; };
 		DB7F0F5F181C514300086520 /* CoverArtSearcher.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7F0F49181C514300086520 /* CoverArtSearcher.xib */; };
 		DB7F0F60181C514300086520 /* Credits.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = DB7F0F4B181C514300086520 /* Credits.rtfd */; };
 		DB7F0F61181C514300086520 /* CustomFormatManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7F0F4D181C514300086520 /* CustomFormatManager.xib */; };
@@ -193,6 +220,8 @@
 		DB947696181970C7001DD475 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB94764C18196FFE001DD475 /* libcrypto.dylib */; };
 		DB94769C181970F4001DD475 /* XLDVorbisOutput.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DB9476811819708B001DD475 /* XLDVorbisOutput.bundle */; };
 		DB94769F1819711B001DD475 /* XLDVorbisOutput.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9476A11819711B001DD475 /* XLDVorbisOutput.xib */; };
+		DBC6BC24181EA9F500741959 /* MAC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB133696181C4AD100FD756C /* MAC.framework */; };
+		DBC6BC2A181EAA1800741959 /* Shorten.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB13369E181C4AD100FD756C /* Shorten.framework */; };
 		DBD675E21819A038000CDC5A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
 		DBD675E81819A038000CDC5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBD675E61819A038000CDC5A /* InfoPlist.strings */; };
 		DBD675F21819A052000CDC5A /* XLDApeDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = DBD675F11819A052000CDC5A /* XLDApeDecoder.mm */; };
@@ -207,8 +236,6 @@
 		DBEE19681819B04100AF3AE6 /* XLDLameOutputTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEE19661819B04100AF3AE6 /* XLDLameOutputTask.m */; };
 		DBEE196E1819B09F00AF3AE6 /* XLDLameOutput.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBEE19701819B09F00AF3AE6 /* XLDLameOutput.xib */; };
 		DBEE19831819B1BF00AF3AE6 /* XLDLameOutput.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DBEE19571819B01D00AF3AE6 /* XLDLameOutput.bundle */; };
-		DBEE19981819B27700AF3AE6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEE198D1819B26C00AF3AE6 /* Sparkle.framework */; };
-		DBEE19991819B28D00AF3AE6 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DBEE198D1819B26C00AF3AE6 /* Sparkle.framework */; };
 		DBEE199F1819B29E00AF3AE6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
 		DBEE19A51819B29E00AF3AE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBEE19A31819B29E00AF3AE6 /* InfoPlist.strings */; };
 		DBEE19AC1819B2AC00AF3AE6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEE198D1819B26C00AF3AE6 /* Sparkle.framework */; };
@@ -557,61 +584,12 @@
 			remoteGlobalIDString = DBE2A29F18196443005CAB64;
 			remoteInfo = FLAC;
 		};
-		DB1336F7181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB3352951819696D00EF3380;
-			remoteInfo = LAME;
-		};
-		DB1336F9181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB9476A81819726E001DD475;
-			remoteInfo = MAC;
-		};
-		DB1336FB181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DBD676111819A553000CDC5A;
-			remoteInfo = Opus;
-		};
 		DB1336FD181C4DDF00FD756C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = DBEE19B71819B4FF00AF3AE6;
 			remoteInfo = WavPack;
-		};
-		DB1336FF181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB027616181A095200129746;
-			remoteInfo = Shorten;
-		};
-		DB133701181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DBD2C816181A2FF100255CCC;
-			remoteInfo = libavcodec;
-		};
-		DB133703181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB212AA5181B52AC0014FB7C;
-			remoteInfo = libavutil;
-		};
-		DB133705181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB212B99181B65330014FB7C;
-			remoteInfo = libavformat;
 		};
 		DB133707181C4DDF00FD756C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -640,6 +618,153 @@
 			proxyType = 1;
 			remoteGlobalIDString = DB61B85F1819AB880084D8FB;
 			remoteInfo = XLDOpusOutput;
+		};
+		DB6E7F6C181EA850009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F70181EA87B009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F72181EA882009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F75181EA88D009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F78181EA894009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F7B181EA89B009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F7E181EA8A1009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F81181EA8A9009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F84181EA8B2009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F87181EA8B9009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F8A181EA8BF009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F8D181EA8C5009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F90181EA8CE009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F93181EA8D5009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F96181EA8DC009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F99181EA8E4009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F9C181EA8EB009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7F9F181EA8F3009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7FA2181EA8FC009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7FA5181EA905009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
+		DB6E7FA8181EA90D009AAFFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
 		};
 		DB7F10EA181C59EC00086520 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -732,13 +857,6 @@
 			remoteGlobalIDString = 55C14BB7136EEF1500649790;
 			remoteInfo = finish_installation;
 		};
-		DBEE19961819B27000AF3AE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DBEE19841819B26C00AF3AE6 /* Sparkle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
 		DBEE19AA1819B2A700AF3AE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBEE19841819B26C00AF3AE6 /* Sparkle.xcodeproj */;
@@ -793,29 +911,74 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB23347D181EA9B7002DBE97 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBC6BC24181EA9F500741959 /* MAC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB6E7FAB181EA95B009AAFFE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB6E7FAC181EA964009AAFFE /* libavcodec.framework in CopyFiles */,
+				DB6E7FAD181EA964009AAFFE /* libavutil.framework in CopyFiles */,
+				DB6E7FAE181EA964009AAFFE /* libavformat.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB6E7FAF181EA97D009AAFFE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB6E7FB0181EA986009AAFFE /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB74B276181EAA6300C76D60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB74B27C181EAA6D00C76D60 /* LAME.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB74B27D181EAA9200C76D60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB74B27E181EAA9C00C76D60 /* Opus.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB8E191E1818E43B0099CBC4 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DB6E7F6E181EA861009AAFFE /* XLDPlugins.framework in Copy Frameworks */,
 				DB7F10F4181C59FE00086520 /* CDDB.framework in Copy Frameworks */,
 				DB133709181C4DE900FD756C /* Ogg.framework in Copy Frameworks */,
 				DB13370A181C4DE900FD756C /* FLAC.framework in Copy Frameworks */,
-				DB13370B181C4DE900FD756C /* LAME.framework in Copy Frameworks */,
 				DB13370C181C4DE900FD756C /* Vorbis.framework in Copy Frameworks */,
-				DB13370D181C4DE900FD756C /* MAC.framework in Copy Frameworks */,
-				DB13370E181C4DE900FD756C /* Opus.framework in Copy Frameworks */,
 				DB13370F181C4DE900FD756C /* WavPack.framework in Copy Frameworks */,
 				DB133710181C4DE900FD756C /* sndfile.framework in Copy Frameworks */,
-				DB133711181C4DE900FD756C /* Shorten.framework in Copy Frameworks */,
-				DB133712181C4DE900FD756C /* libavcodec.framework in Copy Frameworks */,
-				DB133713181C4DE900FD756C /* libavutil.framework in Copy Frameworks */,
-				DB133714181C4DE900FD756C /* libavformat.framework in Copy Frameworks */,
 				DB133715181C4DE900FD756C /* fftw3.framework in Copy Frameworks */,
 				DB1336AE181C4AEA00FD756C /* Paranoia.framework in Copy Frameworks */,
 				DBEE1AE61819BC1100AF3AE6 /* XLDID3.framework in Copy Frameworks */,
-				DBEE19991819B28D00AF3AE6 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,6 +1011,16 @@
 				DB8E19531818E4F70099CBC4 /* XLDFlacDecoder.bundle in Copy Bundles */,
 			);
 			name = "Copy Bundles";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC6BC29181EAA1000741959 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBC6BC2A181EAA1800741959 /* Shorten.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -1066,6 +1239,16 @@
 		DB61B8641819AB880084D8FB /* XLDOpusOutput-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDOpusOutput-Info.plist"; sourceTree = "<group>"; };
 		DB61B8661819AB880084D8FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB61B8681819AB880084D8FB /* XLDOpusOutput-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDOpusOutput-Prefix.pch"; sourceTree = "<group>"; };
+		DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLDPlugins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6E7F3E181EA7BC009AAFFE /* XLDPlugins-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDPlugins-Info.plist"; sourceTree = "<group>"; };
+		DB6E7F40181EA7BC009AAFFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB6E7F42181EA7BC009AAFFE /* XLDPlugins-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDPlugins-Prefix.pch"; sourceTree = "<group>"; };
+		DB6E7F43181EA7BC009AAFFE /* XLDPlugins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLDPlugins.h; sourceTree = "<group>"; };
+		DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLDPlugins.m; sourceTree = "<group>"; };
+		DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDecoder.h; sourceTree = "<group>"; };
+		DB6E7F64181EA80B009AAFFE /* XLDOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutput.h; sourceTree = "<group>"; };
+		DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutputTask.h; sourceTree = "<group>"; };
+		DB6E7F66181EA80B009AAFFE /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
 		DB7F0F52181C514300086520 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB7F0F6A181C514F00086520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CoverArtSearcher.xib; sourceTree = "<group>"; };
 		DB7F0F6C181C515B00086520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomFormatManager.xib; sourceTree = "<group>"; };
@@ -1149,15 +1332,11 @@
 		DB8E18D61818E3F30099CBC4 /* XLD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8E18D91818E3F30099CBC4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DB8E18DC1818E3F30099CBC4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		DB8E18DD1818E3F30099CBC4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DB8E18DE1818E3F30099CBC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB8E18E11818E3F30099CBC4 /* XLD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLD-Info.plist"; sourceTree = "<group>"; };
 		DB8E18E51818E3F30099CBC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB8E18E71818E3F30099CBC4 /* XLD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLD-Prefix.pch"; sourceTree = "<group>"; };
 		DB8E18F11818E3F30099CBC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DB8E18F81818E3F30099CBC4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DB8E19221818E4750099CBC4 /* XLDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDecoder.h; sourceTree = "<group>"; };
-		DB8E19231818E4750099CBC4 /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
 		DB8E19281818E4840099CBC4 /* XLDFlacDecoder.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLDFlacDecoder.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8E192C1818E4840099CBC4 /* XLDFlacDecoder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDFlacDecoder-Info.plist"; sourceTree = "<group>"; };
 		DB8E19301818E4840099CBC4 /* XLDFlacDecoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDFlacDecoder-Prefix.pch"; sourceTree = "<group>"; };
@@ -1170,8 +1349,6 @@
 		DB8E19801818E5710099CBC4 /* XLDFlacOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDFlacOutput.m; sourceTree = "<group>"; };
 		DB8E19811818E5710099CBC4 /* XLDFlacOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDFlacOutputTask.h; sourceTree = "<group>"; };
 		DB8E19821818E5710099CBC4 /* XLDFlacOutputTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDFlacOutputTask.m; sourceTree = "<group>"; };
-		DB8E19851818E59E0099CBC4 /* XLDOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLDOutput.h; sourceTree = "<group>"; };
-		DB8E19861818E59E0099CBC4 /* XLDOutputTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLDOutputTask.h; sourceTree = "<group>"; };
 		DB8E1A5F1818E9C70099CBC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/XLDFlacOutput.xib; sourceTree = "<group>"; };
 		DB8E1A651818E9EC0099CBC4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/XLDFlacOutput.strings; sourceTree = "<group>"; };
 		DB8E1A661818E9ED0099CBC4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/XLDFlacOutput.strings; sourceTree = "<group>"; };
@@ -1275,6 +1452,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F92181EA8D1009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336C0181C4B2200FD756C /* sndfile.framework in Frameworks */,
 				DB0275101819C1E900129746 /* XLDID3.framework in Frameworks */,
 				DB0274FD1819C17D00129746 /* Cocoa.framework in Frameworks */,
@@ -1285,6 +1463,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F95181EA8D7009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336BD181C4B1800FD756C /* sndfile.framework in Frameworks */,
 				DB02752C1819C26E00129746 /* AudioToolbox.framework in Frameworks */,
 				DB0275181819C23D00129746 /* Cocoa.framework in Frameworks */,
@@ -1295,6 +1474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F98181EA8DF009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB0275601819C30A00129746 /* AudioToolbox.framework in Frameworks */,
 				DB0275421819C2DB00129746 /* Cocoa.framework in Frameworks */,
 			);
@@ -1304,6 +1484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F9B181EA8E7009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB0275671819C33600129746 /* AudioToolbox.framework in Frameworks */,
 				DB0275521819C2E300129746 /* Cocoa.framework in Frameworks */,
 			);
@@ -1313,6 +1494,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F9E181EA8EE009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB0275A71819D28300129746 /* AudioToolbox.framework in Frameworks */,
 				DB0275861819D25300129746 /* Cocoa.framework in Frameworks */,
 			);
@@ -1322,6 +1504,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7FA1181EA8F8009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB0275C41819D6DC00129746 /* AudioToolbox.framework in Frameworks */,
 				DB0275961819D25A00129746 /* Cocoa.framework in Frameworks */,
 			);
@@ -1331,6 +1514,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7FA4181EA900009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB0275E71819E06300129746 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1339,6 +1523,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7FA7181EA908009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336BA181C4B0B00FD756C /* Shorten.framework in Frameworks */,
 				DB0276DC181A0ED500129746 /* Cocoa.framework in Frameworks */,
 			);
@@ -1348,6 +1533,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7FAA181EA911009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336B5181C4B0300FD756C /* libavcodec.framework in Frameworks */,
 				DB1336B6181C4B0300FD756C /* libavformat.framework in Frameworks */,
 				DB1336B7181C4B0300FD756C /* libavutil.framework in Frameworks */,
@@ -1359,10 +1545,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F80181EA8A4009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336CF181C4B4C00FD756C /* Opus.framework in Frameworks */,
 				DB1336CE181C4B4900FD756C /* Ogg.framework in Frameworks */,
 				DBEE19321819AEFC00AF3AE6 /* Cocoa.framework in Frameworks */,
 				DBEE19311819AEF300AF3AE6 /* libcrypto.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB6E7F36181EA7BC009AAFFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E7F3B181EA7BC009AAFFE /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1380,7 +1575,6 @@
 				DB7F110A181C5B5100086520 /* DiskArbitration.framework in Frameworks */,
 				DB1336F0181C4DD900FD756C /* sndfile.framework in Frameworks */,
 				DB1336AD181C4AE000FD756C /* Paranoia.framework in Frameworks */,
-				DBEE19981819B27700AF3AE6 /* Sparkle.framework in Frameworks */,
 				DB8E18DA1818E3F30099CBC4 /* Cocoa.framework in Frameworks */,
 				DB7F10F5181C5A1700086520 /* CDDB.framework in Frameworks */,
 			);
@@ -1390,6 +1584,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F6F181EA874009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336DE181C4B7700FD756C /* FLAC.framework in Frameworks */,
 				DB8E19291818E4840099CBC4 /* Cocoa.framework in Frameworks */,
 			);
@@ -1399,6 +1594,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F74181EA885009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336DB181C4B7000FD756C /* FLAC.framework in Frameworks */,
 				DB8E19711818E54E0099CBC4 /* Cocoa.framework in Frameworks */,
 			);
@@ -1408,6 +1604,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F77181EA88F009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336D8181C4B6800FD756C /* Vorbis.framework in Frameworks */,
 				DB94764D18196FFE001DD475 /* libcrypto.dylib in Frameworks */,
 				DB94764B18196FF3001DD475 /* libssl.dylib in Frameworks */,
@@ -1419,6 +1616,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F7A181EA897009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336E1181C4BA000FD756C /* Ogg.framework in Frameworks */,
 				DB1336D5181C4B6100FD756C /* Vorbis.framework in Frameworks */,
 				DB947696181970C7001DD475 /* libcrypto.dylib in Frameworks */,
@@ -1430,6 +1628,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F7D181EA89D009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336D2181C4B5500FD756C /* MAC.framework in Frameworks */,
 				DBD675E21819A038000CDC5A /* Cocoa.framework in Frameworks */,
 			);
@@ -1439,6 +1638,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F83181EA8AD009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336C9181C4B3D00FD756C /* LAME.framework in Frameworks */,
 				DBEE19581819B01D00AF3AE6 /* Cocoa.framework in Frameworks */,
 			);
@@ -1448,6 +1648,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F86181EA8B5009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DBEE19AC1819B2AC00AF3AE6 /* Sparkle.framework in Frameworks */,
 				DBEE199F1819B29E00AF3AE6 /* Cocoa.framework in Frameworks */,
 			);
@@ -1457,6 +1658,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F89181EA8BC009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336C6181C4B3200FD756C /* WavPack.framework in Frameworks */,
 				DBEE1A511819B76800AF3AE6 /* Cocoa.framework in Frameworks */,
 			);
@@ -1466,6 +1668,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F8C181EA8C2009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DB1336C3181C4B2900FD756C /* WavPack.framework in Frameworks */,
 				DBEE1A851819BA2F00AF3AE6 /* libcrypto.dylib in Frameworks */,
 				DBEE1A611819B77200AF3AE6 /* Cocoa.framework in Frameworks */,
@@ -1484,6 +1687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6E7F8F181EA8C8009AAFFE /* XLDPlugins.framework in Frameworks */,
 				DBEE1AE91819BC6300AF3AE6 /* AudioToolbox.framework in Frameworks */,
 				DBEE1AE31819BBFF00AF3AE6 /* XLDID3.framework in Frameworks */,
 				DBEE1AD31819BBE600AF3AE6 /* Cocoa.framework in Frameworks */,
@@ -1858,11 +2062,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DB6E7F3C181EA7BC009AAFFE /* XLDPlugins */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E7F6B181EA832009AAFFE /* Headers */,
+				DB6E7F43181EA7BC009AAFFE /* XLDPlugins.h */,
+				DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */,
+				DB6E7F3D181EA7BC009AAFFE /* Supporting Files */,
+			);
+			path = XLDPlugins;
+			sourceTree = "<group>";
+		};
+		DB6E7F3D181EA7BC009AAFFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E7F3E181EA7BC009AAFFE /* XLDPlugins-Info.plist */,
+				DB6E7F3F181EA7BC009AAFFE /* InfoPlist.strings */,
+				DB6E7F42181EA7BC009AAFFE /* XLDPlugins-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB6E7F6B181EA832009AAFFE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */,
+				DB6E7F64181EA80B009AAFFE /* XLDOutput.h */,
+				DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */,
+				DB6E7F66181EA80B009AAFFE /* XLDTrack.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		DB8E18CD1818E3F30099CBC4 = {
 			isa = PBXGroup;
 			children = (
-				DB8E19211818E4750099CBC4 /* Common */,
 				DB8E18DF1818E3F30099CBC4 /* XLD */,
+				DB6E7F3C181EA7BC009AAFFE /* XLDPlugins */,
 				DB8E192A1818E4840099CBC4 /* XLDFlacDecoder */,
 				DB8E19721818E54E0099CBC4 /* XLDFlacOutput */,
 				DB94763D18196FBC001DD475 /* XLDVorbisDecoder */,
@@ -1915,6 +2151,7 @@
 				DB0275E61819E06300129746 /* XLDHEAACOutput.bundle */,
 				DB0276DB181A0ED500129746 /* XLDShortenDecoder.bundle */,
 				DB212DE9181BAF220014FB7C /* XLDAVDecoder.bundle */,
+				DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1932,7 +2169,6 @@
 				DB94764C18196FFE001DD475 /* libcrypto.dylib */,
 				DB94764A18196FF3001DD475 /* libssl.dylib */,
 				DB8E18D91818E3F30099CBC4 /* Cocoa.framework */,
-				DB8E18F81818E3F30099CBC4 /* XCTest.framework */,
 				DB8E18DB1818E3F30099CBC4 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -1942,7 +2178,6 @@
 			isa = PBXGroup;
 			children = (
 				DB8E18DC1818E3F30099CBC4 /* AppKit.framework */,
-				DB8E18DD1818E3F30099CBC4 /* CoreData.framework */,
 				DB8E18DE1818E3F30099CBC4 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
@@ -1992,17 +2227,6 @@
 				DBEE19841819B26C00AF3AE6 /* Sparkle.xcodeproj */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		DB8E19211818E4750099CBC4 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				DB8E19221818E4750099CBC4 /* XLDDecoder.h */,
-				DB8E19231818E4750099CBC4 /* XLDTrack.h */,
-				DB8E19851818E59E0099CBC4 /* XLDOutput.h */,
-				DB8E19861818E59E0099CBC4 /* XLDOutputTask.h */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		DB8E192A1818E4840099CBC4 /* XLDFlacDecoder */ = {
@@ -2244,6 +2468,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		DB6E7F37181EA7BC009AAFFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E7F68181EA80B009AAFFE /* XLDOutput.h in Headers */,
+				DB6E7F6A181EA80B009AAFFE /* XLDTrack.h in Headers */,
+				DB6E7F67181EA80B009AAFFE /* XLDDecoder.h in Headers */,
+				DB6E7F69181EA80B009AAFFE /* XLDOutputTask.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBEE1AA71819BB9400AF3AE6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2266,6 +2501,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F91181EA8CE009AAFFE /* PBXTargetDependency */,
 				DB1336BF181C4B1E00FD756C /* PBXTargetDependency */,
 				DB02750F1819C1E500129746 /* PBXTargetDependency */,
 			);
@@ -2285,6 +2521,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F94181EA8D5009AAFFE /* PBXTargetDependency */,
 				DB1336BC181C4B1400FD756C /* PBXTargetDependency */,
 			);
 			name = XLDSd2fOutput;
@@ -2303,6 +2540,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F97181EA8DC009AAFFE /* PBXTargetDependency */,
 			);
 			name = XLDAlacDecoder;
 			productName = XLDAlacDecoder;
@@ -2320,6 +2558,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F9A181EA8E4009AAFFE /* PBXTargetDependency */,
 			);
 			name = XLDAlacOutput;
 			productName = XLDAlacOutput;
@@ -2337,6 +2576,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F9D181EA8EB009AAFFE /* PBXTargetDependency */,
 			);
 			name = XLDAacOutput;
 			productName = XLDAacOutput;
@@ -2354,6 +2594,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7FA0181EA8F3009AAFFE /* PBXTargetDependency */,
 			);
 			name = XLDAacOutput2;
 			productName = XLDAacOutput2;
@@ -2372,6 +2613,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7FA3181EA8FC009AAFFE /* PBXTargetDependency */,
 			);
 			name = XLDHEAACOutput;
 			productName = XLDHEAACOutput;
@@ -2383,12 +2625,14 @@
 			buildConfigurationList = DB0276E4181A0ED500129746 /* Build configuration list for PBXNativeTarget "XLDShortenDecoder" */;
 			buildPhases = (
 				DB0276D7181A0ED500129746 /* Sources */,
+				DBC6BC29181EAA1000741959 /* CopyFiles */,
 				DB0276D8181A0ED500129746 /* Frameworks */,
 				DB0276D9181A0ED500129746 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7FA6181EA905009AAFFE /* PBXTargetDependency */,
 				DB1336B9181C4B0700FD756C /* PBXTargetDependency */,
 			);
 			name = XLDShortenDecoder;
@@ -2401,12 +2645,14 @@
 			buildConfigurationList = DB212DF8181BAF220014FB7C /* Build configuration list for PBXNativeTarget "XLDAVDecoder" */;
 			buildPhases = (
 				DB212DE5181BAF220014FB7C /* Sources */,
+				DB6E7FAB181EA95B009AAFFE /* CopyFiles */,
 				DB212DE6181BAF220014FB7C /* Frameworks */,
 				DB212DE7181BAF220014FB7C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7FA9181EA90D009AAFFE /* PBXTargetDependency */,
 				DB1336B0181C4AFE00FD756C /* PBXTargetDependency */,
 				DB1336B2181C4AFE00FD756C /* PBXTargetDependency */,
 				DB1336B4181C4AFE00FD756C /* PBXTargetDependency */,
@@ -2421,12 +2667,14 @@
 			buildConfigurationList = DB61B86E1819AB880084D8FB /* Build configuration list for PBXNativeTarget "XLDOpusOutput" */;
 			buildPhases = (
 				DB61B85C1819AB880084D8FB /* Sources */,
+				DB74B27D181EAA9200C76D60 /* CopyFiles */,
 				DB61B85D1819AB880084D8FB /* Frameworks */,
 				DB61B85E1819AB880084D8FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F7F181EA8A1009AAFFE /* PBXTargetDependency */,
 				DB1336CD181C4B4400FD756C /* PBXTargetDependency */,
 				DB1336CB181C4B4100FD756C /* PBXTargetDependency */,
 			);
@@ -2434,6 +2682,24 @@
 			productName = XLDOpusOutput;
 			productReference = DB61B8601819AB880084D8FB /* XLDOpusOutput.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		DB6E7F39181EA7BC009AAFFE /* XLDPlugins */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB6E7F61181EA7BD009AAFFE /* Build configuration list for PBXNativeTarget "XLDPlugins" */;
+			buildPhases = (
+				DB6E7F35181EA7BC009AAFFE /* Sources */,
+				DB6E7F36181EA7BC009AAFFE /* Frameworks */,
+				DB6E7F37181EA7BC009AAFFE /* Headers */,
+				DB6E7F38181EA7BC009AAFFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XLDPlugins;
+			productName = XLDPlugins;
+			productReference = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		DB8E18D51818E3F30099CBC4 /* XLD */ = {
 			isa = PBXNativeTarget;
@@ -2448,21 +2714,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F6D181EA850009AAFFE /* PBXTargetDependency */,
 				DB7F10EB181C59EC00086520 /* PBXTargetDependency */,
 				DB1336F2181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336F4181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336F6181C4DDF00FD756C /* PBXTargetDependency */,
-				DB1336F8181C4DDF00FD756C /* PBXTargetDependency */,
-				DB1336FA181C4DDF00FD756C /* PBXTargetDependency */,
-				DB1336FC181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336FE181C4DDF00FD756C /* PBXTargetDependency */,
-				DB133700181C4DDF00FD756C /* PBXTargetDependency */,
-				DB133702181C4DDF00FD756C /* PBXTargetDependency */,
-				DB133704181C4DDF00FD756C /* PBXTargetDependency */,
-				DB133706181C4DDF00FD756C /* PBXTargetDependency */,
 				DB133708181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336EF181C4DD200FD756C /* PBXTargetDependency */,
-				DBEE19971819B27000AF3AE6 /* PBXTargetDependency */,
 				DBEE1AE51819BC0500AF3AE6 /* PBXTargetDependency */,
 				DB1336AC181C4AD600FD756C /* PBXTargetDependency */,
 				DB8E19511818E4DB0099CBC4 /* PBXTargetDependency */,
@@ -2502,6 +2761,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F71181EA87B009AAFFE /* PBXTargetDependency */,
 				DB1336DD181C4B7300FD756C /* PBXTargetDependency */,
 			);
 			name = XLDFlacDecoder;
@@ -2520,6 +2780,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F73181EA882009AAFFE /* PBXTargetDependency */,
 				DB1336DA181C4B6D00FD756C /* PBXTargetDependency */,
 			);
 			name = XLDFlacOutput;
@@ -2538,6 +2799,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F76181EA88D009AAFFE /* PBXTargetDependency */,
 				DB1336D7181C4B6500FD756C /* PBXTargetDependency */,
 			);
 			name = XLDVorbisDecoder;
@@ -2556,6 +2818,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F79181EA894009AAFFE /* PBXTargetDependency */,
 				DB1336E0181C4B9D00FD756C /* PBXTargetDependency */,
 				DB1336D4181C4B5E00FD756C /* PBXTargetDependency */,
 			);
@@ -2569,12 +2832,14 @@
 			buildConfigurationList = DBD675EA1819A038000CDC5A /* Build configuration list for PBXNativeTarget "XLDApeDecoder" */;
 			buildPhases = (
 				DBD675DD1819A038000CDC5A /* Sources */,
+				DB23347D181EA9B7002DBE97 /* CopyFiles */,
 				DBD675DE1819A038000CDC5A /* Frameworks */,
 				DBD675DF1819A038000CDC5A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F7C181EA89B009AAFFE /* PBXTargetDependency */,
 				DB1336D1181C4B5300FD756C /* PBXTargetDependency */,
 			);
 			name = XLDApeDecoder;
@@ -2587,12 +2852,14 @@
 			buildConfigurationList = DBEE19601819B01D00AF3AE6 /* Build configuration list for PBXNativeTarget "XLDLameOutput" */;
 			buildPhases = (
 				DBEE19531819B01D00AF3AE6 /* Sources */,
+				DB74B276181EAA6300C76D60 /* CopyFiles */,
 				DBEE19541819B01D00AF3AE6 /* Frameworks */,
 				DBEE19551819B01D00AF3AE6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F82181EA8A9009AAFFE /* PBXTargetDependency */,
 				DB1336C8181C4B3A00FD756C /* PBXTargetDependency */,
 			);
 			name = XLDLameOutput;
@@ -2607,10 +2874,12 @@
 				DBEE199A1819B29E00AF3AE6 /* Sources */,
 				DBEE199B1819B29E00AF3AE6 /* Frameworks */,
 				DBEE199C1819B29E00AF3AE6 /* Resources */,
+				DB6E7FAF181EA97D009AAFFE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F85181EA8B2009AAFFE /* PBXTargetDependency */,
 				DBEE19AB1819B2A700AF3AE6 /* PBXTargetDependency */,
 			);
 			name = XLDSparkleUpdater;
@@ -2629,6 +2898,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F88181EA8B9009AAFFE /* PBXTargetDependency */,
 				DB1336C5181C4B2F00FD756C /* PBXTargetDependency */,
 			);
 			name = XLDWavpackDecoder;
@@ -2647,6 +2917,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F8B181EA8BF009AAFFE /* PBXTargetDependency */,
 				DB1336C2181C4B2600FD756C /* PBXTargetDependency */,
 			);
 			name = XLDWavpackOutput;
@@ -2683,6 +2954,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB6E7F8E181EA8C5009AAFFE /* PBXTargetDependency */,
 				DBEE1AE21819BBF900AF3AE6 /* PBXTargetDependency */,
 			);
 			name = XLDMP3Decoder;
@@ -2761,6 +3033,7 @@
 				DB0275E51819E06300129746 /* XLDHEAACOutput */,
 				DB0276DA181A0ED500129746 /* XLDShortenDecoder */,
 				DB212DE8181BAF220014FB7C /* XLDAVDecoder */,
+				DB6E7F39181EA7BC009AAFFE /* XLDPlugins */,
 			);
 		};
 /* End PBXProject section */
@@ -2996,6 +3269,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB6E7F38181EA7BC009AAFFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E7F41181EA7BC009AAFFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB8E18D41818E3F30099CBC4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3198,6 +3479,14 @@
 				DBEE192D1819AED500AF3AE6 /* XLDOpusOutputTask.m in Sources */,
 				DB5F350F1819AC63001BF71D /* lpc.c in Sources */,
 				DBEE192C1819AED500AF3AE6 /* XLDOpusOutput.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB6E7F35181EA7BC009AAFFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6E7F45181EA7BC009AAFFE /* XLDPlugins.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3507,45 +3796,10 @@
 			name = FLAC;
 			targetProxy = DB1336F5181C4DDF00FD756C /* PBXContainerItemProxy */;
 		};
-		DB1336F8181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LAME;
-			targetProxy = DB1336F7181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB1336FA181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MAC;
-			targetProxy = DB1336F9181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB1336FC181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Opus;
-			targetProxy = DB1336FB181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
 		DB1336FE181C4DDF00FD756C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WavPack;
 			targetProxy = DB1336FD181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB133700181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Shorten;
-			targetProxy = DB1336FF181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB133702181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libavcodec;
-			targetProxy = DB133701181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB133704181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libavutil;
-			targetProxy = DB133703181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB133706181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libavformat;
-			targetProxy = DB133705181C4DDF00FD756C /* PBXContainerItemProxy */;
 		};
 		DB133708181C4DDF00FD756C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3566,6 +3820,111 @@
 			isa = PBXTargetDependency;
 			target = DB61B85F1819AB880084D8FB /* XLDOpusOutput */;
 			targetProxy = DB5F34ED1819ABD6001BF71D /* PBXContainerItemProxy */;
+		};
+		DB6E7F6D181EA850009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F6C181EA850009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F71181EA87B009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F70181EA87B009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F73181EA882009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F72181EA882009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F76181EA88D009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F75181EA88D009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F79181EA894009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F78181EA894009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F7C181EA89B009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F7B181EA89B009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F7F181EA8A1009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F7E181EA8A1009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F82181EA8A9009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F81181EA8A9009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F85181EA8B2009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F84181EA8B2009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F88181EA8B9009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F87181EA8B9009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F8B181EA8BF009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F8A181EA8BF009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F8E181EA8C5009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F8D181EA8C5009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F91181EA8CE009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F90181EA8CE009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F94181EA8D5009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F93181EA8D5009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F97181EA8DC009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F96181EA8DC009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F9A181EA8E4009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F99181EA8E4009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7F9D181EA8EB009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F9C181EA8EB009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7FA0181EA8F3009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7F9F181EA8F3009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7FA3181EA8FC009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7FA2181EA8FC009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7FA6181EA905009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7FA5181EA905009AAFFE /* PBXContainerItemProxy */;
+		};
+		DB6E7FA9181EA90D009AAFFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DB6E7FA8181EA90D009AAFFE /* PBXContainerItemProxy */;
 		};
 		DB7F10EB181C59EC00086520 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3601,11 +3960,6 @@
 			isa = PBXTargetDependency;
 			target = DBEE19561819B01D00AF3AE6 /* XLDLameOutput */;
 			targetProxy = DBEE19811819B1B300AF3AE6 /* PBXContainerItemProxy */;
-		};
-		DBEE19971819B27000AF3AE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Sparkle;
-			targetProxy = DBEE19961819B27000AF3AE6 /* PBXContainerItemProxy */;
 		};
 		DBEE19AB1819B2A700AF3AE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3734,6 +4088,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				DB61B8661819AB880084D8FB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB6E7F3F181EA7BC009AAFFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB6E7F40181EA7BC009AAFFE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -4321,6 +4683,42 @@
 			};
 			name = Release;
 		};
+		DB6E7F58181EA7BD009AAFFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XLDPlugins/XLDPlugins-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XLDPlugins/XLDPlugins-Info.plist";
+				INSTALL_PATH = "@executable_path/../";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		DB6E7F59181EA7BD009AAFFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XLDPlugins/XLDPlugins-Prefix.pch";
+				INFOPLIST_FILE = "XLDPlugins/XLDPlugins-Info.plist";
+				INSTALL_PATH = "@executable_path/../";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		DB8E19051818E3F30099CBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4864,6 +5262,15 @@
 			buildConfigurations = (
 				DB61B8691819AB880084D8FB /* Debug */,
 				DB61B86A1819AB880084D8FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB6E7F61181EA7BD009AAFFE /* Build configuration list for PBXNativeTarget "XLDPlugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB6E7F58181EA7BD009AAFFE /* Debug */,
+				DB6E7F59181EA7BD009AAFFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
