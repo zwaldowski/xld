@@ -8,7 +8,7 @@
 
 #import "XLDAacOutput2Task.h"
 #import "XLDAacOutput2.h"
-
+#import <XLDAAC/XLDAAC.h>
 #import <sys/stat.h>
 #import <unistd.h>
 #import <sys/types.h>
@@ -111,99 +111,6 @@ static int getM4aFrequency(FILE *fp)
 end:
 		fseeko(fp,initPos,SEEK_SET);
 	return freq;
-}
-
-static void appendUserDefinedComment(NSMutableData *tagData, NSString *tagIdentifier, NSString *commentStr)
-{
-	unsigned int tmp;
-	unsigned char tmp3;
-	NSData *commentData = [commentStr dataUsingEncoding:NSUTF8StringEncoding];
-	NSData *tagIdentifierData = [tagIdentifier dataUsingEncoding:NSUTF8StringEncoding];
-	tmp = 0x40 + [commentData length] + [tagIdentifierData length];
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"----" length:4];
-	tmp = 0x1C;
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"mean" length:4];
-	tmp = 0;
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"com.apple.iTunes" length:16];
-	tmp = 0xC + [tagIdentifierData length];
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"name" length:4];
-	tmp = 0;
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendData:tagIdentifierData];
-	tmp = 0x10 + [commentData length];
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"data" length:4];
-	tmp = 0;
-	[tagData appendBytes:&tmp length:3]; //reserved
-	tmp3 = 1;
-	[tagData appendBytes:&tmp3 length:1]; //type (1:UTF-8)
-	tmp = 0;
-	[tagData appendBytes:&tmp length:4]; //locale (reserved to be 0)
-	[tagData appendData:commentData];
-}
-
-static void appendTextTag(NSMutableData *tagData, const char *atomID, NSString *tagStr)
-{
-	unsigned int tmp;
-	unsigned char tmp3;
-	NSData *data = [tagStr dataUsingEncoding:NSUTF8StringEncoding];
-	tmp = 24 + [data length];
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:atomID length:4];
-	tmp = 16 + [data length];
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"data" length:4];
-	tmp = 0;
-	[tagData appendBytes:&tmp length:3]; //reserved
-	tmp3 = 1;
-	[tagData appendBytes:&tmp3 length:1]; //type (1:UTF-8)
-	tmp = 0;
-	[tagData appendBytes:&tmp length:4]; //locale (reserved to be 0)
-	[tagData appendData:data];
-}
-
-static void appendNumericTag(NSMutableData *tagData, const char *atomID, NSNumber *tagNum, int length)
-{
-	if(length != 1 && length != 2 && length != 4) return;
-	unsigned int tmp;
-	unsigned short tmp2;
-	unsigned char tmp3;
-	tmp = 24 + length;
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:atomID length:4];
-	tmp = 16 + length;
-	tmp = NSSwapHostIntToBig(tmp);
-	[tagData appendBytes:&tmp length:4];
-	[tagData appendBytes:"data" length:4];
-	tmp = 0;
-	[tagData appendBytes:&tmp length:3]; //reserved
-	tmp3 = 0x15;
-	[tagData appendBytes:&tmp3 length:1]; //type (0x15:integer)
-	tmp = 0;
-	[tagData appendBytes:&tmp length:4]; //locale (reserved to be 0)
-	if(length == 1) {
-		tmp3 = [tagNum unsignedCharValue];
-		[tagData appendBytes:&tmp3 length:1];
-	}
-	else if(length == 2) {
-		tmp2 = NSSwapHostShortToBig([tagNum unsignedShortValue]);
-		[tagData appendBytes:&tmp2 length:2];
-	}
-	else if(length == 4) {
-		tmp = NSSwapHostIntToBig([tagNum unsignedIntValue]);
-		[tagData appendBytes:&tmp length:4];
-	}
 }
 
 NSMutableData *buildChapterTrack(unsigned int totalSamples, int samplerate, NSArray *trackList)
@@ -614,7 +521,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLE];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"nam",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* ART atom */
@@ -623,14 +530,14 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTIST];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"ART",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* aART atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTIST]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTIST];
-			appendTextTag(tagData, "aART", str);
+			XLDAACAppendTextTag(tagData, "aART", str);
 		}
 		
 		/* alb atom */
@@ -639,7 +546,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUM];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"alb",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* gen atom */
@@ -648,7 +555,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GENRE];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"gen",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* wrt atom */
@@ -657,7 +564,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSER];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"wrt",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* trkn atom */
@@ -730,14 +637,14 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_DATE];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"day",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		else if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_YEAR]) {
 			added = YES;
 			NSString *str = [[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_YEAR] stringValue];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"day",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* cmt atom */
@@ -746,7 +653,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"cmt",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		else {
 			NSMutableString *tmpStr = [NSMutableString string];
@@ -765,7 +672,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 				added = YES;
 				atomID[0] = 0xa9;
 				memcpy(atomID+1,"cmt",3);
-				appendTextTag(tagData, atomID, tmpStr);
+				XLDAACAppendTextTag(tagData, atomID, tmpStr);
 			}
 		}
 		
@@ -775,7 +682,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_LYRICS];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"lyr",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* grp atom */
@@ -784,144 +691,144 @@ NSMutableData *buildChapterData(NSArray *trackList)
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GROUP];
 			atomID[0] = 0xa9;
 			memcpy(atomID+1,"grp",3);
-			appendTextTag(tagData, atomID, str);
+			XLDAACAppendTextTag(tagData, atomID, str);
 		}
 		
 		/* sonm atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLESORT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLESORT];
-			appendTextTag(tagData, "sonm", str);
+			XLDAACAppendTextTag(tagData, "sonm", str);
 		}
 		
 		/* soar atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTISTSORT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTISTSORT];
-			appendTextTag(tagData, "soar", str);
+			XLDAACAppendTextTag(tagData, "soar", str);
 		}
 		
 		/* soal atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMSORT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMSORT];
-			appendTextTag(tagData, "soal", str);
+			XLDAACAppendTextTag(tagData, "soal", str);
 		}
 		
 		/* soaa atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTISTSORT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTISTSORT];
-			appendTextTag(tagData, "soaa", str);
+			XLDAACAppendTextTag(tagData, "soaa", str);
 		}
 		
 		/* soco atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSERSORT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSERSORT];
-			appendTextTag(tagData, "soco", str);
+			XLDAACAppendTextTag(tagData, "soco", str);
 		}
 		
 		/* cpil atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION]) {
 			if([[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION] boolValue]) {
 				added = YES;
-				appendNumericTag(tagData, "cpil", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION], 1);
+				XLDAACAppendNumericTag(tagData, "cpil", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION], 1);
 			}
 		}
 		
 		/* Gracenote CDDB information */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"iTunes_CDDB_IDs", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE]);
+			XLDAACAppendUserDefinedComment(tagData, @"iTunes_CDDB_IDs", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"iTunes_CDDB_1", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]);
+			XLDAACAppendUserDefinedComment(tagData, @"iTunes_CDDB_1", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]);
 			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK]) {
-				appendUserDefinedComment(tagData, @"iTunes_CDDB_TrackNumber", [NSString stringWithFormat:@"%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK] intValue]]);
+				XLDAACAppendUserDefinedComment(tagData, @"iTunes_CDDB_TrackNumber", [NSString stringWithFormat:@"%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK] intValue]]);
 			}
 		}
 		
 		/* tmpo atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_BPM]) {
 			added = YES;
-			appendNumericTag(tagData, "tmpo", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_BPM], 2);
+			XLDAACAppendNumericTag(tagData, "tmpo", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_BPM], 2);
 		}
 		
 		/* cprt atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COPYRIGHT]) {
 			added = YES;
 			NSString *str = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COPYRIGHT];
-			appendTextTag(tagData, "cprt", str);
+			XLDAACAppendTextTag(tagData, "cprt", str);
 		}
 		
 		/* pgap atom */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM]) {
 			if([[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM] boolValue]) {
 				added = YES;
-				appendNumericTag(tagData, "pgap", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM], 1);
+				XLDAACAppendNumericTag(tagData, "pgap", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GAPLESSALBUM], 1);
 			}
 		}
 		
 		/* MusicBrainz related tags */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_TRACKID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Track Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_TRACKID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Track Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_TRACKID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Album Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Album Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Album Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Album Artist Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Disc Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Disc Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicIP PUID", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicIP PUID", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Album Status", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Album Status", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Album Type", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Album Type", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Album Release Country", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Album Release Country", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Release Group Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Release Group Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MusicBrainz Work Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]);
+			XLDAACAppendUserDefinedComment(tagData, @"MusicBrainz Work Id", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]);
 		}
 		
 		/* Timecode related tags */
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"SMPTE_TIMECODE_START", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]);
+			XLDAACAppendUserDefinedComment(tagData, @"SMPTE_TIMECODE_START", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"SMPTE_TIMECODE_DURATION", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]);
+			XLDAACAppendUserDefinedComment(tagData, @"SMPTE_TIMECODE_DURATION", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]);
 		}
 		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]) {
 			added = YES;
-			appendUserDefinedComment(tagData, @"MEDIA_FPS", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]);
+			XLDAACAppendUserDefinedComment(tagData, @"MEDIA_FPS", [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]);
 		}
 		
 		/* covr atom */
@@ -963,7 +870,7 @@ NSMutableData *buildChapterData(NSArray *trackList)
 		NSString *str = [NSString stringWithFormat:@"X Lossless Decoder %@, QuickTime %d.%d.%d, %@",[[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"],(version>>24)&0xF,(version>>20)&0xF,(version>>16)&0xF,encoderAttr];
 		atomID[0] = 0xa9;
 		memcpy(atomID+1,"too",3);
-		appendTextTag(tagData, atomID, str);
+		XLDAACAppendTextTag(tagData, atomID, str);
 	}
 	
 	/* gapless information */
@@ -1652,8 +1559,6 @@ end:
 			if(fread(atom,1,4,fp) < 4) goto end;
 			tmp = SWAP32(tmp);
 			if(!memcmp(atom,"udta",4)) {
-				/*updateUdta(fp, tagData);
-				udtaSize = [tagData length];*/
 				if((udtaSize >= tmp) && ((ftello(fp)+tmp-8) == (pos_moov+moovSize-4))) {
 					if(fseeko(fp,-8,SEEK_CUR) != 0) goto end;
 					if(fwrite([tagData bytes],1,tmp,fp) < tmp) goto end;
