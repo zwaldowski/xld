@@ -1,4 +1,3 @@
-#import <Foundation/Foundation.h>
 #import "XLDLibsndfileDecoder.h"
 #import <XLDID3/XLDID3.h>
 

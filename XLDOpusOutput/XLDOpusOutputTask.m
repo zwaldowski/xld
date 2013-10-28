@@ -7,11 +7,7 @@
 //
 
 #import "XLDOpusOutputTask.h"
-
-typedef int64_t xldoffset_t;
-#import "XLDTrack.h"
 #import "lpc.h"
-
 #import <openssl/bio.h>
 #import <openssl/evp.h>
 #import <openssl/buffer.h>

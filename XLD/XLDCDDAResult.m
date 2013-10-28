@@ -8,7 +8,6 @@
 //  Access to AccurateRip is regulated, see  http://www.accuraterip.com/3rdparty-access.htm for details.
 
 #import "XLDCDDAResult.h"
-#import "XLDTrack.h"
 #import "XLDAccurateRipDB.h"
 #import "XLDCustomClasses.h"
 #ifdef XLD_LOG_CHECKER

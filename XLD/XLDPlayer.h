@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "sfifo.h"
 #import "XLDDiscLayout.h"

@@ -9,7 +9,6 @@
 #import <DiscRecording/DiscRecording.h>
 #import "XLDTrackProducer.h"
 #import "XLDDiscBurner.h"
-#import "XLDTrack.h"
 
 static int sample_compare(const void *A, const void *B, int numSamples, unsigned int *totalDifference)
 {

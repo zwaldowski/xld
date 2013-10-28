@@ -1,5 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "XLDDecoder.h"
 
 @interface XLDMP3Decoder : NSObject <XLDDecoder>
 {

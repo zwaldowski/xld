@@ -8,7 +8,6 @@
 
 #import <DiscRecording/DiscRecording.h>
 #import "XLDDiscBurner.h"
-#import "XLDTrack.h"
 #import "XLDTrackProducer.h"
 #import "XLDCustomClasses.h"
 

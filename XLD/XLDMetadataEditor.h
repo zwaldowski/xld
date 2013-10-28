@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDMetadataEditor : NSObject {
 	id delegate;

@@ -1,8 +1,6 @@
-#import <Foundation/Foundation.h>
-
+#import "XLDVorbisDecoder.h"
 #import <openssl/bio.h>
 #import <openssl/evp.h>
-#import "XLDVorbisDecoder.h"
 
 static unsigned char *base64dec(char *input, int length)
 {

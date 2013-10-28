@@ -10,8 +10,6 @@
 #import <sys/time.h>
 #import "XLDAccurateRipChecker.h"
 #import "XLDecoderCenter.h"
-#import "XLDDecoder.h"
-#import "XLDTrack.h"
 #import "XLDController.h"
 #import "XLDAccurateRipDB.h"
 

@@ -1,7 +1,7 @@
 /* XLDWavpackOutput */
 
 #import <Cocoa/Cocoa.h>
-#import "XLDOutput.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDWavpackOutput : NSObject <XLDOutput>
 {

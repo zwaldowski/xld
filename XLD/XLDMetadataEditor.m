@@ -8,8 +8,6 @@
 
 #import "XLDMetadataEditor.h"
 #import "XLDController.h"
-#import "XLDTrack.h"
-//#import "XLDDragImageView.h"
 #import "XLDShadowedImageView.h"
 #import "XLDCustomClasses.h"
 #import "XLDMetadataTextParser.h"

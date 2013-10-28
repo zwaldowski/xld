@@ -118,7 +118,6 @@
 		DB133792181C4EBA00FD756C /* XLDSecureRipperEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13375F181C4EBA00FD756C /* XLDSecureRipperEngine.m */; };
 		DB133793181C4EBA00FD756C /* XLDShadowedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133761181C4EBA00FD756C /* XLDShadowedImageView.m */; };
 		DB133794181C4EBA00FD756C /* XLDSilentDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133763181C4EBA00FD756C /* XLDSilentDecoder.m */; };
-		DB133795181C4EBA00FD756C /* XLDTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133765181C4EBA00FD756C /* XLDTrack.m */; };
 		DB133796181C4EBA00FD756C /* XLDTrackProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133767181C4EBA00FD756C /* XLDTrackProducer.m */; };
 		DB133797181C4EBA00FD756C /* XLDTrackValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133769181C4EBA00FD756C /* XLDTrackValidator.m */; };
 		DB133798181C4EBA00FD756C /* XLDWave64Output.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13376B181C4EBA00FD756C /* XLDWave64Output.m */; };
@@ -134,11 +133,9 @@
 		DB61B8671819AB880084D8FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB61B8651819AB880084D8FB /* InfoPlist.strings */; };
 		DB6E7F3B181EA7BC009AAFFE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
 		DB6E7F41181EA7BC009AAFFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB6E7F3F181EA7BC009AAFFE /* InfoPlist.strings */; };
-		DB6E7F45181EA7BC009AAFFE /* XLDPlugins.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */; };
 		DB6E7F67181EA80B009AAFFE /* XLDDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6E7F68181EA80B009AAFFE /* XLDOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F64181EA80B009AAFFE /* XLDOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6E7F69181EA80B009AAFFE /* XLDOutputTask.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB6E7F6A181EA80B009AAFFE /* XLDTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F66181EA80B009AAFFE /* XLDTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB6E7F6E181EA861009AAFFE /* XLDPlugins.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
 		DB6E7F6F181EA874009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
 		DB6E7F74181EA885009AAFFE /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
@@ -226,6 +223,14 @@
 		DBD675E81819A038000CDC5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBD675E61819A038000CDC5A /* InfoPlist.strings */; };
 		DBD675F21819A052000CDC5A /* XLDApeDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = DBD675F11819A052000CDC5A /* XLDApeDecoder.mm */; };
 		DBD675F51819A22C000CDC5A /* XLDApeDecoder.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DBD675E11819A038000CDC5A /* XLDApeDecoder.bundle */; };
+		DBD9E91A181ED6F100AAF534 /* XLDMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD9E918181ED6F100AAF534 /* XLDMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBD9E91B181ED6F100AAF534 /* XLDMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9E919181ED6F100AAF534 /* XLDMetadata.m */; };
+		DBD9E921181ED7FE00AAF534 /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
+		DBD9E922181ED9FB00AAF534 /* XLDPlugins.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6E7F43181EA7BC009AAFFE /* XLDPlugins.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBD9E925181EDACA00AAF534 /* XLDTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD9E923181EDACA00AAF534 /* XLDTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBD9E926181EDACA00AAF534 /* XLDTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD9E924181EDACA00AAF534 /* XLDTrack.m */; };
+		DBD9E928181EDD5900AAF534 /* XLDTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD9E927181EDD5900AAF534 /* XLDTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBD9E92B181EDEB300AAF534 /* XLDPlugins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6E7F3A181EA7BC009AAFFE /* XLDPlugins.framework */; };
 		DBEE192C1819AED500AF3AE6 /* XLDOpusOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEE19291819AED500AF3AE6 /* XLDOpusOutput.m */; };
 		DBEE192D1819AED500AF3AE6 /* XLDOpusOutputTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEE192B1819AED500AF3AE6 /* XLDOpusOutputTask.m */; };
 		DBEE19311819AEF300AF3AE6 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB94764C18196FFE001DD475 /* libcrypto.dylib */; };
@@ -815,6 +820,13 @@
 			remoteGlobalIDString = DBD675E01819A038000CDC5A;
 			remoteInfo = XLDApeDecoder;
 		};
+		DBD9E929181EDEAF00AAF534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6E7F39181EA7BC009AAFFE;
+			remoteInfo = XLDPlugins;
+		};
 		DBEE19811819B1B300AF3AE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
@@ -1211,8 +1223,6 @@
 		DB133761181C4EBA00FD756C /* XLDShadowedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDShadowedImageView.m; sourceTree = "<group>"; };
 		DB133762181C4EBA00FD756C /* XLDSilentDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDSilentDecoder.h; sourceTree = "<group>"; };
 		DB133763181C4EBA00FD756C /* XLDSilentDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDSilentDecoder.m; sourceTree = "<group>"; };
-		DB133764181C4EBA00FD756C /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
-		DB133765181C4EBA00FD756C /* XLDTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDTrack.m; sourceTree = "<group>"; };
 		DB133766181C4EBA00FD756C /* XLDTrackProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrackProducer.h; sourceTree = "<group>"; };
 		DB133767181C4EBA00FD756C /* XLDTrackProducer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDTrackProducer.m; sourceTree = "<group>"; };
 		DB133768181C4EBA00FD756C /* XLDTrackValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrackValidator.h; sourceTree = "<group>"; };
@@ -1244,11 +1254,9 @@
 		DB6E7F40181EA7BC009AAFFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB6E7F42181EA7BC009AAFFE /* XLDPlugins-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDPlugins-Prefix.pch"; sourceTree = "<group>"; };
 		DB6E7F43181EA7BC009AAFFE /* XLDPlugins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLDPlugins.h; sourceTree = "<group>"; };
-		DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLDPlugins.m; sourceTree = "<group>"; };
 		DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDDecoder.h; sourceTree = "<group>"; };
 		DB6E7F64181EA80B009AAFFE /* XLDOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutput.h; sourceTree = "<group>"; };
 		DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOutputTask.h; sourceTree = "<group>"; };
-		DB6E7F66181EA80B009AAFFE /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
 		DB7F0F52181C514300086520 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB7F0F6A181C514F00086520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CoverArtSearcher.xib; sourceTree = "<group>"; };
 		DB7F0F6C181C515B00086520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomFormatManager.xib; sourceTree = "<group>"; };
@@ -1379,6 +1387,11 @@
 		DBD675E91819A038000CDC5A /* XLDApeDecoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDApeDecoder-Prefix.pch"; sourceTree = "<group>"; };
 		DBD675F01819A052000CDC5A /* XLDApeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDApeDecoder.h; sourceTree = "<group>"; };
 		DBD675F11819A052000CDC5A /* XLDApeDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XLDApeDecoder.mm; sourceTree = "<group>"; };
+		DBD9E918181ED6F100AAF534 /* XLDMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDMetadata.h; sourceTree = "<group>"; };
+		DBD9E919181ED6F100AAF534 /* XLDMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDMetadata.m; sourceTree = "<group>"; };
+		DBD9E923181EDACA00AAF534 /* XLDTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTrack.h; sourceTree = "<group>"; };
+		DBD9E924181EDACA00AAF534 /* XLDTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDTrack.m; sourceTree = "<group>"; };
+		DBD9E927181EDD5900AAF534 /* XLDTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDTypes.h; sourceTree = "<group>"; };
 		DBEE19281819AED500AF3AE6 /* XLDOpusOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOpusOutput.h; sourceTree = "<group>"; };
 		DBEE19291819AED500AF3AE6 /* XLDOpusOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDOpusOutput.m; sourceTree = "<group>"; };
 		DBEE192A1819AED500AF3AE6 /* XLDOpusOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDOpusOutputTask.h; sourceTree = "<group>"; };
@@ -1577,6 +1590,7 @@
 				DB1336AD181C4AE000FD756C /* Paranoia.framework in Frameworks */,
 				DB8E18DA1818E3F30099CBC4 /* Cocoa.framework in Frameworks */,
 				DB7F10F5181C5A1700086520 /* CDDB.framework in Frameworks */,
+				DBD9E921181ED7FE00AAF534 /* XLDPlugins.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1679,6 +1693,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD9E92B181EDEB300AAF534 /* XLDPlugins.framework in Frameworks */,
 				DBEE1AAB1819BB9400AF3AE6 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1961,8 +1976,6 @@
 				DB133761181C4EBA00FD756C /* XLDShadowedImageView.m */,
 				DB133762181C4EBA00FD756C /* XLDSilentDecoder.h */,
 				DB133763181C4EBA00FD756C /* XLDSilentDecoder.m */,
-				DB133764181C4EBA00FD756C /* XLDTrack.h */,
-				DB133765181C4EBA00FD756C /* XLDTrack.m */,
 				DB133766181C4EBA00FD756C /* XLDTrackProducer.h */,
 				DB133767181C4EBA00FD756C /* XLDTrackProducer.m */,
 				DB133768181C4EBA00FD756C /* XLDTrackValidator.h */,
@@ -2067,7 +2080,10 @@
 			children = (
 				DB6E7F6B181EA832009AAFFE /* Headers */,
 				DB6E7F43181EA7BC009AAFFE /* XLDPlugins.h */,
-				DB6E7F44181EA7BC009AAFFE /* XLDPlugins.m */,
+				DBD9E918181ED6F100AAF534 /* XLDMetadata.h */,
+				DBD9E919181ED6F100AAF534 /* XLDMetadata.m */,
+				DBD9E923181EDACA00AAF534 /* XLDTrack.h */,
+				DBD9E924181EDACA00AAF534 /* XLDTrack.m */,
 				DB6E7F3D181EA7BC009AAFFE /* Supporting Files */,
 			);
 			path = XLDPlugins;
@@ -2089,7 +2105,7 @@
 				DB6E7F63181EA80B009AAFFE /* XLDDecoder.h */,
 				DB6E7F64181EA80B009AAFFE /* XLDOutput.h */,
 				DB6E7F65181EA80B009AAFFE /* XLDOutputTask.h */,
-				DB6E7F66181EA80B009AAFFE /* XLDTrack.h */,
+				DBD9E927181EDD5900AAF534 /* XLDTypes.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -2473,9 +2489,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB6E7F68181EA80B009AAFFE /* XLDOutput.h in Headers */,
-				DB6E7F6A181EA80B009AAFFE /* XLDTrack.h in Headers */,
+				DBD9E91A181ED6F100AAF534 /* XLDMetadata.h in Headers */,
+				DBD9E922181ED9FB00AAF534 /* XLDPlugins.h in Headers */,
 				DB6E7F67181EA80B009AAFFE /* XLDDecoder.h in Headers */,
 				DB6E7F69181EA80B009AAFFE /* XLDOutputTask.h in Headers */,
+				DBD9E928181EDD5900AAF534 /* XLDTypes.h in Headers */,
+				DBD9E925181EDACA00AAF534 /* XLDTrack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2937,6 +2956,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DBD9E92A181EDEAF00AAF534 /* PBXTargetDependency */,
 			);
 			name = XLDID3;
 			productName = XLDID3;
@@ -3486,7 +3506,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB6E7F45181EA7BC009AAFFE /* XLDPlugins.m in Sources */,
+				DBD9E926181EDACA00AAF534 /* XLDTrack.m in Sources */,
+				DBD9E91B181ED6F100AAF534 /* XLDMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3523,7 +3544,6 @@
 				DB13377F181C4EBA00FD756C /* XLDDiscogsRelease.m in Sources */,
 				DB1336ED181C4D3F00FD756C /* XLDCustomClasses.m in Sources */,
 				DB133791181C4EBA00FD756C /* XLDRenamer.m in Sources */,
-				DB133795181C4EBA00FD756C /* XLDTrack.m in Sources */,
 				DB133770181C4EBA00FD756C /* XLDAiffOutput.m in Sources */,
 				DB133777181C4EBA00FD756C /* XLDCoverArtSearcher.m in Sources */,
 				DB133794181C4EBA00FD756C /* XLDSilentDecoder.m in Sources */,
@@ -3955,6 +3975,11 @@
 			isa = PBXTargetDependency;
 			target = DBD675E01819A038000CDC5A /* XLDApeDecoder */;
 			targetProxy = DBD675F31819A21C000CDC5A /* PBXContainerItemProxy */;
+		};
+		DBD9E92A181EDEAF00AAF534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB6E7F39181EA7BC009AAFFE /* XLDPlugins */;
+			targetProxy = DBD9E929181EDEAF00AAF534 /* PBXContainerItemProxy */;
 		};
 		DBEE19821819B1B300AF3AE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4686,6 +4711,7 @@
 		DB6E7F58181EA7BD009AAFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -4706,6 +4732,7 @@
 		DB6E7F59181EA7BD009AAFFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

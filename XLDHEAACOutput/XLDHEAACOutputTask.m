@@ -8,10 +8,6 @@
 
 #import "XLDHEAACOutputTask.h"
 #import "XLDHEAACOutput.h"
-
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
 #import <sys/stat.h>
 #import <unistd.h>
 #import <sys/types.h>

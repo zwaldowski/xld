@@ -6,11 +6,8 @@
 //  Copyright 2013 tmkk. All rights reserved.
 //
 
-typedef int64_t xldoffset_t;
-
 #import "XLDSd2fOutputTask.h"
 #import "XLDSd2fOutput.h"
-#import "XLDTrack.h"
 
 @implementation XLDSd2fOutputTask
 

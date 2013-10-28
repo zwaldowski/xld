@@ -1,5 +1,6 @@
+#import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "XLDDecoder.h"
 
 @interface XLDAlacDecoder : NSObject <XLDDecoder>
 {

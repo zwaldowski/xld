@@ -1,5 +1,6 @@
 
 #import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDTypes.h>
 
 @interface XLDTrack : NSObject
 {

@@ -8,7 +8,6 @@
 
 #import "XLDConverterTask.h"
 #import "XLDQueue.h"
-#import "XLDOutput.h"
 #import "XLDRawDecoder.h"
 #import "XLDDefaultOutputTask.h"
 #import "XLDCDDARipper.h"

@@ -9,10 +9,6 @@
 #import "XLDLameOutputTask.h"
 #import "XLDLameOutput.h"
 
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
-
 //extern int id3tag_set_lyrics_utf16(lame_global_flags * gfp, char const *lang, unsigned short const *desc, unsigned short const *text);
 extern int id3v2_add_ucs2(lame_t gfp, uint32_t frame_id, char const *lang, unsigned short const *desc, unsigned short const *text);
 

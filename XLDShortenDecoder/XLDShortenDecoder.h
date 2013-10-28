@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <Shorten/decode.h>
-#import "XLDDecoder.h"
 
 @interface XLDShortenDecoder : NSObject <XLDDecoder>
 {

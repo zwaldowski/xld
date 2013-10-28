@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDOutputTask.h"
+#import <XLDPlugins/XLDPlugins.h>
 #import <sndfile/sndfile.h>
 #import <AudioToolbox/AudioToolbox.h>
 

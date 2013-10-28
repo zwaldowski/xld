@@ -1,7 +1,4 @@
-#import <Foundation/Foundation.h>
-
 #import "XLDFlacDecoder.h"
-#import "XLDTrack.h"
 #import <unistd.h>
 
 typedef struct {

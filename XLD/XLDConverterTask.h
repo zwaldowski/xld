@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDTrack.h"
+#import <XLDPlugins/XLDPlugins.h>
 #import "XLDCustomClasses.h"
 #import "XLDDiscLayout.h"
 #import "XLDCDDAResult.h"

@@ -12,7 +12,6 @@
 #import "XLDShadowedImageView.h"
 #import "XLDCustomClasses.h"
 #import "XLDCueParser.h"
-#import "XLDTrack.h"
 #import "XLDController.h"
 #import "XLDMetadataEditor.h"
 #import "XLDPlayer.h"

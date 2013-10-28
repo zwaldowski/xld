@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDDiscView : NSObject {
 	IBOutlet id o_window;

@@ -8,7 +8,6 @@
 
 #import "XLDDefaultOutputTask.h"
 #import "XLDDefaultOutput.h"
-#import "XLDTrack.h"
 
 static void appendTextTag(NSMutableData *tagData, char *field, NSString *tagStr, int encoding)
 {

@@ -1,6 +1,10 @@
-#import <Foundation/Foundation.h>
 
-@protocol XLDOutput
+#import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDTypes.h>
+
+@class NSView;
+
+@protocol XLDOutput <NSObject>
 
 + (NSString *)pluginName;
 + (BOOL)canLoadThisBundle;

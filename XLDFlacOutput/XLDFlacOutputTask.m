@@ -9,10 +9,6 @@
 #import "XLDFlacOutputTask.h"
 #import "XLDFlacOutput.h"
 
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
-
 @implementation XLDFlacOutputTask
 
 - (id)init

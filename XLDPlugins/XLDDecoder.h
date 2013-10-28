@@ -1,14 +1,8 @@
+
 #import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDTypes.h>
 
-typedef int64_t xldoffset_t;
-
-typedef enum {
-	XLDNoCueSheet = 0,
-	XLDTrackTypeCueSheet,
-	XLDTextTypeCueSheet
-} XLDEmbeddedCueSheetType;
-
-@protocol XLDDecoder
+@protocol XLDDecoder <NSObject>
 
 + (BOOL)canHandleFile:(char *)path;
 + (BOOL)canLoadThisBundle;

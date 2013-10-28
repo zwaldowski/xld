@@ -8,6 +8,7 @@
 //  Access to AccurateRip is regulated, see  http://www.accuraterip.com/3rdparty-access.htm for details.
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import "gain_analysis.h"
 #import "XLDTrackValidator.h"
 

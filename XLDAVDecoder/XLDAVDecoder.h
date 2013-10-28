@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <libavcodec/avcodec.h>
 #import <libavformat/avformat.h>
-#import "XLDDecoder.h"
 
 @interface XLDTakDecoder : NSObject <XLDDecoder> {
 	BOOL error;

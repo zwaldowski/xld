@@ -6,7 +6,6 @@
 #import <DiskArbitration/DiskArbitration.h>
 #import "XLDController.h"
 #import "XLDecoderCenter.h"
-#import "XLDDecoder.h"
 #import "XLDWavOutput.h"
 #import "XLDAiffOutput.h"
 #import "XLDWave64Output.h"
@@ -14,8 +13,6 @@
 #import "XLDPcmLEOutput.h"
 #import "XLDDefaultOutputTask.h"
 #import "XLDCueParser.h"
-#import "XLDTrack.h"
-#import "XLDOutput.h"
 #import "XLDPlayer.h"
 #import "XLDQueue.h"
 #import "XLDConverterTask.h"

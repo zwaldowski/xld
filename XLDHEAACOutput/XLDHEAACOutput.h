@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDOutput.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDHEAACOutput : NSObject <XLDOutput> {
 	IBOutlet id o_prefView;

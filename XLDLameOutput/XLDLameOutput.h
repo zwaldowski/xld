@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDOutput.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 typedef enum
 {

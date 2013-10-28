@@ -7,7 +7,6 @@
 //
 
 #import "XLDecoderCenter.h"
-#import "XLDDecoder.h"
 #import "XLDCDDARipper.h"
 
 @implementation XLDecoderCenter

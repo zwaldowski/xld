@@ -1,14 +1,8 @@
+
 #import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDTypes.h>
 
-typedef struct
-{
-	int channels;
-	int bps;
-	int samplerate;
-	int isFloat;
-} XLDFormat;
-
-@protocol XLDOutputTask
+@protocol XLDOutputTask <NSObject>
 
 - (BOOL)setOutputFormat:(XLDFormat)fmt;
 - (BOOL)openFileForOutput:(NSString *)str withTrackData:(id)track;

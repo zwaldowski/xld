@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XLDOutput.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDOpusOutput : NSObject <XLDOutput> {
 	IBOutlet id o_encoderMode;

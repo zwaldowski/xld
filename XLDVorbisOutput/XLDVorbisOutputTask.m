@@ -6,15 +6,11 @@
 //  Copyright 2006 tmkk. All rights reserved.
 //
 
+#import "XLDVorbisOutputTask.h"
+#import "XLDVorbisOutput.h"
 #import <openssl/bio.h>
 #import <openssl/evp.h>
 #import <openssl/buffer.h>
-#import "XLDVorbisOutputTask.h"
-#import "XLDVorbisOutput.h"
-
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
 
 static char *base64enc(const unsigned  char *input, int length)
 {

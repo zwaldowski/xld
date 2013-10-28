@@ -8,10 +8,8 @@
 
 #import "XLDPlayer.h"
 #import "XLDecoderCenter.h"
-#import "XLDDecoder.h"
 #import "XLDController.h"
 #import "XLDRawDecoder.h"
-#import "XLDTrack.h"
 #import "XLDPlayerSlider.h"
 #import "XLDMultipleFileWrappedDecoder.h"
 #import <CoreServices/CoreServices.h>

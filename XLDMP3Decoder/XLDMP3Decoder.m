@@ -1,35 +1,5 @@
-#import <Foundation/Foundation.h>
-#import <CoreFoundation/CoreFoundation.h>
 #import "XLDMP3Decoder.h"
 #import <XLDID3/XLDID3.h>
-
-#define XLD_METADATA_TITLE		@"Title"
-#define XLD_METADATA_ARTIST		@"Artist"
-#define XLD_METADATA_ALBUM		@"Album"
-#define XLD_METADATA_GENRE		@"Genre"
-#define XLD_METADATA_TRACK		@"Track"
-#define XLD_METADATA_DISC		@"Disc"
-#define XLD_METADATA_YEAR		@"Year"
-#define XLD_METADATA_DATE		@"Date"
-#define XLD_METADATA_COMPOSER	@"Composer"
-#define XLD_METADATA_CUESHEET	@"Cuesheet"
-#define XLD_METADATA_COMMENT	@"Comment"
-#define XLD_METADATA_TOTALTRACKS	@"Totaltracks"
-#define XLD_METADATA_TOTALDISCS	@"Totaldiscs"
-#define XLD_METADATA_LYRICS		@"Lyrics"
-#define XLD_METADATA_ISRC		@"ISRC"
-#define XLD_METADATA_COVER		@"Cover"
-#define XLD_METADATA_ALBUMARTIST	@"AlbumArtist"
-#define XLD_METADATA_REPLAYGAIN_TRACK_GAIN	@"RGTrackGain"
-#define XLD_METADATA_REPLAYGAIN_ALBUM_GAIN	@"RGAlbumGain"
-#define XLD_METADATA_REPLAYGAIN_TRACK_PEAK	@"RGTrackPeak"
-#define XLD_METADATA_REPLAYGAIN_ALBUM_PEAK	@"RGAlbumPeak"
-#define XLD_METADATA_COMPILATION	@"Compilation"
-#define XLD_METADATA_GROUP		@"Group"
-#define XLD_METADATA_GRACENOTE		@"Gracenote"
-#define XLD_METADATA_CATALOG		@"Catalog"
-#define XLD_METADATA_PREEMPHASIS	@"Emphasis"
-#define XLD_METADATA_FREEDBDISCID	@"DISCID"
 
 #ifdef _BIG_ENDIAN
 #define SWAP32(n) (n)

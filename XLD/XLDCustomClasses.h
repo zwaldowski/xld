@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDView : NSView {
 	int tag;

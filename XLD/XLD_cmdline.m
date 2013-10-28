@@ -2,14 +2,11 @@
 # define FloatToUnsigned(f)	((unsigned long)(((long)((f) - 2147483648.0)) + 2147483647L + 1))
 
 #import <Foundation/Foundation.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <sndfile/sndfile.h>
 #import <unistd.h>
 #import <sys/stat.h>
 #import <getopt.h>
-#import "XLDDecoder.h"
-#import "XLDOutput.h"
-#import "XLDOutputTask.h"
-#import "XLDTrack.h"
 #import "XLDRawDecoder.h"
 #import "XLDCueParser.h"
 #import "XLDDDPParser.h"

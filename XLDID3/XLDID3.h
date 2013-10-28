@@ -8,8 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XLDID3 : NSObject
-
-@end
-
 void parseID3(NSData *dat, NSMutableDictionary *metadata);

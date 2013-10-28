@@ -9,9 +9,6 @@
 #import "XLDAacOutput2Task.h"
 #import "XLDAacOutput2.h"
 
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
 #import <sys/stat.h>
 #import <unistd.h>
 #import <sys/types.h>

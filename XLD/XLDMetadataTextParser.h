@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDMetadataTextParser: NSObject {
 	NSArray *acceptedFormats;

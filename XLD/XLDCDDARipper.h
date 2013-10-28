@@ -8,9 +8,9 @@
 //  Access to AccurateRip is regulated, see  http://www.accuraterip.com/3rdparty-access.htm for details.
 
 #import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import <Paranoia/XLDCDDABackend.h>
 #import <Paranoia/cdda_paranoia.h>
-#import "XLDDecoder.h"
 #import "XLDCDDAResult.h"
 #import "XLDSecureRipperEngine.h"
 

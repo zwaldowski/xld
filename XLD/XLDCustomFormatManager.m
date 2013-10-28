@@ -6,7 +6,7 @@
 //  Copyright 2010 tmkk. All rights reserved.
 
 #import "XLDCustomFormatManager.h"
-#import "XLDoutput.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 @implementation XLDCustomFormatManager
 

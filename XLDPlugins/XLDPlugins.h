@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Taihei Monma. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface XLDPlugins : NSObject
-
-@end
+#import <XLDPlugins/XLDTypes.h>
+#import <XLDPlugins/XLDDecoder.h>
+#import <XLDPlugins/XLDOutput.h>
+#import <XLDPlugins/XLDOutputTask.h>
+#import <XLDPlugins/XLDTrack.h>
+#import <XLDPlugins/XLDMetadata.h>

@@ -6,7 +6,8 @@
 //  Copyright 2011 tmkk. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
+#import <XLDPlugins/XLDPlugins.h>
 #import "XLDMultipleFileWrappedDecoder.h"
 
 @interface XLDTrackProducer : NSObject {

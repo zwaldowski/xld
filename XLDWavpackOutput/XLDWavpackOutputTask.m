@@ -9,10 +9,6 @@
 #import "XLDWavpackOutputTask.h"
 #import "XLDWavpackOutput.h"
 
-typedef int64_t xldoffset_t;
-
-#import "XLDTrack.h"
-
 static int write_block (void *id, void *data, int32_t length)
 {
 	fileID *fid = (fileID *)id;

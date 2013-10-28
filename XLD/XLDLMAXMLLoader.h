@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDLMAXMLLoader : NSObject {
 	NSMutableArray *fileList;

@@ -6,7 +6,7 @@
 //  Copyright 2006 tmkk. All rights reserved.
 //
 
-#import "XLDDecoder.h"
+#import <XLDPlugins/XLDPlugins.h>
 
 @interface XLDRawDecoder : NSObject <XLDDecoder>
 {
