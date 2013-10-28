@@ -39,7 +39,6 @@
 		DB0275C41819D6DC00129746 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEE1AE81819BC6300AF3AE6 /* AudioToolbox.framework */; };
 		DB0275C91819D70C00129746 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB0275C51819D70C00129746 /* Localizable.strings */; };
 		DB0275CA1819D70C00129746 /* XLDAacOutput2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB0275C71819D70C00129746 /* XLDAacOutput2.xib */; };
-		DB0275E01819E04700129746 /* XLDAacOutput.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DB0275851819D25300129746 /* XLDAacOutput.bundle */; };
 		DB0275E11819E04700129746 /* XLDAacOutput2.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DB0275951819D25A00129746 /* XLDAacOutput2.bundle */; };
 		DB0275E71819E06300129746 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
 		DB0275F41819E07300129746 /* XLDHEAACOutput.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DB0275E61819E06300129746 /* XLDHEAACOutput.bundle */; };
@@ -78,7 +77,6 @@
 		DB13370C181C4DE900FD756C /* Vorbis.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB133690181C4AD100FD756C /* Vorbis.framework */; };
 		DB13370F181C4DE900FD756C /* WavPack.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369A181C4AD100FD756C /* WavPack.framework */; };
 		DB133710181C4DE900FD756C /* sndfile.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB13369C181C4AD100FD756C /* sndfile.framework */; };
-		DB133715181C4DE900FD756C /* fftw3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB1336A8181C4AD100FD756C /* fftw3.framework */; };
 		DB13376E181C4EBA00FD756C /* XLDAccurateRipChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133717181C4EB900FD756C /* XLDAccurateRipChecker.m */; };
 		DB13376F181C4EBA00FD756C /* XLDAccurateRipDB.m in Sources */ = {isa = PBXBuildFile; fileRef = DB133719181C4EB900FD756C /* XLDAccurateRipDB.m */; };
 		DB133770181C4EBA00FD756C /* XLDAiffOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13371B181C4EB900FD756C /* XLDAiffOutput.m */; };
@@ -309,13 +307,6 @@
 			remoteGlobalIDString = DB0275501819C2E300129746;
 			remoteInfo = XLDAlacOutput;
 		};
-		DB0275DC1819E03A00129746 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB0275841819D25300129746;
-			remoteInfo = XLDAacOutput;
-		};
 		DB0275DE1819E03A00129746 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB8E18CE1818E3F30099CBC4 /* Project object */;
@@ -420,13 +411,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = DB212E0C181BB1330014FB7C;
 			remoteInfo = aacplusenc;
-		};
-		DB1336A7181C4AD100FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB212E1A181BB2940014FB7C;
-			remoteInfo = FFTW;
 		};
 		DB1336A9181C4AD100FD756C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -595,13 +579,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = DBEE19B71819B4FF00AF3AE6;
 			remoteInfo = WavPack;
-		};
-		DB133707181C4DDF00FD756C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB33546F18196B9C00EF3380 /* XLD-External.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DB212E19181BB2940014FB7C;
-			remoteInfo = FFTW;
 		};
 		DB212B1B181B5CDA0014FB7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -988,7 +965,6 @@
 				DB13370C181C4DE900FD756C /* Vorbis.framework in Copy Frameworks */,
 				DB13370F181C4DE900FD756C /* WavPack.framework in Copy Frameworks */,
 				DB133710181C4DE900FD756C /* sndfile.framework in Copy Frameworks */,
-				DB133715181C4DE900FD756C /* fftw3.framework in Copy Frameworks */,
 				DB1336AE181C4AEA00FD756C /* Paranoia.framework in Copy Frameworks */,
 				DBEE1AE61819BC1100AF3AE6 /* XLDID3.framework in Copy Frameworks */,
 			);
@@ -1004,7 +980,6 @@
 				DB212E07181BAFFB0014FB7C /* XLDAVDecoder.bundle in Copy Bundles */,
 				DB212B1F181B5CEB0014FB7C /* XLDShortenDecoder.bundle in Copy Bundles */,
 				DB0275F41819E07300129746 /* XLDHEAACOutput.bundle in Copy Bundles */,
-				DB0275E01819E04700129746 /* XLDAacOutput.bundle in Copy Bundles */,
 				DB0275E11819E04700129746 /* XLDAacOutput2.bundle in Copy Bundles */,
 				DB02756C1819C34B00129746 /* XLDAlacDecoder.bundle in Copy Bundles */,
 				DB02756D1819C34B00129746 /* XLDAlacOutput.bundle in Copy Bundles */,
@@ -2006,7 +1981,6 @@
 				DB1336A2181C4AD100FD756C /* libavutil.framework */,
 				DB1336A4181C4AD100FD756C /* libavformat.framework */,
 				DB1336A6181C4AD100FD756C /* aacplusenc */,
-				DB1336A8181C4AD100FD756C /* fftw3.framework */,
 				DB1336AA181C4AD100FD756C /* Paranoia.framework */,
 				DB7F10F3181C59EC00086520 /* CDDB.framework */,
 			);
@@ -2739,7 +2713,6 @@
 				DB1336F4181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336F6181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336FE181C4DDF00FD756C /* PBXTargetDependency */,
-				DB133708181C4DDF00FD756C /* PBXTargetDependency */,
 				DB1336EF181C4DD200FD756C /* PBXTargetDependency */,
 				DBEE1AE51819BC0500AF3AE6 /* PBXTargetDependency */,
 				DB1336AC181C4AD600FD756C /* PBXTargetDependency */,
@@ -2758,7 +2731,6 @@
 				DB0275321819C27700129746 /* PBXTargetDependency */,
 				DB0275691819C34000129746 /* PBXTargetDependency */,
 				DB02756B1819C34000129746 /* PBXTargetDependency */,
-				DB0275DD1819E03A00129746 /* PBXTargetDependency */,
 				DB0275DF1819E03A00129746 /* PBXTargetDependency */,
 				DB0275F31819E06900129746 /* PBXTargetDependency */,
 				DB212B1C181B5CDA0014FB7C /* PBXTargetDependency */,
@@ -3148,13 +3120,6 @@
 			fileType = "compiled.mach-o.executable";
 			path = aacplusenc;
 			remoteRef = DB1336A5181C4AD100FD756C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB1336A8181C4AD100FD756C /* fftw3.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = fftw3.framework;
-			remoteRef = DB1336A7181C4AD100FD756C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		DB1336AA181C4AD100FD756C /* Paranoia.framework */ = {
@@ -3691,11 +3656,6 @@
 			target = DB0275501819C2E300129746 /* XLDAlacOutput */;
 			targetProxy = DB02756A1819C34000129746 /* PBXContainerItemProxy */;
 		};
-		DB0275DD1819E03A00129746 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DB0275841819D25300129746 /* XLDAacOutput */;
-			targetProxy = DB0275DC1819E03A00129746 /* PBXContainerItemProxy */;
-		};
 		DB0275DF1819E03A00129746 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DB0275941819D25A00129746 /* XLDAacOutput2 */;
@@ -3820,11 +3780,6 @@
 			isa = PBXTargetDependency;
 			name = WavPack;
 			targetProxy = DB1336FD181C4DDF00FD756C /* PBXContainerItemProxy */;
-		};
-		DB133708181C4DDF00FD756C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FFTW;
-			targetProxy = DB133707181C4DDF00FD756C /* PBXContainerItemProxy */;
 		};
 		DB212B1C181B5CDA0014FB7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
