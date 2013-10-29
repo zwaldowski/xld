@@ -569,6 +569,7 @@
 		DBA7382B18196E1E00BE4ECD /* vorbisfile.c in Sources */ = {isa = PBXBuildFile; fileRef = DBA7373418196D7500BE4ECD /* vorbisfile.c */; };
 		DBA7382C18196E1E00BE4ECD /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = DBA7373518196D7500BE4ECD /* window.c */; };
 		DBA7382F18196ECB00BE4ECD /* Ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE2A1C3181961B5005CAB64 /* Ogg.framework */; };
+		DBB4F859181F664200A0153D /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB4F857181F663300A0153D /* SmartPtr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBD2D383181A3C8A00255CCC /* allcodecs.c in Sources */ = {isa = PBXBuildFile; fileRef = DBD2C8DA181A343000255CCC /* allcodecs.c */; };
 		DBD6759F18199E24000CDC5A /* IO.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD6759E18199E24000CDC5A /* IO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBD675A018199E2D000CDC5A /* APECompress.h in Headers */ = {isa = PBXBuildFile; fileRef = DB947956181990A5001DD475 /* APECompress.h */; };
@@ -598,7 +599,6 @@
 		DBD675B818199E2D000CDC5A /* ID3Genres.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B2181990A6001DD475 /* ID3Genres.h */; };
 		DBD675B918199E2D000CDC5A /* NoWindows.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B4181990A6001DD475 /* NoWindows.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBD675BA18199E2D000CDC5A /* RollBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B5181990A6001DD475 /* RollBuffer.h */; };
-		DBD675BB18199E2D000CDC5A /* SmartPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B6181990A6001DD475 /* SmartPtr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBD675BC18199E2D000CDC5A /* StdLibFileIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B8181990A6001DD475 /* StdLibFileIO.h */; };
 		DBD675BD18199E2D000CDC5A /* StdString.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479B9181990A6001DD475 /* StdString.h */; };
 		DBD675BE18199E2D000CDC5A /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9479BA181990A6001DD475 /* Timer.h */; };
@@ -1536,6 +1536,7 @@
 		DBA7373418196D7500BE4ECD /* vorbisfile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vorbisfile.c; sourceTree = "<group>"; };
 		DBA7373518196D7500BE4ECD /* window.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
 		DBA7373618196D7500BE4ECD /* window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		DBB4F857181F663300A0153D /* SmartPtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartPtr.h; sourceTree = "<group>"; };
 		DBD2C817181A2FF100255CCC /* libavcodec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libavcodec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD2C81B181A2FF100255CCC /* libavcodec-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libavcodec-Info.plist"; sourceTree = "<group>"; };
 		DBD2C81F181A2FF100255CCC /* libavcodec-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libavcodec-Prefix.pch"; sourceTree = "<group>"; };
@@ -2703,6 +2704,7 @@
 		DB9476AB1819726E001DD475 /* MAC */ = {
 			isa = PBXGroup;
 			children = (
+				DBB4F857181F663300A0153D /* SmartPtr.h */,
 				DB9479E2181991BA001DD475 /* MAC.h */,
 				DB9478EC181990A5001DD475 /* MAC-src */,
 				DB9476AC1819726E001DD475 /* Supporting Files */,
@@ -3941,6 +3943,7 @@
 				DBD675A118199E2D000CDC5A /* APECompressCore.h in Headers */,
 				DBD675A218199E2D000CDC5A /* APECompressCreate.h in Headers */,
 				DBD675A318199E2D000CDC5A /* APEDecompress.h in Headers */,
+				DBB4F859181F664200A0153D /* SmartPtr.h in Headers */,
 				DBD675A418199E2D000CDC5A /* APEHeader.h in Headers */,
 				DBD675A518199E2D000CDC5A /* APEInfo.h in Headers */,
 				DBD675A618199E2D000CDC5A /* APELink.h in Headers */,
@@ -3963,7 +3966,6 @@
 				DBD675B818199E2D000CDC5A /* ID3Genres.h in Headers */,
 				DBD675B918199E2D000CDC5A /* NoWindows.h in Headers */,
 				DBD675BA18199E2D000CDC5A /* RollBuffer.h in Headers */,
-				DBD675BB18199E2D000CDC5A /* SmartPtr.h in Headers */,
 				DBD675BC18199E2D000CDC5A /* StdLibFileIO.h in Headers */,
 				DBD675BD18199E2D000CDC5A /* StdString.h in Headers */,
 				DBD675BE18199E2D000CDC5A /* Timer.h in Headers */,
