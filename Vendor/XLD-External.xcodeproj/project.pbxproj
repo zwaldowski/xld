@@ -644,7 +644,7 @@
 		DBE2A6F8181965BD005CAB64 /* seektable.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3B7181965BB005CAB64 /* seektable.h */; };
 		DBE2A6F9181965BD005CAB64 /* grabbag.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3B8181965BB005CAB64 /* grabbag.h */; };
 		DBE2A6FA181965BD005CAB64 /* macros.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3B9181965BB005CAB64 /* macros.h */; };
-		DBE2A6FE181965BD005CAB64 /* private.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3BD181965BB005CAB64 /* private.h */; };
+		DBE2A6FE181965BD005CAB64 /* private.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3BD181965BB005CAB64 /* private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBE2A6FF181965BD005CAB64 /* replaygain_analysis.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3BE181965BB005CAB64 /* replaygain_analysis.h */; };
 		DBE2A700181965BD005CAB64 /* replaygain_synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3BF181965BB005CAB64 /* replaygain_synthesis.h */; };
 		DBE2A701181965BD005CAB64 /* safe_str.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE2A3C0181965BB005CAB64 /* safe_str.h */; };
@@ -4138,12 +4138,12 @@
 				DBE2A6F8181965BD005CAB64 /* seektable.h in Headers */,
 				DBE2A700181965BD005CAB64 /* replaygain_synthesis.h in Headers */,
 				DBE2A6F0181965BD005CAB64 /* getopt.h in Headers */,
+				DBE2A6FE181965BD005CAB64 /* private.h in Headers */,
 				DBE2A6E0181965BD005CAB64 /* stream_decoder.h in Headers */,
 				DBE2A6DF181965BD005CAB64 /* ordinals.h in Headers */,
 				DBE2A6DE181965BD005CAB64 /* metadata.h in Headers */,
 				DBE2A701181965BD005CAB64 /* safe_str.h in Headers */,
 				DBE2A6F9181965BD005CAB64 /* grabbag.h in Headers */,
-				DBE2A6FE181965BD005CAB64 /* private.h in Headers */,
 				DBE2A6F1181965BD005CAB64 /* cuesheet.h in Headers */,
 				DBE2A703181965BD005CAB64 /* win_utf8_io.h in Headers */,
 				DBE2A6DA181965BD005CAB64 /* format.h in Headers */,

@@ -8,27 +8,17 @@
 
 #import "XLDFlacOutputTask.h"
 #import "XLDFlacOutput.h"
+#import <FLAC/private.h>
 
 @implementation XLDFlacOutputTask
 
-- (id)init
-{
-	[super init];
-	addTag = NO;
-	internalBuffer = NULL;
-	path = nil;
-	encoder = NULL;
-	tag = NULL;
-	st = NULL;
-	picture = NULL;
-	return self;
-}
-
 - (id)initWithConfigurations:(NSDictionary *)cfg
 {
-	[self init];
-	configurations = [cfg retain];
-	if([configurations objectForKey:@"WriteRGTags"]) writeRGTags = [[configurations objectForKey:@"WriteRGTags"] boolValue];
+	self = [super init];
+	if (self) {
+		configurations = [cfg copy];
+		if (configurations[@"WriteRGTags"]) writeRGTags = [configurations[@"WriteRGTags"] boolValue];
+	}
 	return self;
 }
 
@@ -39,10 +29,6 @@
 	if(encoder) FLAC__stream_encoder_delete(encoder);
 	if(picture) FLAC__metadata_object_delete(picture);
 	if(internalBuffer) free(internalBuffer);
-	if(path) [path release];
-	if(configurations) [configurations release];
-	if(metadataDic) [metadataDic release];
-	[super dealloc];
 }
 
 - (BOOL)setOutputFormat:(XLDFormat)fmt
@@ -80,244 +66,292 @@
 	FLAC__metadata_object_seektable_template_sort(st,true);
 	metadata[0] = st;
 	
-	FLAC__StreamMetadata_VorbisComment_Entry entry;
+	__block FLAC__StreamMetadata_VorbisComment_Entry entry;
 	tag = FLAC__metadata_object_new(FLAC__METADATA_TYPE_VORBIS_COMMENT);
-	entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ENCODER=X Lossless Decoder %@",[[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]] UTF8String];
-	entry.length = strlen((char *)entry.entry);
+	
+	NSString *data = [NSString stringWithFormat:@"ENCODER=X Lossless Decoder %@",[[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"]];
+	entry.entry = (FLAC__byte *)[data UTF8String];
+	entry.length = (FLAC__uint32)[data length];
 	FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
+	
 	if(addTag) {
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLE]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TITLE=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLE]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TITLE]) {
+			NSString *data = [NSString stringWithFormat:@"TITLE=%@",[(XLDTrack *)track metadata][XLD_METADATA_TITLE]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTIST]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ARTIST=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTIST]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ARTIST]) {
+			NSString *data = [NSString stringWithFormat:@"ARTIST=%@",[(XLDTrack *)track metadata][XLD_METADATA_ARTIST]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUM]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ALBUM=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUM]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ALBUM]) {
+			NSString *data = [NSString stringWithFormat:@"ALBUM=%@",[(XLDTrack *)track metadata][XLD_METADATA_ALBUM]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GENRE]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"GENRE=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GENRE]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_GENRE]) {
+			NSString *data = [NSString stringWithFormat:@"GENRE=%@",[(XLDTrack *)track metadata][XLD_METADATA_GENRE]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSER]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"COMPOSER=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSER]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_COMPOSER]) {
+			NSString *data = [NSString stringWithFormat:@"COMPOSER=%@",[(XLDTrack *)track metadata][XLD_METADATA_COMPOSER]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTIST]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ALBUMARTIST=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTIST]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ALBUMARTIST]) {
+			NSString *data = [NSString stringWithFormat:@"ALBUMARTIST=%@",[(XLDTrack *)track metadata][XLD_METADATA_ALBUMARTIST]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TRACKNUMBER=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TRACK] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TRACK]) {
+			NSString *data = [NSString stringWithFormat:@"TRACKNUMBER=%d",[[(XLDTrack *)track metadata][XLD_METADATA_TRACK] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALTRACKS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TRACKTOTAL=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALTRACKS] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TOTALTRACKS]) {
+			NSString *data = [NSString stringWithFormat:@"TRACKTOTAL=%d",[[(XLDTrack *)track metadata][XLD_METADATA_TOTALTRACKS] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALTRACKS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TOTALTRACKS=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALTRACKS] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TOTALTRACKS]) {
+			NSString *data = [NSString stringWithFormat:@"TOTALTRACKS=%d",[[(XLDTrack *)track metadata][XLD_METADATA_TOTALTRACKS] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_DISC]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"DISCNUMBER=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_DISC] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_DISC]) {
+			NSString *data = [NSString stringWithFormat:@"DISCNUMBER=%d",[[(XLDTrack *)track metadata][XLD_METADATA_DISC] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALDISCS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"DISCTOTAL=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALDISCS] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TOTALDISCS]) {
+			NSString *data = [NSString stringWithFormat:@"DISCTOTAL=%d",[[(XLDTrack *)track metadata][XLD_METADATA_TOTALDISCS] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALDISCS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TOTALDISCS=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TOTALDISCS] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TOTALDISCS]) {
+			NSString *data = [NSString stringWithFormat:@"TOTALDISCS=%d",[[(XLDTrack *)track metadata][XLD_METADATA_TOTALDISCS] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_DATE]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"DATE=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_DATE]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_DATE]) {
+			NSString *data = [NSString stringWithFormat:@"DATE=%@",[(XLDTrack *)track metadata][XLD_METADATA_DATE]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		else if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_YEAR]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"DATE=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_YEAR] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		else if([(XLDTrack *)track metadata][XLD_METADATA_YEAR]) {
+			NSString *data = [NSString stringWithFormat:@"DATE=%d",[[(XLDTrack *)track metadata][XLD_METADATA_YEAR] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GROUP]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"CONTENTGROUP=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GROUP]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_GROUP]) {
+			NSString *data = [NSString stringWithFormat:@"CONTENTGROUP=%@",[(XLDTrack *)track metadata][XLD_METADATA_GROUP]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"COMMENT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMMENT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_COMMENT]) {
+			NSString *data = [NSString stringWithFormat:@"COMMENT=%@",[(XLDTrack *)track metadata][XLD_METADATA_COMMENT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_CUESHEET] && [[configurations objectForKey:@"AllowEmbeddedCuesheet"] boolValue]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"CUESHEET=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_CUESHEET]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_CUESHEET] && [configurations[@"AllowEmbeddedCuesheet"] boolValue]) {
+			NSString *data = [NSString stringWithFormat:@"CUESHEET=%@",[(XLDTrack *)track metadata][XLD_METADATA_CUESHEET]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ISRC]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ISRC=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ISRC]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ISRC]) {
+			NSString *data = [NSString stringWithFormat:@"ISRC=%@",[(XLDTrack *)track metadata][XLD_METADATA_ISRC]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_CATALOG]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MCN=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_CATALOG]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_CATALOG]) {
+			NSString *data = [NSString stringWithFormat:@"MCN=%@",[(XLDTrack *)track metadata][XLD_METADATA_CATALOG]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"COMPILATION=%d",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPILATION] intValue]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_COMPILATION]) {
+			NSString *data = [NSString stringWithFormat:@"COMPILATION=%d",[[(XLDTrack *)track metadata][XLD_METADATA_COMPILATION] intValue]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLESORT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"TITLESORT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_TITLESORT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_TITLESORT]) {
+			NSString *data = [NSString stringWithFormat:@"TITLESORT=%@",[(XLDTrack *)track metadata][XLD_METADATA_TITLESORT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTISTSORT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ARTISTSORT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ARTISTSORT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ARTISTSORT]) {
+			NSString *data = [NSString stringWithFormat:@"ARTISTSORT=%@",[(XLDTrack *)track metadata][XLD_METADATA_ARTISTSORT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMSORT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ALBUMSORT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMSORT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ALBUMSORT]) {
+			NSString *data = [NSString stringWithFormat:@"ALBUMSORT=%@",[(XLDTrack *)track metadata][XLD_METADATA_ALBUMSORT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTISTSORT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"ALBUMARTISTSORT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_ALBUMARTISTSORT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_ALBUMARTISTSORT]) {
+			NSString *data = [NSString stringWithFormat:@"ALBUMARTISTSORT=%@",[(XLDTrack *)track metadata][XLD_METADATA_ALBUMARTISTSORT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSERSORT]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"COMPOSERSORT=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COMPOSERSORT]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_COMPOSERSORT]) {
+			NSString *data = [NSString stringWithFormat:@"COMPOSERSORT=%@",[(XLDTrack *)track metadata][XLD_METADATA_COMPOSERSORT]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"iTunes_CDDB_1=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_GRACENOTE2]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_GRACENOTE2]) {
+			NSString *data = [NSString stringWithFormat:@"iTunes_CDDB_1=%@",[(XLDTrack *)track metadata][XLD_METADATA_GRACENOTE2]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_TRACKID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_TRACKID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_TRACKID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_TRACKID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_TRACKID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_TRACKID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_ALBUMID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_ALBUMID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_ARTISTID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ARTISTID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_ARTISTID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_ARTISTID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_ARTISTID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_ALBUMARTISTID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMARTISTID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMARTISTID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_ALBUMARTISTID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMARTISTID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_DISCID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_DISCID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_DISCID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_DISCID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_DISCID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICIP_PUID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_PUID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_PUID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICIP_PUID=%@",[(XLDTrack *)track metadata][XLD_METADATA_PUID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_ALBUMSTATUS=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMSTATUS]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMSTATUS]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_ALBUMSTATUS=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMSTATUS]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_ALBUMTYPE=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_ALBUMTYPE]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMTYPE]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_ALBUMTYPE=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_ALBUMTYPE]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"RELEASECOUNTRY=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASECOUNTRY]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_RELEASECOUNTRY]) {
+			NSString *data = [NSString stringWithFormat:@"RELEASECOUNTRY=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_RELEASECOUNTRY]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_RELEASEGROUPID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_RELEASEGROUPID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_RELEASEGROUPID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_RELEASEGROUPID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_RELEASEGROUPID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MUSICBRAINZ_WORKID=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MB_WORKID]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MB_WORKID]) {
+			NSString *data = [NSString stringWithFormat:@"MUSICBRAINZ_WORKID=%@",[(XLDTrack *)track metadata][XLD_METADATA_MB_WORKID]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"SMPTE_TIMECODE_START=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_START]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_SMPTE_TIMECODE_START]) {
+			NSString *data = [NSString stringWithFormat:@"SMPTE_TIMECODE_START=%@",[(XLDTrack *)track metadata][XLD_METADATA_SMPTE_TIMECODE_START]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"SMPTE_TIMECODE_DURATION=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_SMPTE_TIMECODE_DURATION]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_SMPTE_TIMECODE_DURATION]) {
+			NSString *data = [NSString stringWithFormat:@"SMPTE_TIMECODE_DURATION=%@",[(XLDTrack *)track metadata][XLD_METADATA_SMPTE_TIMECODE_DURATION]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]) {
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"MEDIA_FPS=%@",[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_MEDIA_FPS]] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+		if([(XLDTrack *)track metadata][XLD_METADATA_MEDIA_FPS]) {
+			NSString *data = [NSString stringWithFormat:@"MEDIA_FPS=%@",[(XLDTrack *)track metadata][XLD_METADATA_MEDIA_FPS]];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 		}
 		if(writeRGTags) {
-			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN]) {
-				entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_TRACK_GAIN=%+.2f dB",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN] floatValue]] UTF8String];
-				entry.length = strlen((char *)entry.entry);
+			if([(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_TRACK_GAIN]) {
+				NSString *data = [NSString stringWithFormat:@"REPLAYGAIN_TRACK_GAIN=%+.2f dB",[[(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_TRACK_GAIN] floatValue]];
+				entry.entry = (FLAC__byte *)[data UTF8String];
+				entry.length = (FLAC__uint32)[data length];
 				FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 			}
-			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK]) {
-				entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_TRACK_PEAK=%.8f",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK] floatValue]] UTF8String];
-				entry.length = strlen((char *)entry.entry);
+			if([(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_TRACK_PEAK]) {
+				NSString *data = [NSString stringWithFormat:@"REPLAYGAIN_TRACK_PEAK=%.8f",[[(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_TRACK_PEAK] floatValue]];
+				entry.entry = (FLAC__byte *)[data UTF8String];
+				entry.length = (FLAC__uint32)[data length];
 				FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 			}
-			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN]) {
-				entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_ALBUM_GAIN=%+.2f dB",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN] floatValue]] UTF8String];
-				entry.length = strlen((char *)entry.entry);
+			if([(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_ALBUM_GAIN]) {
+				NSString *data = [NSString stringWithFormat:@"REPLAYGAIN_ALBUM_GAIN=%+.2f dB",[[(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_ALBUM_GAIN] floatValue]];
+				entry.entry = (FLAC__byte *)[data UTF8String];
+				entry.length = (FLAC__uint32)[data length];
 				FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 			}
-			if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK]) {
-				entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_ALBUM_PEAK=%.8f",[[[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK] floatValue]] UTF8String];
-				entry.length = strlen((char *)entry.entry);
+			if([(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_ALBUM_PEAK]) {
+				NSString *data = [NSString stringWithFormat:@"REPLAYGAIN_ALBUM_PEAK=%.8f",[[(XLDTrack *)track metadata][XLD_METADATA_REPLAYGAIN_ALBUM_PEAK] floatValue]];
+				entry.entry = (FLAC__byte *)[data UTF8String];
+				entry.length = (FLAC__uint32)[data length];
 				FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
 			}
 		}
-		if([[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COVER]) {
-			NSData *imgData = [[(XLDTrack *)track metadata] objectForKey:XLD_METADATA_COVER];
+		
+		if([(XLDTrack *)track metadata][XLD_METADATA_COVER]) {
+			NSData *imgData = [(XLDTrack *)track metadata][XLD_METADATA_COVER];
 			NSBitmapImageRep *rep = [NSBitmapImageRep imageRepWithData:imgData];
 			if(rep) {
 				picture = FLAC__metadata_object_new(FLAC__METADATA_TYPE_PICTURE);
-				FLAC__metadata_object_picture_set_data(picture, (FLAC__byte *)[imgData bytes], [imgData length], true);
-				picture->data.picture.width = [rep pixelsWide];
-				picture->data.picture.height = [rep pixelsHigh];
+				FLAC__metadata_object_picture_set_data(picture, (FLAC__byte *)[imgData bytes], (FLAC__uint32)[imgData length], true);
+				picture->data.picture.width = (FLAC__uint32)[rep pixelsWide];
+				picture->data.picture.height = (FLAC__uint32)[rep pixelsHigh];
 				picture->data.picture.type = FLAC__STREAM_METADATA_PICTURE_TYPE_FRONT_COVER;
-				picture->data.picture.depth = [rep bitsPerPixel];
+				picture->data.picture.depth = (FLAC__uint32)[rep bitsPerPixel];
 				if(picture->data.picture.data_length >= 8 && 0 == memcmp(picture->data.picture.data, "\x89PNG\x0d\x0a\x1a\x0a", 8))
 					FLAC__metadata_object_picture_set_mime_type(picture, "image/png", true);
 				else if(picture->data.picture.data_length >= 6 && (0 == memcmp(picture->data.picture.data, "GIF87a", 6) || 0 == memcmp(picture->data.picture.data, "GIF89a", 6))) {
@@ -330,42 +364,42 @@
 				//NSLog(@"%d,%s",ret,mime);
 			}
 		}
-		NSArray *keyArr = [[(XLDTrack *)track metadata] allKeys];
-		for(i=[keyArr count]-1;i>=0;i--) {
-			NSString *key = [keyArr objectAtIndex:i];
+		
+		[[(XLDTrack *)track metadata] enumerateKeysAndObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString *key, NSString *dat, BOOL *stop) {
 			NSRange range = [key rangeOfString:@"XLD_UNKNOWN_TEXT_METADATA_"];
-			if(range.location != 0) continue;
+			if (range.location != 0) return;
+			
 			NSString *idx = [key substringFromIndex:range.length];
-			NSString *dat = [[(XLDTrack *)track metadata] objectForKey:key];
-			entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"%@=%@",idx,dat] UTF8String];
-			entry.length = strlen((char *)entry.entry);
+			NSString *data = [NSString stringWithFormat:@"%@=%@",idx,dat];
+			entry.entry = (FLAC__byte *)[data UTF8String];
+			entry.length = (FLAC__uint32)[data length];
 			FLAC__metadata_object_vorbiscomment_append_comment(tag,entry,true);
-		}
+		}];
 	}
 	metadata[1] = tag;
 	
 	FLAC__StreamMetadata padding;
 	padding.is_last = false; /* the encoder will set this for us */
 	padding.type = FLAC__METADATA_TYPE_PADDING;
-	padding.length = [[configurations objectForKey:@"Padding"] intValue]*1024;
+	padding.length = [configurations[@"Padding"] intValue]*1024;
 	metadata[2] = &padding;
 	
 	if(picture) {
 		metadata[3] = picture;
 	}
 	
-	metadataDic = [[(XLDTrack *)track metadata] retain];
+	metadataDic = [(XLDTrack *)track metadata];
 	
 	FLAC__stream_encoder_set_metadata(encoder,metadata,picture ? 4 : 3);
 	
-	int level = [[configurations objectForKey:@"CompressionLevel"] intValue];
+	int level = [configurations[@"CompressionLevel"] intValue];
 	if(level >= 0) {
 		FLAC__stream_encoder_set_compression_level(encoder,level);
 		if(format.channels != 2) {
 			FLAC__stream_encoder_set_do_mid_side_stereo(encoder, false);
 			FLAC__stream_encoder_set_loose_mid_side_stereo(encoder, false);
 		}
-		NSString *apodization = [configurations objectForKey:@"Apodization"];
+		NSString *apodization = configurations[@"Apodization"];
 		if(apodization && ![apodization isEqualToString:@""]) {
 			NSMutableString *str = [NSMutableString stringWithString:apodization];
 			[str replaceOccurrencesOfString:@" " withString:@"" options:0 range:NSMakeRange(0, [str length])];
@@ -375,12 +409,11 @@
 	else {
 		FLAC__stream_encoder_disable_constant_subframes(encoder,true);
 		FLAC__stream_encoder_disable_fixed_subframes(encoder,true);
-		FLAC__stream_encoder_disable_verbatim_subframes(encoder,false);
 		FLAC__stream_encoder_set_do_mid_side_stereo(encoder, false);
 		FLAC__stream_encoder_set_loose_mid_side_stereo(encoder, false);
 	}
 	
-	if([[configurations objectForKey:@"OggFlac"] boolValue]) {
+	if([configurations[@"OggFlac"] boolValue]) {
 		FLAC__stream_encoder_set_ogg_serial_number(encoder,(long)rand());
 		ret = FLAC__stream_encoder_init_ogg_file(encoder,[str UTF8String],NULL,NULL);
 	}
@@ -388,14 +421,14 @@
 	
 	if(ret != FLAC__STREAM_ENCODER_INIT_STATUS_OK) return NO;
 	
-	path = [str retain];
+	path = str;
 	
 	return YES;
 }
 
 - (NSString *)extensionStr
 {
-	if([[configurations objectForKey:@"OggFlac"] boolValue]) return @"oga";
+	if([configurations[@"OggFlac"] boolValue]) return @"oga";
 	else return @"flac";
 }
 
@@ -413,59 +446,6 @@
 	return YES;
 }
 
-- (void)finalize
-{
-	FLAC__stream_encoder_finish(encoder);
-	
-	/* update metadata */
-	if(addTag && writeRGTags && ([metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN] || [metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK])) {
-		FLAC__Metadata_SimpleIterator *mi = FLAC__metadata_simple_iterator_new();
-		if(mi) {
-			if(encoder) FLAC__stream_encoder_delete(encoder);
-			encoder = NULL;
-			if(FLAC__metadata_simple_iterator_init(mi,[path fileSystemRepresentation],false,true) == false) goto end;
-			do {
-				if(FLAC__metadata_simple_iterator_get_block_type(mi) != FLAC__METADATA_TYPE_VORBIS_COMMENT) continue;
-				FLAC__StreamMetadata *block = FLAC__metadata_simple_iterator_get_block(mi);
-				int idx;
-				FLAC__StreamMetadata_VorbisComment_Entry entry;
-				if([metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN]) {
-					idx = FLAC__metadata_object_vorbiscomment_find_entry_from(block,0,"REPLAYGAIN_TRACK_GAIN");
-					entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_TRACK_GAIN=%+.2f dB",[[metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN] floatValue]] UTF8String];
-					entry.length = strlen((char *)entry.entry);
-					if(idx < 0) FLAC__metadata_object_vorbiscomment_append_comment(block,entry,true);
-					else FLAC__metadata_object_vorbiscomment_set_comment(block,idx,entry,true);
-				}
-				if([metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK]) {
-					idx = FLAC__metadata_object_vorbiscomment_find_entry_from(block,0,"REPLAYGAIN_TRACK_PEAK");
-					entry.entry = (FLAC__byte *)[[NSString stringWithFormat:@"REPLAYGAIN_TRACK_PEAK=%.8f",[[metadataDic objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK] floatValue]] UTF8String];
-					entry.length = strlen((char *)entry.entry);
-					if(idx < 0) FLAC__metadata_object_vorbiscomment_append_comment(block,entry,true);
-					else FLAC__metadata_object_vorbiscomment_set_comment(block,idx,entry,true);
-				}
-				FLAC__metadata_simple_iterator_set_block(mi,block,true);
-				FLAC__metadata_object_delete(block);
-				goto end;
-			} while(FLAC__metadata_simple_iterator_next(mi) != false);
-		end:
-			FLAC__metadata_simple_iterator_delete(mi);
-		}
-	}
-	
-	if(![[configurations objectForKey:@"SetOggS"] boolValue]) return;
-	
-	FSRef ref;
-	OSErr err;
-	FSCatalogInfoBitmap	myInfoWanted = kFSCatInfoFinderInfo;
-	FSCatalogInfo		myInfoReceived;
-	
-	err = FSPathMakeRef((const UInt8*)[path fileSystemRepresentation], &ref, NULL);
-	if(err != noErr) return;
-	err = FSGetCatalogInfo(&ref, myInfoWanted, &myInfoReceived, NULL, NULL, NULL);
-	if(err != noErr) return;
-	((FileInfo *)&myInfoReceived.finderInfo)->fileType = 'OggS';
-	FSSetCatalogInfo(&ref, myInfoWanted, &myInfoReceived);
-}
 
 - (void)closeFile
 {
@@ -477,9 +457,7 @@
 	encoder = NULL;
 	if(picture) FLAC__metadata_object_delete(picture);
 	picture = NULL;
-	if(path) [path release];
 	path = nil;
-	if(metadataDic) [metadataDic release];
 	metadataDic = nil;
 }
 

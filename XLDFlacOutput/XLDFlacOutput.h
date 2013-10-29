@@ -9,28 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import <XLDPlugins/XLDPlugins.h>
 
-@interface XLDFlacOutput : NSObject <XLDOutput> {
-	IBOutlet id o_prefView;
-	IBOutlet id o_compressionLevel;
-	IBOutlet id o_oggFlacCheckBox;
-	IBOutlet id o_padding;
-	IBOutlet id o_allowEmbeddedCuesheet;
-	IBOutlet id o_setOggS;
-	IBOutlet id o_useCustomApodization;
-	IBOutlet id o_apodization;
-	IBOutlet id o_writeRGTags;
-}
-
-+ (NSString *)pluginName;
-+ (BOOL)canLoadThisBundle;
-- (NSView *)prefPane;
-- (void)savePrefs;
-- (void)loadPrefs;
-- (id)createTaskForOutput;
-- (id)createTaskForOutputWithConfigurations:(NSDictionary *)cfg;
-- (NSMutableDictionary *)configurations;
-- (void)loadConfigurations:(id)cfg;
-
-- (IBAction)statusChanged:(id)sender;
+@interface XLDFlacOutput : NSObject <XLDOutput>
 
 @end

@@ -12,3 +12,5 @@
 #import <XLDPlugins/XLDOutputTask.h>
 #import <XLDPlugins/XLDTrack.h>
 #import <XLDPlugins/XLDMetadata.h>
+#import <XLDPlugins/XLDURLUtilities.h>
+#import <XLDPlugins/XLDFinderInfo.h>

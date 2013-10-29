@@ -215,6 +215,10 @@
 		DB947696181970C7001DD475 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB94764C18196FFE001DD475 /* libcrypto.dylib */; };
 		DB94769C181970F4001DD475 /* XLDVorbisOutput.bundle in Copy Bundles */ = {isa = PBXBuildFile; fileRef = DB9476811819708B001DD475 /* XLDVorbisOutput.bundle */; };
 		DB94769F1819711B001DD475 /* XLDVorbisOutput.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9476A11819711B001DD475 /* XLDVorbisOutput.xib */; };
+		DBB4F85C181F690E00A0153D /* XLDURLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB4F85A181F690E00A0153D /* XLDURLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBB4F85D181F690E00A0153D /* XLDURLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB4F85B181F690E00A0153D /* XLDURLUtilities.m */; };
+		DBB4F860181F69BD00A0153D /* XLDFinderInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB4F85E181F69BD00A0153D /* XLDFinderInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBB4F861181F69BD00A0153D /* XLDFinderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB4F85F181F69BD00A0153D /* XLDFinderInfo.m */; };
 		DBC6BC24181EA9F500741959 /* MAC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB133696181C4AD100FD756C /* MAC.framework */; };
 		DBC6BC2A181EAA1800741959 /* Shorten.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB13369E181C4AD100FD756C /* Shorten.framework */; };
 		DBD675E21819A038000CDC5A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E18D91818E3F30099CBC4 /* Cocoa.framework */; };
@@ -1372,7 +1376,6 @@
 		DB8E19351818E4920099CBC4 /* XLDFlacDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDFlacDecoder.m; sourceTree = "<group>"; };
 		DB8E19701818E54E0099CBC4 /* XLDFlacOutput.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLDFlacOutput.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8E19741818E54E0099CBC4 /* XLDFlacOutput-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDFlacOutput-Info.plist"; sourceTree = "<group>"; };
-		DB8E19781818E54E0099CBC4 /* XLDFlacOutput-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XLDFlacOutput-Prefix.pch"; sourceTree = "<group>"; };
 		DB8E197F1818E5710099CBC4 /* XLDFlacOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDFlacOutput.h; sourceTree = "<group>"; };
 		DB8E19801818E5710099CBC4 /* XLDFlacOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDFlacOutput.m; sourceTree = "<group>"; };
 		DB8E19811818E5710099CBC4 /* XLDFlacOutputTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDFlacOutputTask.h; sourceTree = "<group>"; };
@@ -1401,6 +1404,10 @@
 		DB947690181970A0001DD475 /* XLDVorbisOutputTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDVorbisOutputTask.m; sourceTree = "<group>"; };
 		DB9476A01819711B001DD475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/XLDVorbisOutput.xib; sourceTree = "<group>"; };
 		DB9476A31819711F001DD475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/XLDVorbisOutput.strings; sourceTree = "<group>"; };
+		DBB4F85A181F690E00A0153D /* XLDURLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDURLUtilities.h; sourceTree = "<group>"; };
+		DBB4F85B181F690E00A0153D /* XLDURLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDURLUtilities.m; sourceTree = "<group>"; };
+		DBB4F85E181F69BD00A0153D /* XLDFinderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLDFinderInfo.h; sourceTree = "<group>"; };
+		DBB4F85F181F69BD00A0153D /* XLDFinderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLDFinderInfo.m; sourceTree = "<group>"; };
 		DBD675E11819A038000CDC5A /* XLDApeDecoder.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLDApeDecoder.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD675E51819A038000CDC5A /* XLDApeDecoder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XLDApeDecoder-Info.plist"; sourceTree = "<group>"; };
 		DBD675E71819A038000CDC5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -2123,6 +2130,10 @@
 				DBD9E919181ED6F100AAF534 /* XLDMetadata.m */,
 				DBD9E923181EDACA00AAF534 /* XLDTrack.h */,
 				DBD9E924181EDACA00AAF534 /* XLDTrack.m */,
+				DBB4F85A181F690E00A0153D /* XLDURLUtilities.h */,
+				DBB4F85B181F690E00A0153D /* XLDURLUtilities.m */,
+				DBB4F85E181F69BD00A0153D /* XLDFinderInfo.h */,
+				DBB4F85F181F69BD00A0153D /* XLDFinderInfo.m */,
 				DB6E7F3D181EA7BC009AAFFE /* Supporting Files */,
 			);
 			path = XLDPlugins;
@@ -2324,7 +2335,6 @@
 			children = (
 				DB8E1A5E1818E9C70099CBC4 /* XLDFlacOutput.xib */,
 				DB8E19741818E54E0099CBC4 /* XLDFlacOutput-Info.plist */,
-				DB8E19781818E54E0099CBC4 /* XLDFlacOutput-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2557,6 +2567,8 @@
 				DB6E7F67181EA80B009AAFFE /* XLDDecoder.h in Headers */,
 				DB6E7F69181EA80B009AAFFE /* XLDOutputTask.h in Headers */,
 				DBD9E928181EDD5900AAF534 /* XLDTypes.h in Headers */,
+				DBB4F85C181F690E00A0153D /* XLDURLUtilities.h in Headers */,
+				DBB4F860181F69BD00A0153D /* XLDFinderInfo.h in Headers */,
 				DBD9E925181EDACA00AAF534 /* XLDTrack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3601,6 +3613,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD9E926181EDACA00AAF534 /* XLDTrack.m in Sources */,
+				DBB4F85D181F690E00A0153D /* XLDURLUtilities.m in Sources */,
+				DBB4F861181F69BD00A0153D /* XLDFinderInfo.m in Sources */,
 				DBD9E91B181ED6F100AAF534 /* XLDMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4875,7 +4889,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4913,7 +4926,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -5004,10 +5016,8 @@
 		DB8E197D1818E54E0099CBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XLDFlacOutput/XLDFlacOutput-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -5022,10 +5032,8 @@
 		DB8E197E1818E54E0099CBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "XLDFlacOutput/XLDFlacOutput-Prefix.pch";
 				INFOPLIST_FILE = "XLDFlacOutput/XLDFlacOutput-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -5531,6 +5539,7 @@
 				DBD9E962181EEC5000AAF534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBEE19601819B01D00AF3AE6 /* Build configuration list for PBXNativeTarget "XLDLameOutput" */ = {
 			isa = XCConfigurationList;

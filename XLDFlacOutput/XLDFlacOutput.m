@@ -9,6 +9,20 @@
 #import "XLDFlacOutput.h"
 #import "XLDFlacOutputTask.h"
 
+@interface XLDFlacOutput ()
+
+@property (nonatomic, strong) IBOutlet NSView *prefPane;
+@property (nonatomic, strong) IBOutlet NSSlider *compressionLevelSlider;
+@property (nonatomic, strong) IBOutlet NSButton *oggFlacCheckbox;
+@property (nonatomic, strong) IBOutlet NSTextField *paddingField;
+@property (nonatomic, strong) IBOutlet NSButton *allowEmbeddedCuesheetCheckbox;
+@property (nonatomic, strong) IBOutlet NSButton *setOggSCheckBox;
+@property (nonatomic, strong) IBOutlet NSButton *useCustomApodizationCheckbox;
+@property (nonatomic, strong) IBOutlet NSTextField *customApodizationField;
+@property (nonatomic, strong) IBOutlet NSButton *writeReplayGainCheckbox;
+
+@end
+
 @implementation XLDFlacOutput
 
 + (NSString *)pluginName
@@ -26,28 +40,25 @@
 
 - (id)init
 {
-	[super init];
-	[NSBundle loadNibNamed:@"XLDFlacOutput" owner:self];
-	srand(time(NULL));
+	self = [super init];
+	if (self) {
+		[[NSBundle bundleForClass:[self class]] loadNibNamed:@"XLDFlacOutput" owner:self topLevelObjects:NULL];
+		srand((unsigned)time(NULL));
+	}
 	return self;
-}
-
-- (NSView *)prefPane
-{
-	return o_prefView;
 }
 
 - (void)savePrefs
 {
 	NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
-	[pref setInteger:[o_compressionLevel intValue] forKey:@"XLDFlacOutput_CompressionLevel"];
-	[pref setInteger:[o_oggFlacCheckBox state] forKey:@"XLDFlacOutput_OggFLAC"];
-	[pref setInteger:[o_padding intValue] forKey:@"XLDFlacOutput_Padding"];
-	[pref setInteger:[o_allowEmbeddedCuesheet intValue] forKey:@"XLDFlacOutput_AllowEmbeddedCueSheet"];
-	[pref setInteger:[o_setOggS intValue] forKey:@"XLDFlacOutput_SetOggS"];
-	[pref setInteger:[o_useCustomApodization state] forKey:@"XLDFlacOutput_UseCustomApodization"];
-	[pref setObject:[o_apodization stringValue] forKey:@"XLDFlacOutput_Apodization"];
-	[pref setInteger:[o_writeRGTags state] forKey:@"XLDFlacOutput_WriteRGTags"];
+	[pref setInteger:self.compressionLevelSlider.integerValue forKey:@"XLDFlacOutput_CompressionLevel"];
+	[pref setInteger:self.oggFlacCheckbox.state forKey:@"XLDFlacOutput_OggFLAC"];
+	[pref setInteger:self.paddingField.integerValue forKey:@"XLDFlacOutput_Padding"];
+	[pref setInteger:self.allowEmbeddedCuesheetCheckbox.state forKey:@"XLDFlacOutput_AllowEmbeddedCueSheet"];
+	[pref setInteger:self.setOggSCheckBox.state forKey:@"XLDFlacOutput_SetOggS"];
+	[pref setInteger:self.useCustomApodizationCheckbox.state forKey:@"XLDFlacOutput_UseCustomApodization"];
+	[pref setObject:self.customApodizationField.stringValue forKey:@"XLDFlacOutput_Apodization"];
+	[pref setInteger:self.writeReplayGainCheckbox.state forKey:@"XLDFlacOutput_WriteRGTags"];
 	[pref synchronize];
 }
 
@@ -69,101 +80,98 @@
 
 - (int)compressionLevel
 {
-	return [o_compressionLevel intValue];
+	return self.compressionLevelSlider.intValue;
 }
 
 - (BOOL)oggFlac
 {
-	return [o_oggFlacCheckBox state] == NSOnState ? YES : NO;
+	return (self.oggFlacCheckbox.state == NSOnState);
 }
 
 - (int)padding
 {
-	if([o_padding intValue] < 1) return 1;
-	return [o_padding intValue];
+	return MAX(1, self.paddingField.intValue);
 }
 
 - (BOOL)allowEmbeddedCuesheet
 {
-	return ([o_allowEmbeddedCuesheet state] == NSOnState);
+	return (self.allowEmbeddedCuesheetCheckbox.state == NSOnState);
 }
 
 - (BOOL)setOggS
 {
-	return ([o_setOggS state] == NSOnState);
+	return (self.setOggSCheckBox.state == NSOnState);
 }
 
 - (BOOL)writeRGTags
 {
-	return ([o_writeRGTags state] == NSOnState);
+	return (self.writeReplayGainCheckbox.state == NSOnState);
+}
+
+- (BOOL)useCustomApodization
+{
+	return (self.useCustomApodizationCheckbox.state == NSOnState);
 }
 
 - (NSMutableDictionary *)configurations
 {
 	NSMutableDictionary *cfg = [[NSMutableDictionary alloc] init];
 	/* for GUI */
-	[cfg setObject:[NSNumber numberWithInt:[o_compressionLevel intValue]] forKey:@"XLDFlacOutput_CompressionLevel"];
-	[cfg setObject:[NSNumber numberWithInt:[o_oggFlacCheckBox state]] forKey:@"XLDFlacOutput_OggFLAC"];
-	[cfg setObject:[NSNumber numberWithInt:[o_padding intValue]] forKey:@"XLDFlacOutput_Padding"];
-	[cfg setObject:[NSNumber numberWithInt:[o_allowEmbeddedCuesheet intValue]] forKey:@"XLDFlacOutput_AllowEmbeddedCueSheet"];
-	[cfg setObject:[NSNumber numberWithInt:[o_setOggS intValue]] forKey:@"XLDFlacOutput_SetOggS"];
-	[cfg setObject:[NSNumber numberWithInt:[o_useCustomApodization state]] forKey:@"XLDFlacOutput_UseCustomApodization"];
-	[cfg setObject:[o_apodization stringValue] forKey:@"XLDFlacOutput_Apodization"];
-	[cfg setObject:[NSNumber numberWithInt:[o_writeRGTags state]] forKey:@"XLDFlacOutput_WriteRGTags"];
+	cfg[@"XLDFlacOutput_CompressionLevel"] = @(self.compressionLevelSlider.intValue);
+	cfg[@"XLDFlacOutput_OggFLAC"] = @(self.oggFlacCheckbox.state);
+	cfg[@"XLDFlacOutput_Padding"] = @(self.paddingField.integerValue);
+	cfg[@"XLDFlacOutput_AllowEmbeddedCueSheet"] = @(self.allowEmbeddedCuesheetCheckbox.integerValue);
+	cfg[@"XLDFlacOutput_SetOggS"] = @(self.setOggSCheckBox.integerValue);
+	cfg[@"XLDFlacOutput_UseCustomApodization"] = @(self.useCustomApodizationCheckbox.state);
+	cfg[@"XLDFlacOutput_Apodization"] = self.customApodizationField.stringValue;
+	cfg[@"XLDFlacOutput_WriteRGTags"] = @(self.writeReplayGainCheckbox.state);
 	/* for task */
-	[cfg setObject:[NSNumber numberWithInt:[self compressionLevel]] forKey:@"CompressionLevel"];
-	[cfg setObject:[NSNumber numberWithBool:[self oggFlac]] forKey:@"OggFlac"];
-	[cfg setObject:[NSNumber numberWithInt:[self padding]] forKey:@"Padding"];
-	[cfg setObject:[NSNumber numberWithBool:[self allowEmbeddedCuesheet]] forKey:@"AllowEmbeddedCuesheet"];
-	[cfg setObject:[NSNumber numberWithBool:[self setOggS]] forKey:@"SetOggS"];
-	if([o_useCustomApodization state] == NSOnState) [cfg setObject:[o_apodization stringValue] forKey:@"Apodization"];
-	[cfg setObject:[NSNumber numberWithBool:[self writeRGTags]] forKey:@"WriteRGTags"];
+	cfg[@"CompressionLevel"] = @([self compressionLevel]);
+	cfg[@"OggFlac"] = @([self oggFlac]);
+	cfg[@"Padding"] = @([self padding]);
+	cfg[@"AllowEmbeddedCuesheet"] = @([self allowEmbeddedCuesheet]);
+	cfg[@"SetOggS"] = @([self setOggS]);
+	if (self.useCustomApodization == NSOnState) cfg[@"Apodization"] = self.customApodizationField.stringValue;
+	cfg[@"WriteRGTags"] = @([self writeRGTags]);
 	/* desc */
-	if([self oggFlac]) {
-		if([self compressionLevel] >= 0) [cfg setObject:[NSString stringWithFormat:@"level %d, ogg wrapped",[self compressionLevel]] forKey:@"ShortDesc"];
-		else  [cfg setObject:@"uncompressed, ogg wrapped" forKey:@"ShortDesc"];
+	if ([self oggFlac]) {
+		if([self compressionLevel] >= 0) cfg[@"ShortDesc"] = [NSString stringWithFormat:@"level %d, ogg wrapped",[self compressionLevel]];
+		else  cfg[@"ShortDesc"] = @"uncompressed, ogg wrapped";
 	}
 	else {
-		if([self compressionLevel] >= 0) [cfg setObject:[NSString stringWithFormat:@"level %d",[self compressionLevel]] forKey:@"ShortDesc"];
-		else  [cfg setObject:@"uncompressed" forKey:@"ShortDesc"];
+		if([self compressionLevel] >= 0) cfg[@"ShortDesc"] = [NSString stringWithFormat:@"level %d",[self compressionLevel]];
+		else  cfg[@"ShortDesc"] = @"uncompressed";
 	}
-	return [cfg autorelease];
+	return cfg;
 }
 
-- (void)loadConfigurations:(id)cfg
+- (void)loadConfigurations:(NSUserDefaults *)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_CompressionLevel"]) {
-		[o_compressionLevel setIntValue:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_CompressionLevel"])) {
+		self.compressionLevelSlider.integerValue = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_OggFLAC"]) {
-		[o_oggFlacCheckBox setState:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_OggFLAC"])) {
+		self.oggFlacCheckbox.state = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_Padding"]) {
-		[o_padding setIntValue:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_Padding"])) {
+		self.paddingField.integerValue = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_AllowEmbeddedCueSheet"]) {
-		[o_allowEmbeddedCuesheet setIntValue:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_AllowEmbeddedCueSheet"])) {
+		self.allowEmbeddedCuesheetCheckbox.state = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_SetOggS"]) {
-		[o_setOggS setIntValue:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_SetOggS"])) {
+		self.setOggSCheckBox.integerValue = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_UseCustomApodization"]) {
-		[o_useCustomApodization setState:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_UseCustomApodization"])) {
+		self.useCustomApodizationCheckbox.state = [obj integerValue];
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_Apodization"]) {
-		[o_apodization setStringValue:obj];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_Apodization"])) {
+		self.customApodizationField.stringValue = obj;
 	}
-	if(obj=[cfg objectForKey:@"XLDFlacOutput_WriteRGTags"]) {
-		[o_writeRGTags setIntValue:[obj intValue]];
+	if((obj=[cfg objectForKey:@"XLDFlacOutput_WriteRGTags"])) {
+		self.writeReplayGainCheckbox.integerValue = [obj integerValue];
 	}
-	[self statusChanged:nil];
-}
-
-- (IBAction)statusChanged:(id)sender
-{
-	if([o_useCustomApodization state] == NSOnState) [o_apodization setEnabled:YES];
-	else [o_apodization setEnabled:NO];
 }
 
 @end
