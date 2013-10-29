@@ -4,6 +4,7 @@
 #import <fcntl.h>
 #import <IOKit/scsi/IOSCSIMultimediaCommandsDevice.h>
 #import <DiskArbitration/DiskArbitration.h>
+#import <objc/runtime.h>
 #import "XLDController.h"
 #import "XLDecoderCenter.h"
 #import "XLDWavOutput.h"
@@ -4482,7 +4483,7 @@ fail:
 	
 	[[[[[NSApp mainMenu] itemAtIndex:3] submenu] itemAtIndex:0] setKeyEquivalent:@"M"];
 	
-	Class logChecker = (Class)objc_lookUpClass("XLDLogChecker");
+	Class logChecker = objc_lookUpClass("XLDLogChecker");
 	if(logChecker) {
 		NSMenuItem *logcheckerItem = [[NSMenuItem alloc] initWithTitle:LS(@"Log Checker...") action:@selector(logChecker) keyEquivalent:@""];
 		[logcheckerItem setTarget:[[logChecker alloc] init]];

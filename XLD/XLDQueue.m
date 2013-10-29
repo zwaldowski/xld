@@ -82,18 +82,20 @@
 	
 	for(i=0;(i<[taskArr count]) && (activeTask < [delegate maxThreads]);i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		XLDConverterTask *task = [taskArr objectAtIndex:i];
+		
 		if(!atomic) {
-			if(![[taskArr objectAtIndex:i] isActive]) {
+			if(![task isActive]) {
 				atomic = [task isAtomic];
-				[[taskArr objectAtIndex:i] beginConvert];
-				if(lowestActivePosition < [[taskArr objectAtIndex:i] position]) lowestActivePosition = [[taskArr objectAtIndex:i] position];
+				[task beginConvert];
+				lowestActivePosition = MIN(lowestActivePosition, [task position]);
 				activeTask++;
 			}
 		}
 		else {
-			if(![[taskArr objectAtIndex:i] isActive] && ![[taskArr objectAtIndex:i] isAtomic]) {
-				[[taskArr objectAtIndex:i] beginConvert];
-				if(lowestActivePosition < [[taskArr objectAtIndex:i] position]) lowestActivePosition = [[taskArr objectAtIndex:i] position];
+			if(![task isActive] && ![task isAtomic]) {
+				[task beginConvert];
+				lowestActivePosition = MIN(lowestActivePosition, [task position]);
 				activeTask++;
 			}
 		}
@@ -132,7 +134,7 @@
 	}
 }
 
-- (void)addTask:(id)task
+- (void)addTask:(XLDConverterTask *)task
 {
 	if(!activeTask) {
 		checkUpdateStatus = [delegate checkUpdateStatus];
@@ -148,14 +150,14 @@
 		if(activeTask < [delegate maxThreads]) {
 			atomic = [task isAtomic];
 			[task beginConvert];
-			if(lowestActivePosition < [task position]) lowestActivePosition = [task position];
+			lowestActivePosition = MIN(lowestActivePosition, [task position]);
 			activeTask++;
 		}
 	}
 	else {
 		if((activeTask < [delegate maxThreads]) && ![task isAtomic]) {
 			[task beginConvert];
-			if(lowestActivePosition < [task position]) lowestActivePosition = [task position];
+			lowestActivePosition = MIN(lowestActivePosition, [task position]);
 			activeTask++;
 		}
 	}
@@ -173,7 +175,7 @@
 	[lock lock];
 	for(i=0;i<[tasks count];i++) {
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		id task = [tasks objectAtIndex:i];
+		XLDConverterTask *task = [tasks objectAtIndex:i];
 		[taskArr addObject:task];
 		[progressViewArr addObject:[task progressView]];
 		[o_tableView reloadData];
@@ -182,14 +184,14 @@
 			if(activeTask < [delegate maxThreads]) {
 				atomic = [task isAtomic];
 				[task beginConvert];
-				if(lowestActivePosition < [task position]) lowestActivePosition = [task position];
+				lowestActivePosition = MIN(lowestActivePosition, [task position]);
 				activeTask++;
 			}
 		}
 		else {
 			if((activeTask < [delegate maxThreads]) && ![task isAtomic]) {
 				[task beginConvert];
-				if(lowestActivePosition < [task position]) lowestActivePosition = [task position];
+				lowestActivePosition = MIN(lowestActivePosition, [task position]);
 				activeTask++;
 			}
 		}

@@ -7,6 +7,7 @@
 #import <unistd.h>
 #import <sys/stat.h>
 #import <getopt.h>
+#import <objc/runtime.h>
 #import "XLDRawDecoder.h"
 #import "XLDCueParser.h"
 #import "XLDDDPParser.h"
@@ -242,7 +243,7 @@ static void usage(void)
 static int checkLogfile(char *file)
 {
 #ifdef XLD_LOG_CHECKER
-	Class logChecker = (Class)objc_lookUpClass("XLDLogChecker");
+	Class logChecker = objc_lookUpClass("XLDLogChecker");
 	if(logChecker) {
 		NSData *dat = [NSData dataWithContentsOfFile:[NSString stringWithUTF8String:file]];
 		if(dat) {
@@ -398,7 +399,7 @@ int cmdline_main(int argc, const char *argv[])
 			case 'f':
 				if(!strcasecmp(optarg,"wav")) {
 					sf_format = SF_FORMAT_WAV;
-					customOutputClass = (Class)objc_lookUpClass("XLDWavOutput");
+					customOutputClass = objc_lookUpClass("XLDWavOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: Wav output plugin not loaded\n");
 						return -1;
@@ -407,7 +408,7 @@ int cmdline_main(int argc, const char *argv[])
 				}
 				else if(!strcasecmp(optarg,"aif")) {
 					sf_format = SF_FORMAT_AIFF;
-					customOutputClass = (Class)objc_lookUpClass("XLDAiffOutput");
+					customOutputClass = objc_lookUpClass("XLDAiffOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: AIFF output plugin not loaded\n");
 						return -1;
@@ -416,7 +417,7 @@ int cmdline_main(int argc, const char *argv[])
 				}
 				else if(!strcasecmp(optarg,"raw_big")) {
 					sf_format = SF_FORMAT_RAW|SF_ENDIAN_BIG;
-					customOutputClass = (Class)objc_lookUpClass("XLDPCMBEOutput");
+					customOutputClass = objc_lookUpClass("XLDPCMBEOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: PCM (big endian) output plugin not loaded\n");
 						return -1;
@@ -425,7 +426,7 @@ int cmdline_main(int argc, const char *argv[])
 				}
 				else if(!strcasecmp(optarg,"raw_little")) {
 					sf_format = SF_FORMAT_RAW|SF_ENDIAN_LITTLE;
-					customOutputClass = (Class)objc_lookUpClass("XLDPCMLEOutput");
+					customOutputClass = objc_lookUpClass("XLDPCMLEOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: PCM (little endian) output plugin not loaded\n");
 						return -1;
@@ -433,7 +434,7 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = YES;
 				}
 				else if(!strcasecmp(optarg,"mp3")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDLameOutput");
+					customOutputClass = objc_lookUpClass("XLDLameOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: MP3 output plugin not loaded\n");
 						return -1;
@@ -441,9 +442,9 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = NO;
 				}
 				else if(!strcasecmp(optarg,"aac")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDAacOutput2");
+					customOutputClass = objc_lookUpClass("XLDAacOutput2");
 					if(!customOutputClass) {
-						customOutputClass = (Class)objc_lookUpClass("XLDAacOutput");
+						customOutputClass = objc_lookUpClass("XLDAacOutput");
 						if(!customOutputClass) {
 							fprintf(stderr,"error: AAC output plugin not loaded\n");
 							return -1;
@@ -452,7 +453,7 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = NO;
 				}
 				else if(!strcasecmp(optarg,"flac")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDFlacOutput");
+					customOutputClass = objc_lookUpClass("XLDFlacOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: FLAC output plugin not loaded\n");
 						return -1;
@@ -460,7 +461,7 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = NO;
 				}
 				else if(!strcasecmp(optarg,"alac")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDAlacOutput");
+					customOutputClass = objc_lookUpClass("XLDAlacOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: FLAC output plugin not loaded\n");
 						return -1;
@@ -468,7 +469,7 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = NO;
 				}
 				else if(!strcasecmp(optarg,"vorbis")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDVorbisOutput");
+					customOutputClass = objc_lookUpClass("XLDVorbisOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: Ogg Vorbis output plugin not loaded\n");
 						return -1;
@@ -476,7 +477,7 @@ int cmdline_main(int argc, const char *argv[])
 					acceptStdoutWriting = NO;
 				}
 				else if(!strcasecmp(optarg,"wavpack")) {
-					customOutputClass = (Class)objc_lookUpClass("XLDWavpackOutput");
+					customOutputClass = objc_lookUpClass("XLDWavpackOutput");
 					if(!customOutputClass) {
 						fprintf(stderr,"error: WavPack output plugin not loaded\n");
 						return -1;
@@ -504,7 +505,7 @@ int cmdline_main(int argc, const char *argv[])
 		NSString *outFormatStr = [profileDic objectForKey:@"OutputFormatName"];
 		if([outFormatStr isEqualToString:@"WAV"]) {
 			sf_format = SF_FORMAT_WAV;
-			customOutputClass = (Class)objc_lookUpClass("XLDWavOutput");
+			customOutputClass = objc_lookUpClass("XLDWavOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: Wav output plugin not loaded\n");
 				return -1;
@@ -513,7 +514,7 @@ int cmdline_main(int argc, const char *argv[])
 		}
 		else if([outFormatStr isEqualToString:@"AIFF"]) {
 			sf_format = SF_FORMAT_AIFF;
-			customOutputClass = (Class)objc_lookUpClass("XLDAiffOutput");
+			customOutputClass = objc_lookUpClass("XLDAiffOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: AIFF output plugin not loaded\n");
 				return -1;
@@ -522,7 +523,7 @@ int cmdline_main(int argc, const char *argv[])
 		}
 		else if([profileDic objectForKey:@"XLDPcmBEOutput_BitDepth"]) {
 			sf_format = SF_FORMAT_RAW|SF_ENDIAN_BIG;
-			customOutputClass = (Class)objc_lookUpClass("XLDPCMBEOutput");
+			customOutputClass = objc_lookUpClass("XLDPCMBEOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: PCM (big endian) output plugin not loaded\n");
 				return -1;
@@ -531,7 +532,7 @@ int cmdline_main(int argc, const char *argv[])
 		}
 		else if([profileDic objectForKey:@"XLDPcmLEOutput_BitDepth"]) {
 			sf_format = SF_FORMAT_RAW|SF_ENDIAN_LITTLE;
-			customOutputClass = (Class)objc_lookUpClass("XLDPCMLEOutput");
+			customOutputClass = objc_lookUpClass("XLDPCMLEOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: PCM (little endian) output plugin not loaded\n");
 				return -1;
@@ -539,7 +540,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = YES;
 		}
 		else if([outFormatStr isEqualToString:@"Wave64"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDWave64Output");
+			customOutputClass = objc_lookUpClass("XLDWave64Output");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: Wave64 output plugin not loaded\n");
 				return -1;
@@ -547,7 +548,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"LAME MP3"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDLameOutput");
+			customOutputClass = objc_lookUpClass("XLDLameOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: MP3 output plugin not loaded\n");
 				return -1;
@@ -555,9 +556,9 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"MPEG-4 AAC"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDAacOutput2");
+			customOutputClass = objc_lookUpClass("XLDAacOutput2");
 			if(!customOutputClass) {
-				customOutputClass = (Class)objc_lookUpClass("XLDAacOutput");
+				customOutputClass = objc_lookUpClass("XLDAacOutput");
 				if(!customOutputClass) {
 					fprintf(stderr,"error: AAC output plugin not loaded\n");
 					return -1;
@@ -566,7 +567,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"FLAC"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDFlacOutput");
+			customOutputClass = objc_lookUpClass("XLDFlacOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: FLAC output plugin not loaded\n");
 				return -1;
@@ -574,7 +575,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"Apple Lossless"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDAlacOutput");
+			customOutputClass = objc_lookUpClass("XLDAlacOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: FLAC output plugin not loaded\n");
 				return -1;
@@ -582,7 +583,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"Ogg Vorbis"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDVorbisOutput");
+			customOutputClass = objc_lookUpClass("XLDVorbisOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: Ogg Vorbis output plugin not loaded\n");
 				return -1;
@@ -590,7 +591,7 @@ int cmdline_main(int argc, const char *argv[])
 			acceptStdoutWriting = NO;
 		}
 		else if([outFormatStr isEqualToString:@"WavPack"]) {
-			customOutputClass = (Class)objc_lookUpClass("XLDWavpackOutput");
+			customOutputClass = objc_lookUpClass("XLDWavpackOutput");
 			if(!customOutputClass) {
 				fprintf(stderr,"error: WavPack output plugin not loaded\n");
 				return -1;
@@ -674,7 +675,7 @@ int cmdline_main(int argc, const char *argv[])
 	[configDic setObject:[NSNumber numberWithUnsignedInt:sf_format] forKey:@"SFFormat"];
 	
 	if(!customOutputClass) {
-		customOutputClass = (Class)objc_lookUpClass("XLDWavOutput");
+		customOutputClass = objc_lookUpClass("XLDWavOutput");
 		if(!customOutputClass) {
 			fprintf(stderr,"error: Wav output plugin not loaded\n");
 			return -1;
