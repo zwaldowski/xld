@@ -396,7 +396,7 @@ NSMutableArray *getChapterTrackList(FILE *fp, int samplerate)
 		tmp = NSSwapBigIntToHost(tmp);
 		xldoffset_t sample = (xldoffset_t)roundf((float)tmp*samplerate/timescale);
 		for(j=0;j<sampleCount;j++) {
-			XLDTrack *track = [[objc_getClass("XLDTrack") alloc] init];
+			XLDTrack *track = [[XLDTrack alloc] init];
 			[track setIndex:offset];
 			[track setFrames:sample];
 			offset += sample;

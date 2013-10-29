@@ -13,7 +13,7 @@
 #import <unistd.h>
 #import <sys/types.h>
 
-#ifdef _BIG_ENDIAN
+#ifdef __BIG_ENDIAN__
 #define SWAP32(n) (n)
 #define SWAP16(n) (n)
 #else

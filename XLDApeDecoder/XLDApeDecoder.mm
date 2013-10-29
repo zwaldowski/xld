@@ -4,10 +4,10 @@
 #import "XLDApeDecoder.h"
 
 extern "C"	{
-	int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length);
+	int getApeTag(CAPETag *tag, const wchar_t *field, char *buf, int *length);
 }
 
-int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length)
+int getApeTag(CAPETag *tag, const wchar_t *field, char *buf, int *length)
 {
 	return tag->GetFieldBinary(field, buf, length);
 }
@@ -71,6 +71,7 @@ int getApeTag(CAPETag *tag, wchar_t *field, char *buf, int *length)
 	CAPETag *tag = (CAPETag *)mac->GetInfo(APE_INFO_TAG,0,0);
 	int len = 1;
 	char buf_tmp[1];
+	
 	getApeTag(tag, L"cuesheet", buf_tmp, &len);
 	if(len) {
 		char *buf = (char *)malloc(len+10);

@@ -119,7 +119,7 @@ static NSString* samplesToTimecode(uint64_t samples, int samplerate, double fps)
 	qsort(markers, markerCount, sizeof(marker_t), (int (*)(const void*, const void*))compare_marker);
 	trackArr = [[NSMutableArray alloc] init];
 	if(markers[0].offset != 0) {
-		XLDTrack *track = [[objc_getClass("XLDTrack") alloc] init];
+		XLDTrack *track = [[XLDTrack alloc] init];
 		[track setIndex:0];
 		[[track metadata] setObject:[NSNumber numberWithInt:trackNum++] forKey:XLD_METADATA_TRACK];
 		[trackArr addObject:track];
@@ -130,7 +130,7 @@ static NSString* samplesToTimecode(uint64_t samples, int samplerate, double fps)
 	for(i=0;i<markerCount;i++) {
 		if(markers[i].offset >= totalFrames) continue;
 		if(markers[i].offset == prevIndex) continue;
-		XLDTrack *track = [[objc_getClass("XLDTrack") alloc] init];
+		XLDTrack *track = [[XLDTrack alloc] init];
 		[track setIndex:markers[i].offset];
 		if(prevTrack) [prevTrack setFrames:markers[i].offset-prevIndex];
 		[[track metadata] setObject:[NSNumber numberWithInt:trackNum++] forKey:XLD_METADATA_TRACK];
@@ -248,7 +248,7 @@ end:
 			int pos = 6+OSSwapBigToHostInt32(*(int*)(ptr+2));
 			int regionSize = OSSwapBigToHostInt32(*(int*)(ptr+6));
 			while(pos < resSize) {
-				XLDTrack *track = [[objc_getClass("XLDTrack") alloc] init];
+				XLDTrack *track = [[XLDTrack alloc] init];
 				unsigned int idx = OSSwapBigToHostInt32(*(int*)(ptr+pos+4));
 				unsigned int length = OSSwapBigToHostInt32(*(int*)(ptr+pos+8)) - idx;
 				[track setIndex:idx];

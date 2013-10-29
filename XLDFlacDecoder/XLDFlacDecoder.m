@@ -391,7 +391,7 @@ void metadata_callback(const FLAC__StreamDecoder *decoder, const FLAC__StreamMet
 		delegate->trackArr = [[NSMutableArray alloc] init];
 		for(i=0;i<cuesheet.num_tracks;i++) {
 			if(cuesheet.tracks[i].number == 170) continue;
-			XLDTrack *track = [[objc_getClass("XLDTrack") alloc] init];
+			XLDTrack *track = [[XLDTrack alloc] init];
 			[[track metadata] setObject:[NSNumber numberWithInt:i+1] forKey:XLD_METADATA_TRACK];
 			[[track metadata] setObject:[NSNumber numberWithInt:cuesheet.num_tracks] forKey:XLD_METADATA_TOTALTRACKS];
 			if(cuesheet.tracks[i].num_indices > 1) {
