@@ -282,39 +282,39 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDLameOutput_Bitrate"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_Bitrate"])) {
 		if([obj intValue] < [o_bitrate numberOfItems]) [o_bitrate selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_Quality2"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_Quality2"])) {
 		if([obj intValue] < [o_quality numberOfItems]) [o_quality selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_ABRBitrate"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_ABRBitrate"])) {
 		[o_abrBitrate setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_VBRQuality_Float"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_VBRQuality_Float"])) {
 		[o_vbrQuality setDoubleValue:[obj floatValue]];
 		[self setVbrQuality:o_vbrQuality];
 	}
-	else if(obj=[cfg objectForKey:@"XLDLameOutput_VBRQuality"]) {
+	else if((obj=[cfg objectForKey:@"XLDLameOutput_VBRQuality"])) {
 		[o_vbrQuality setIntValue:[obj intValue]+1];
 		[self setVbrQuality:o_vbrQuality];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_VBRMethod"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_VBRMethod"])) {
 		if([obj intValue] < [o_vbrMethod numberOfItems]) [o_vbrMethod selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_ReplayGain"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_ReplayGain"])) {
 		[o_replayGain setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_EncodeMode"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_EncodeMode"])) {
 		if([obj intValue] < [o_mode numberOfItems]) [o_mode selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_StereoMode"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_StereoMode"])) {
 		if([obj intValue] < [o_stereoMode numberOfItems]) [o_stereoMode selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_SampleRate"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_SampleRate"])) {
 		if([obj intValue] < [o_sampleRate numberOfItems]) [o_sampleRate selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDLameOutput_AppendTLEN"]) {
+	if((obj=[cfg objectForKey:@"XLDLameOutput_AppendTLEN"])) {
 		[o_appendTLEN setState:[obj intValue]];
 	}
 	[self modeChanged:nil];

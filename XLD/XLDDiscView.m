@@ -390,7 +390,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
 	id obj;
-	if(obj=[pref objectForKey:@"XLDDiscViewSplitPosition"]) {
+	if((obj=[pref objectForKey:@"XLDDiscViewSplitPosition"])) {
 		[self setSplitViewPosition:o_splitView position:obj];
 	}
 }

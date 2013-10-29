@@ -396,35 +396,35 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_Bitrate"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_Bitrate"])) {
 		[o_bitrateField setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_Quality"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_Quality"])) {
 		if([obj intValue] < [o_quality numberOfItems]) [o_quality selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_Mode"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_Mode"])) {
 		if([obj intValue] < [o_encodeMode numberOfItems]) [o_encodeMode selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_AddGapless"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_AddGapless"])) {
 		[o_gaplessFlag setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_VBRQuality"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_VBRQuality"])) {
 		[o_vbrQuality setIntValue:[obj intValue]];
 		[o_field12 setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_AccurateBitrate"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_AccurateBitrate"])) {
 		[o_accurateBitrate setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_Samplerate"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_Samplerate"])) {
 		if([obj intValue] < [o_samplerate numberOfItems]) [o_samplerate selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_UseHE"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_UseHE"])) {
 		[o_enableHE setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_ForceMono"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_ForceMono"])) {
 		[o_forceMono setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAacOutput2_EmbedChapter"]) {
+	if((obj=[cfg objectForKey:@"XLDAacOutput2_EmbedChapter"])) {
 		[o_embedChapter setState:[obj intValue]];
 	}
 	[self modeChanged:self];

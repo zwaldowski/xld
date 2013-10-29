@@ -180,34 +180,34 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_BitRate"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_BitRate"])) {
 		[o_bitrate setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_Mode"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_Mode"])) {
 		int i = [obj intValue];
 		if(i < [o_mode numberOfItems]) {
 			[o_mode selectItemAtIndex:i];
 		}
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_Quality"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_Quality"])) {
 		int i = [obj intValue];
 		if(i < [o_quality numberOfItems]) {
 			[o_quality selectItemAtIndex:i];
 		}
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_CreateCorrectionFile"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_CreateCorrectionFile"])) {
 		[o_createCorrectionFile setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_ExtraCompression"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_ExtraCompression"])) {
 		[o_extraCompression setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_ExtraValue"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_ExtraValue"])) {
 		[o_extraValue setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_DNS"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_DNS"])) {
 		[o_dns setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavpackOutput_AllowEmbeddedCueSheet"]) {
+	if((obj=[cfg objectForKey:@"XLDWavpackOutput_AllowEmbeddedCueSheet"])) {
 		[o_allowEmbeddedCuesheet setIntValue:[obj intValue]];
 	}
 	[self modeChanged:nil];

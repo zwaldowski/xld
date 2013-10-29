@@ -93,13 +93,13 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDAlacOutput_Samplerate"]) {
+	if((obj=[cfg objectForKey:@"XLDAlacOutput_Samplerate"])) {
 		if([obj intValue] < [o_samplerate numberOfItems]) [o_samplerate selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAlacOutput_EmbedChapter"]) {
+	if((obj=[cfg objectForKey:@"XLDAlacOutput_EmbedChapter"])) {
 		[o_embedChapter setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDAlacOutput_BitDepth"]) {
+	if((obj=[cfg objectForKey:@"XLDAlacOutput_BitDepth"])) {
 		if([obj intValue] < [o_bitDepth numberOfItems]) [o_bitDepth selectItemAtIndex:[obj intValue]];
 	}
 }

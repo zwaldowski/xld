@@ -87,10 +87,10 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDDefaultOutput_BitDepth"]) {
+	if((obj=[cfg objectForKey:@"XLDDefaultOutput_BitDepth"])) {
 		[o_bitDepth selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDDefaultOutput_IsFloat"]) {
+	if((obj=[cfg objectForKey:@"XLDDefaultOutput_IsFloat"])) {
 		[o_isFloat setState:[obj intValue]];
 	}
 	[self statusChanged:nil];

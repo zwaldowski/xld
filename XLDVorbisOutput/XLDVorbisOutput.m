@@ -81,7 +81,7 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDVorbisOutput_Quality"]) {
+	if((obj=[cfg objectForKey:@"XLDVorbisOutput_Quality"])) {
 		[o_qValue setFloatValue:[obj floatValue]];
 		[o_qValue sendAction:[o_qValue action] to:[o_qValue target]];
 	}

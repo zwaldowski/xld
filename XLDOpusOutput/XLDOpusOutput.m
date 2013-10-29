@@ -98,21 +98,21 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDOpusOutput_Bitrate"]) {
+	if((obj=[cfg objectForKey:@"XLDOpusOutput_Bitrate"])) {
 		[o_bitrate setIntValue:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDOpusOutput_FrameSize2"]) {
+	if((obj=[cfg objectForKey:@"XLDOpusOutput_FrameSize2"])) {
 		int idx = [o_frameSize indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_frameSize selectItemAtIndex:idx];
 	}
-	else if(obj=[cfg objectForKey:@"XLDOpusOutput_FrameSize"]) {
+	else if((obj=[cfg objectForKey:@"XLDOpusOutput_FrameSize"])) {
 		if([obj intValue] < [o_frameSize numberOfItems]) [o_frameSize selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDOpusOutput_EncoderMode2"]) {
+	if((obj=[cfg objectForKey:@"XLDOpusOutput_EncoderMode2"])) {
 		int idx = [o_encoderMode indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_encoderMode selectItemAtIndex:idx];
 	}
-	else if(obj=[cfg objectForKey:@"XLDOpusOutput_EncoderMode"]) {
+	else if((obj=[cfg objectForKey:@"XLDOpusOutput_EncoderMode"])) {
 		if([obj intValue] < [o_encoderMode numberOfItems]) [o_encoderMode selectItemAtIndex:[obj intValue]];
 	}
 }

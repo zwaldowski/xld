@@ -46,7 +46,7 @@ static NSString*    CDRipIdentifier = @"CD Rip";
 static NSString*    BurnIdentifier = @"Burn";
 static NSString*    FilenameIdentifier = @"Filename";
 
-static void DADoneCallback(DADiskRef DiskRef, DADissenterRef DissenterRef, void *context) 
+static void DADoneCallback(DADiskRef DiskRef, DADissenterRef DissenterRef, void *context)
 {
 	//NSLog(@"done");
     CFRunLoopStop(CFRunLoopGetCurrent());
@@ -62,7 +62,7 @@ static void diskAppeared(DADiskRef disk, void *context)
 static void diskDisappeared(DADiskRef disk, void *context)
 {
 	//NSLog(@"disappear");
-	[[(id)context discView] closeFile:[@"/dev" stringByAppendingPathComponent:[NSString stringWithUTF8String:(const char*)DADiskGetBSDName(disk)]]]; 
+	[[(id)context discView] closeFile:[@"/dev" stringByAppendingPathComponent:[NSString stringWithUTF8String:(const char*)DADiskGetBSDName(disk)]]];
 	[(id)context updateCDDAList:nil];
 }
 
@@ -99,7 +99,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	
 	return volume;
 }
-	
+
 
 #define kAudioCDFilesystemID			(UInt16)(('J' << 8) | 'H' ) // 'JH'; this avoids compiler warning
 
@@ -730,7 +730,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 		
 		int ret = [op runModal];
 		if(ret != NSOKButton) return;
-		if(![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]]) 
+		if(![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]])
 		{
 			NSRunCriticalAlertPanel(LS(@"error"), LS(@"no write permission"), @"OK", nil, nil);
 			return;
@@ -781,13 +781,13 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 		[resultObj setDriveStr:[cueParser driveStr]];
 		[resultObj setMediaType:[cueParser mediaType]];
 		[resultObj setRipperMode:ripperMode
-				 offsetCorrention:[o_offsetCorrectionValue intValue]
-					   retryCount:[o_maxRetryCount intValue]
-				 useAccurateRipDB:(([o_queryAccurateRip state] == NSOnState) && ([discView extractionMode] != 1))
-			   checkInconsistency:([o_verifySuspiciousSector state] == NSOnState)
-					trustARResult:([o_arLogControl state] == NSOnState)
-				   scanReplayGain:([o_scanReplayGain state] == NSOnState)
-						gapStatus:([o_dontReadSubchannel state] << 16) | ([discView extractionMode]&0xffff)];
+				offsetCorrention:[o_offsetCorrectionValue intValue]
+					  retryCount:[o_maxRetryCount intValue]
+				useAccurateRipDB:(([o_queryAccurateRip state] == NSOnState) && ([discView extractionMode] != 1))
+			  checkInconsistency:([o_verifySuspiciousSector state] == NSOnState)
+				   trustARResult:([o_arLogControl state] == NSOnState)
+				  scanReplayGain:([o_scanReplayGain state] == NSOnState)
+					   gapStatus:([o_dontReadSubchannel state] << 16) | ([discView extractionMode]&0xffff)];
 		[resultObj setDate:[NSDate date]];
 		[resultObj setIncludeHTOA:([discView extractionMode] == 0 || [discView extractionMode] == 2) ? YES : NO];
 		[resultObj setTOC:[cueParser trackList]];
@@ -833,7 +833,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	
 	for(i=0;i<[trackList count];i++) {
 		XLDTrack *trk = [trackList objectAtIndex:i];
-		if(![trk enabled]) continue; 
+		if(![trk enabled]) continue;
 		
 		XLDConverterTask *task = [[XLDConverterTask alloc] initWithQueue:taskQueue];
 		
@@ -934,10 +934,10 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 					[testTask setTotalFrame:actualLength];
 					[testTask setDecoderClass:[decoder class]];
 					/*if([cueParser cueMode] == XLDCueModeRaw) {
-						[testTask setRawFormat:[cueParser rawFormat]];
-						[testTask setRawEndian:[cueParser rawEndian]];
-						[testTask setRawOffset:[cueParser rawOffset]];
-					}*/
+					 [testTask setRawFormat:[cueParser rawFormat]];
+					 [testTask setRawEndian:[cueParser rawEndian]];
+					 [testTask setRawOffset:[cueParser rawOffset]];
+					 }*/
 					[testTask setInputPath:[cueParser fileToDecode]];
 					if([outputSubDir length]) [testTask setOutputDir:[outputDir stringByAppendingPathComponent:outputSubDir]];
 					else [testTask setOutputDir:outputDir];
@@ -969,8 +969,8 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	}
 	[decoder closeFile];
 	/*if([NSStringFromClass([decoder class]) isEqualToString:@"XLDCDDARipper"]) {
-		[[taskArray objectAtIndex:[taskArray count]-1] setMountOnEnd];
-	}*/
+	 [[taskArray objectAtIndex:[taskArray count]-1] setMountOnEnd];
+	 }*/
 	[taskQueue addTasks:taskArray];
 	[taskArray release];
 	if(resultObj) [resultObj release];
@@ -1329,7 +1329,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
                                  kFSVolInfoFSInfo,
                                  &volumeInfo,
                                  &volumeName,
-                                 NULL); 
+                                 NULL);
 		
         if (result == noErr)
 		{
@@ -1498,7 +1498,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	int ret = [sv runModalForDirectory:[[cueParser fileToDecode] stringByDeletingLastPathComponent] file:[NSString stringWithFormat:@"%@(offset fix)",[[[cueParser fileToDecode] lastPathComponent] stringByDeletingPathExtension]]];
 	[o_offsetValue validateEditing];
 	[o_offsetValue abortEditing];
-	if(ret != NSOKButton) 
+	if(ret != NSOKButton)
 	{
 		[decoder closeFile];
 		return;
@@ -1540,7 +1540,7 @@ static NSString *mountNameFromBSDName(const char *bsdName)
 	
 	[taskQueue addTask:task];
 end:
-		[track release];
+	[track release];
 	[task release];
 }
 
@@ -1591,12 +1591,12 @@ end:
 		url = @"http://tmkk.undo.jp/xld/donation.html.ja";
 	}
 	/*else if([[languages objectAtIndex:0] isEqualToString:@"de"]
-			|| [[languages objectAtIndex:0] isEqualToString:@"fr"]
-			|| [[languages objectAtIndex:0] isEqualToString:@"nl"]
-			|| [[languages objectAtIndex:0] isEqualToString:@"it"]
-			|| [[languages objectAtIndex:0] isEqualToString:@"el"]) {
-		url = @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=tmkk%40smoug%2enet&item_name=X%20Lossless%20Decoder&no_shipping=0&no_note=1&tax=0&currency_code=EUR&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8";
-	}*/
+	 || [[languages objectAtIndex:0] isEqualToString:@"fr"]
+	 || [[languages objectAtIndex:0] isEqualToString:@"nl"]
+	 || [[languages objectAtIndex:0] isEqualToString:@"it"]
+	 || [[languages objectAtIndex:0] isEqualToString:@"el"]) {
+	 url = @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=tmkk%40smoug%2enet&item_name=X%20Lossless%20Decoder&no_shipping=0&no_note=1&tax=0&currency_code=EUR&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8";
+	 }*/
 	else {
 		//url = @"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=tmkk%40smoug%2enet&item_name=X%20Lossless%20Decoder&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8";
 		url = @"http://tmkk.undo.jp/xld/donation.html.en";
@@ -1805,7 +1805,7 @@ end:
 	DAApprovalSessionRef daASession = DAApprovalSessionCreate(kCFAllocatorDefault);
 	NSDictionary *matchedCD = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"IOCDMedia", [NSNumber numberWithBool:YES], nil]
 														  forKeys:[NSArray arrayWithObjects:(NSString *)kDADiskDescriptionMediaKindKey, kDADiskDescriptionMediaWholeKey, nil]];
-
+	
 	DASessionScheduleWithRunLoop(daSession, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 	DAApprovalSessionScheduleWithRunLoop(daASession, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     DARegisterDiskAppearedCallback(daSession, (CFDictionaryRef)matchedCD, diskAppeared, self);
@@ -1924,21 +1924,21 @@ end:
 - (void)loadPrefsFromDictionary:(id)pref
 {
 	id obj;
-	if(obj=[pref objectForKey:@"Pregap"]) {
+	if((obj=[pref objectForKey:@"Pregap"])) {
 		[discView setExtractionMode:[obj intValue]];
 	}
 	else {
 		[discView setExtractionMode:3]; // default to "Include pre-gap except for HTOA"
 	}
-	if(obj=[pref objectForKey:@"OutputDir"]) {
+	if((obj=[pref objectForKey:@"OutputDir"])) {
 		[o_outputDir setStringValue:obj];
 	}
 	else [o_outputDir setStringValue:[@"~/Music" stringByExpandingTildeInPath]];
-	if(obj=[pref objectForKey:@"OutputFormatName"]) {
+	if((obj=[pref objectForKey:@"OutputFormatName"])) {
 		if([o_formatList itemWithTitle:obj]) [o_formatList selectItemWithTitle:obj];
 		[self formatChanged:self];
 	}
-	else if(obj=[pref objectForKey:@"OutputFormat"]) {
+	else if((obj=[pref objectForKey:@"OutputFormat"])) {
 		if([obj intValue] < [o_formatList numberOfItems]-1) {
 			if([obj intValue] < 4) [o_formatList selectItemAtIndex:[obj intValue]];
 			else [o_formatList selectItemAtIndex:[obj intValue]+1];
@@ -1947,73 +1947,73 @@ end:
 		[pref synchronize];
 		[self formatChanged:self];
 	}
-	/*if(obj=[pref objectForKey:@"OutputFormat"]) {
+	/*if ((obj=[pref objectForKey:@"OutputFormat"])) {
 	 if([obj intValue] < [o_formatList numberOfItems]) {
 	 [o_formatList selectItemAtIndex:[obj intValue]];
 	 }
 	 [self formatChanged:self];
 	 }*/
-	if(obj=[pref objectForKey:@"SelectOutput"]) {
+	if((obj=[pref objectForKey:@"SelectOutput"])) {
 		[o_outputSelectRadio selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"Tagging"]) {
+	if((obj=[pref objectForKey:@"Tagging"])) {
 		[o_autoTagging setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"FilenameFormatRadio"]) {
+	if((obj=[pref objectForKey:@"FilenameFormatRadio"])) {
 		[o_filenameFormatRadio selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"FilenameFormat"]) {
+	if((obj=[pref objectForKey:@"FilenameFormat"])) {
 		[o_filenameFormat setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBServer"]) {
+	if((obj=[pref objectForKey:@"CDDBServer"])) {
 		[o_cddbServer setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBServerPath"]) {
+	if((obj=[pref objectForKey:@"CDDBServerPath"])) {
 		[o_cddbServerPath setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBServerPort"]) {
+	if((obj=[pref objectForKey:@"CDDBServerPort"])) {
 		[o_cddbServerPort setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBProxyServer"]) {
+	if((obj=[pref objectForKey:@"CDDBProxyServer"])) {
 		[o_cddbProxyServer setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBProxyServerPort"]) {
+	if((obj=[pref objectForKey:@"CDDBProxyServerPort"])) {
 		[o_cddbProxyServerPort setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBProxyUser"]) {
+	if((obj=[pref objectForKey:@"CDDBProxyUser"])) {
 		[o_cddbProxyUser setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBProxyPasswd"]) {
+	if((obj=[pref objectForKey:@"CDDBProxyPasswd"])) {
 		[o_cddbProxyPassword setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CDDBUseProxy"]) {
+	if((obj=[pref objectForKey:@"CDDBUseProxy"])) {
 		[o_cddbProxyEnabled setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"CDDBUseCache"]) {
+	if((obj=[pref objectForKey:@"CDDBUseCache"])) {
 		[o_cddbUseCache setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"CDDBServerList"]) {
+	if((obj=[pref objectForKey:@"CDDBServerList"])) {
 		[serverList removeAllObjects];
 		[serverList addObjectsFromArray:obj];
 		[o_cddbServer setNumberOfVisibleItems:[obj count]];
 		[o_cddbServer reloadData];
 	}
-	if(obj=[pref objectForKey:@"RawBitDepth"]) {
+	if((obj=[pref objectForKey:@"RawBitDepth"])) {
 		if([obj intValue] < [o_rawBitDepth numberOfItems]) [o_rawBitDepth selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"RawChannels"]) {
+	if((obj=[pref objectForKey:@"RawChannels"])) {
 		if([obj intValue] < [o_rawChannels numberOfItems]) [o_rawChannels selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"RawEndian"]) {
+	if((obj=[pref objectForKey:@"RawEndian"])) {
 		if([obj intValue] < [o_rawEndian numberOfItems]) [o_rawEndian selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"RawSamplerate"]) {
+	if((obj=[pref objectForKey:@"RawSamplerate"])) {
 		[o_rawSamplerate setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"CorrectOffset"]) {
+	if((obj=[pref objectForKey:@"CorrectOffset"])) {
 		[o_correctOffset setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"CuesheetEncodings2"]) {
+	if((obj=[pref objectForKey:@"CuesheetEncodings2"])) {
 		int i;
 		for(i=[o_cuesheetEncodings numberOfItems]-1;i>=0;i--) {
 			if([[o_cuesheetEncodings itemAtIndex:i] tag] == [obj intValue]) {
@@ -2022,7 +2022,7 @@ end:
 			}
 		}
 	}
-	else if(obj=[pref objectForKey:@"CuesheetEncodings"]) {
+	else if((obj=[pref objectForKey:@"CuesheetEncodings"])) {
 		if([obj intValue] == 0) {
 			[o_cuesheetEncodings selectItemAtIndex:0];
 		}
@@ -2033,7 +2033,7 @@ end:
 			if([obj intValue]-2 < count) [o_cuesheetEncodings selectItemWithTitle:[NSString localizedNameOfStringEncoding:*(encodingsArr+[obj intValue]-2)]];
 		}
 	}
-	if(obj=[pref objectForKey:@"CDDBQueryFlag2"]) {
+	if((obj=[pref objectForKey:@"CDDBQueryFlag2"])) {
 		unsigned int flag = [obj unsignedIntValue];
 		NSMenu *submenu = [o_cddbQueryItem submenu];
 		if(flag & XLDCDDBQueryEmptyOnlyMask) [[submenu itemAtIndex:0] setState:NSOnState];
@@ -2053,7 +2053,7 @@ end:
 		if(flag & XLDCDDBQueryCoverArtMask) [[submenu itemAtIndex:8] setState:NSOnState];
 		else [[submenu itemAtIndex:8] setState:NSOffState];
 	}
-	else if(obj=[pref objectForKey:@"CDDBQueryFlag"]) {
+	else if((obj=[pref objectForKey:@"CDDBQueryFlag"])) {
 		unsigned int flag = [obj unsignedIntValue];
 		NSMenu *submenu = [o_cddbQueryItem submenu];
 		if(flag & XLDCDDBQueryEmptyOnlyMask) [[submenu itemAtIndex:0] setState:NSOnState];
@@ -2071,7 +2071,7 @@ end:
 		if(flag & XLDCDDBQueryCoverArtMask) [[submenu itemAtIndex:8] setState:NSOnState];
 		else [[submenu itemAtIndex:8] setState:NSOffState];
 	}
-	if(obj=[pref objectForKey:@"MaxThreads"]) {
+	if((obj=[pref objectForKey:@"MaxThreads"])) {
 		[o_maxThreads setIntValue:[obj intValue]];
 		[o_maxThreads sendAction:[o_maxThreads action] to:[o_maxThreads target]];
 	}
@@ -2082,206 +2082,206 @@ end:
 		[o_maxThreads setIntValue:numThread];
 		[o_maxThreads sendAction:[o_maxThreads action] to:[o_maxThreads target]];
 	}
-	if(obj=[pref objectForKey:@"ScaleImage"]) {
+	if((obj=[pref objectForKey:@"ScaleImage"])) {
 		[o_scaleImage setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ScaleType"]) {
+	if((obj=[pref objectForKey:@"ScaleType"])) {
 		[o_scaleType selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ScalePixel"]) {
+	if((obj=[pref objectForKey:@"ScalePixel"])) {
 		[o_scalePixel setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"CompressionQuality"]) {
+	if((obj=[pref objectForKey:@"CompressionQuality"])) {
 		[o_compressionQuality setIntValue:[obj intValue]];
 		[o_compressionQuality performClick:nil];
 	}
-	if(obj=[pref objectForKey:@"EditTags"]) {
+	if((obj=[pref objectForKey:@"EditTags"])) {
 		[o_editTags setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AddiTunes"]) {
+	if((obj=[pref objectForKey:@"AddiTunes"])) {
 		[o_addiTunes setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"LibraryType"]) {
+	if((obj=[pref objectForKey:@"LibraryType"])) {
 		[o_libraryType selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"LibraryName"]) {
+	if((obj=[pref objectForKey:@"LibraryName"])) {
 		[o_libraryName setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"RetryCount"]) {
+	if((obj=[pref objectForKey:@"RetryCount"])) {
 		[o_maxRetryCount setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"OffsetCorrectionValue"]) {
+	if((obj=[pref objectForKey:@"OffsetCorrectionValue"])) {
 		[o_offsetCorrectionValue setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"QueryAccurateRip"]) {
+	if((obj=[pref objectForKey:@"QueryAccurateRip"])) {
 		[o_queryAccurateRip setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"SaveLogMode"]) {
+	if((obj=[pref objectForKey:@"SaveLogMode"])) {
 		[o_saveLogMode selectItemAtIndex:[o_saveLogMode indexOfItemWithTag:[obj intValue]]];
 	}
 	else {
-		if(obj=[pref objectForKey:@"SaveLog"]) {
+		if((obj=[pref objectForKey:@"SaveLog"])) {
 			if([obj intValue] == NSOffState) [o_saveLogMode selectItemAtIndex:[o_saveLogMode indexOfItemWithTag:2]];
-			else if(obj=[pref objectForKey:@"SaveLogType"]) {
+			else if((obj=[pref objectForKey:@"SaveLogType"])) {
 				[o_saveLogMode selectItemAtIndex:[o_saveLogMode indexOfItemWithTag:[obj intValue]]];
 			}
 		}
 	}
-	if(obj=[pref objectForKey:@"SaveCueMode"]) {
+	if((obj=[pref objectForKey:@"SaveCueMode"])) {
 		[o_saveCueMode selectItemAtIndex:[o_saveCueMode indexOfItemWithTag:[obj intValue]]];
 	}
-	if(obj=[pref objectForKey:@"VerifySector"]) {
+	if((obj=[pref objectForKey:@"VerifySector"])) {
 		[o_verifySuspiciousSector setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"TestAndCopy"]) {
+	if((obj=[pref objectForKey:@"TestAndCopy"])) {
 		[o_testBeforeCopy setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"TestType"]) {
+	if((obj=[pref objectForKey:@"TestType"])) {
 		[o_testType selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"CuesheetType"]) {
+	if ((obj=[pref objectForKey:@"CuesheetType"])) {
 		[o_cuesheetType selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"LogControl"]) {
+	if ((obj=[pref objectForKey:@"LogControl"])) {
 		[o_arLogControl setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ScanReplayGain"]) {
+	if ((obj=[pref objectForKey:@"ScanReplayGain"])) {
 		[o_scanReplayGain setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"UseC2Pointer"]) {
+	if ((obj=[pref objectForKey:@"UseC2Pointer"])) {
 		[o_useC2Pointer setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoSetOffset"]) {
+	if ((obj=[pref objectForKey:@"AutoSetOffset"])) {
 		[o_autoSetOffsetValue setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"SubdirectoryDepth"]) {
+	if ((obj=[pref objectForKey:@"SubdirectoryDepth"])) {
 		[o_subdirectoryDepth setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoMountDisc"]) {
+	if ((obj=[pref objectForKey:@"AutoMountDisc"])) {
 		[o_autoMountDisc setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoStartRipping"]) {
+	if ((obj=[pref objectForKey:@"AutoStartRipping"])) {
 		[o_autoStartRipping setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"EjectWhenDone"]) {
+	if ((obj=[pref objectForKey:@"EjectWhenDone"])) {
 		[o_ejectWhenDone setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"QuitWhenDone"]) {
+	if ((obj=[pref objectForKey:@"QuitWhenDone"])) {
 		[o_quitWhenDone setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoQueryCDDB"]) {
+	if ((obj=[pref objectForKey:@"AutoQueryCDDB"])) {
 		[o_autoQueryCDDB setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"LimitExtension"]) {
+	if ((obj=[pref objectForKey:@"LimitExtension"])) {
 		[o_limitExtension setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ExtensionFilter"]) {
+	if ((obj=[pref objectForKey:@"ExtensionFilter"])) {
 		[o_extensionFilter setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"PreserveDirectory"]) {
+	if ((obj=[pref objectForKey:@"PreserveDirectory"])) {
 		[o_preserveDirectoryStructure setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"DontPrompt"]) {
+	if ((obj=[pref objectForKey:@"DontPrompt"])) {
 		[o_dontPromptForCDDB setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ForceReadCuesheet"]) {
+	if ((obj=[pref objectForKey:@"ForceReadCuesheet"])) {
 		[o_forceReadCuesheet setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AppendBOM"]) {
+	if ((obj=[pref objectForKey:@"AppendBOM"])) {
 		[o_appendBOM setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ExistingFile"]) {
+	if ((obj=[pref objectForKey:@"ExistingFile"])) {
 		[o_existingFile selectCellWithTag:[obj intValue]];
 	}
-	else if(obj=[pref objectForKey:@"Overwrite"]) {
+	else if ((obj=[pref objectForKey:@"Overwrite"])) {
 		if([obj intValue] == NSOnState) [o_existingFile selectCellWithTag:2];
 		else [o_existingFile selectCellWithTag:0];
 	}
-	if(obj=[pref objectForKey:@"ExpandImage"]) {
+	if ((obj=[pref objectForKey:@"ExpandImage"])) {
 		[o_expandImage setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoLoadCover"]) {
+	if ((obj=[pref objectForKey:@"AutoLoadCover"])) {
 		[o_autoLoadCoverArt setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoLoadCoverName"]) {
+	if ((obj=[pref objectForKey:@"AutoLoadCoverName"])) {
 		[o_autoLoadCoverArtName setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"AutoLoadCoverDontOverwrite"]) {
+	if ((obj=[pref objectForKey:@"AutoLoadCoverDontOverwrite"])) {
 		[o_autoLoadCoverArtDontOverwrite setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"EmbedImages"]) {
+	if ((obj=[pref objectForKey:@"EmbedImages"])) {
 		[o_embedCoverArts setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"DontReadSubchannel"]) {
+	if ((obj=[pref objectForKey:@"DontReadSubchannel"])) {
 		[o_dontReadSubchannel setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"MoveAfterFinish"]) {
+	if ((obj=[pref objectForKey:@"MoveAfterFinish"])) {
 		[o_moveAfterFinish setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AutoSetCompilation"]) {
+	if ((obj=[pref objectForKey:@"AutoSetCompilation"])) {
 		[o_autoSetCompilation setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"PreserveUnknownMetadata"]) {
+	if ((obj=[pref objectForKey:@"PreserveUnknownMetadata"])) {
 		[o_preserveUnknownMetadata setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"KeepTimeStamp"]) {
+	if ((obj=[pref objectForKey:@"KeepTimeStamp"])) {
 		[o_keepTimeStamp setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"RemoveOriginal"]) {
+	if ((obj=[pref objectForKey:@"RemoveOriginal"])) {
 		[o_removeOriginalFile setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"WarnRemoval"]) {
+	if ((obj=[pref objectForKey:@"WarnRemoval"])) {
 		[o_warnBeforeConversion setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"RipperMode"]) {
+	if ((obj=[pref objectForKey:@"RipperMode"])) {
 		int idx = [o_ripperMode indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_ripperMode selectItemAtIndex:idx];
 	}
-	else if(obj=[pref objectForKey:@"UseParanoiaMode"]) {
+	else if ((obj=[pref objectForKey:@"UseParanoiaMode"])) {
 		int tag;
 		if([obj intValue] == NSOnState) tag = kRipperModeParanoia;
 		else tag = kRipperModeBurst;
 		int idx = [o_ripperMode indexOfItemWithTag:tag];
 		if(idx >= 0) [o_ripperMode selectItemAtIndex:idx];
 	}
-	if(obj=[pref objectForKey:@"DefaultCommentValue"]) {
+	if ((obj=[pref objectForKey:@"DefaultCommentValue"])) {
 		[[[o_defaultCommentValue textStorage] mutableString] setString:obj];
 		[[o_defaultCommentValue textStorage] setFont:[NSFont systemFontOfSize:11]];
 	}
-	if(obj=[pref objectForKey:@"PreferredService"]) {
+	if ((obj=[pref objectForKey:@"PreferredService"])) {
 		int idx = [o_preferredService indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_preferredService selectItemAtIndex:idx];
 	}
-	if(obj=[pref objectForKey:@"WriteOffset"]) {
+	if ((obj=[pref objectForKey:@"WriteOffset"])) {
 		[o_writeOffset setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ReadOffsetForVerify"]) {
+	if ((obj=[pref objectForKey:@"ReadOffsetForVerify"])) {
 		[o_readOffsetForVerify setIntValue:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"ReadOffsetUseRipperValue"]) {
+	if ((obj=[pref objectForKey:@"ReadOffsetUseRipperValue"])) {
 		[o_readOffsetUseRipperValue setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"UseAWS"]) {
+	if ((obj=[pref objectForKey:@"UseAWS"])) {
 		[o_useAWS setState:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"AWSKey"]) {
+	if ((obj=[pref objectForKey:@"AWSKey"])) {
 		[o_AWSKey setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"AWSSecretKey"]) {
+	if ((obj=[pref objectForKey:@"AWSSecretKey"])) {
 		[o_AWSSecretKey setStringValue:obj];
 	}
-	if(obj=[pref objectForKey:@"AWSDomain"]) {
+	if ((obj=[pref objectForKey:@"AWSDomain"])) {
 		int idx = [o_AWSDomain indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_AWSDomain selectItemAtIndex:idx];
 	}
-	if(obj=[pref objectForKey:@"HTOAStyle"]) {
+	if ((obj=[pref objectForKey:@"HTOAStyle"])) {
 		[o_htoaStyle selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[pref objectForKey:@"DriveSpeedControl"]) {
+	if ((obj=[pref objectForKey:@"DriveSpeedControl"])) {
 		int idx = [o_driveSpeedControl indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_driveSpeedControl selectItemAtIndex:idx];
 	}
-	if(obj=[pref objectForKey:@"Priority"]) {
+	if ((obj=[pref objectForKey:@"Priority"])) {
 		int idx = [o_priority indexOfItemWithTag:[obj intValue]];
 		if(idx >= 0) [o_priority selectItemAtIndex:idx];
 		[self renice:nil];
@@ -2314,7 +2314,7 @@ end:
 		[pref synchronize];
 	}
 	
-	if(obj=[pref objectForKey:@"PrefPaneVisible"]) {
+	if ((obj=[pref objectForKey:@"PrefPaneVisible"])) {
 		if([obj boolValue]) [o_prefPane makeKeyAndOrderFront:nil];
 	}
 	else {
@@ -2423,7 +2423,7 @@ end:
 			trackList = (NSMutableArray *)[cueParser trackListForExternalCueSheet:file decoder:&decoder];
 			if(!decoder) goto next;
 			else if(![self canHandleOutputForDecoder:decoder]) goto next;
-
+			
 			[rangeArray addObject:[NSValue valueWithRange:NSMakeRange([trackArray count],[trackList count])]];
 			for(j=0;j<[trackList count];j++) {
 				[[trackList objectAtIndex:j] setDesiredFileName:[NSString stringWithFormat:@"%@ - Track %d",[file lastPathComponent],j+1]];
@@ -2434,7 +2434,7 @@ end:
 		else {
 			if(![(id <XLDDecoder>)decoder openFile:(char *)[file UTF8String]]) goto next;
 			if(![self canHandleOutputForDecoder:decoder]) goto next;
-
+			
 			if([decoder hasCueSheet] && [o_forceReadCuesheet state] == NSOnState) {
 				if([decoder hasCueSheet] == XLDTextTypeCueSheet)
 					trackList = (NSMutableArray *)[cueParser trackListForDecoder:decoder withEmbeddedCueData:[decoder cueSheet]];
@@ -2526,7 +2526,7 @@ end:
 		}
 		[trackArray addObjectsFromArray:trackList];
 		[decoder closeFile];
-next:
+	next:
 		[pool release];
 	}
 	
@@ -2677,7 +2677,7 @@ end:
 				[op _setIncludeNewFolderButton:YES];
 			
 			int ret = [op runModal];
-			if((ret != NSOKButton) || ![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]]) 
+			if((ret != NSOKButton) || ![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]])
 			{
 				NSRunCriticalAlertPanel(LS(@"error"), LS(@"no write permission"), @"OK", nil, nil);
 				[decoder closeFile];
@@ -2789,7 +2789,7 @@ end:
 		}
 		
 		[taskQueue addTask:task];
-end:
+	end:
 		[track release];
 		[task release];
 		return;
@@ -2953,7 +2953,7 @@ end:
 				[op _setIncludeNewFolderButton:YES];
 			
 			int ret = [op runModal];
-			if((ret != NSOKButton) || ![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]]) 
+			if((ret != NSOKButton) || ![[NSFileManager defaultManager] isWritableFileAtPath:[op filename]])
 			{
 				NSRunCriticalAlertPanel(LS(@"error"), LS(@"no write permission"), @"OK", nil, nil);
 				[decoder closeFile];
@@ -3033,7 +3033,7 @@ end:
 		}
 		
 		[taskQueue addTask:task];
-end:
+	end:
 		[track release];
 		[task release];
 	}
@@ -3205,7 +3205,7 @@ end:
 				[o_detectPregapProgress setDoubleValue:i];
 			}
 		}
-
+		
 		[o_detectPregapProgress setDoubleValue:cdread.numTracks-1];
 		xld_cdda_close(&cdread);
 		driveIsBusy = NO;
@@ -3329,18 +3329,18 @@ end:
 				[out appendString:LS(@"The cache size is small enough for cdparanoia III 10.2 engine. :)\n\n")];
 		}
 		/*
-		if(result.have_cache && (result.cache_sector_size >= 150)) {
-			int defeatPower = 1;
-			for(;defeatPower<15;defeatPower++) {
-				if(result.cache_sector_size < 550+50*(defeatPower-1)) break;
-			}
-			if(defeatPower<15) [out appendString:[NSString stringWithFormat:LS(@"Recommended cache defeating strength is: %d (1-14)\n\n"),defeatPower]];
-			else [out appendString:LS(@"Your drive has a too large cache to defeat. :(\n\n")];
-		}
-		else {
-			[out appendString:LS(@"The cache size is too small to have an effect.\n")];
-			[out appendString:LS(@"You may be able to turn off \"Disable cache\" option, but I recommend you to disable cache with the minimum strength.\n\n")];
-		}
+		 if(result.have_cache && (result.cache_sector_size >= 150)) {
+		 int defeatPower = 1;
+		 for(;defeatPower<15;defeatPower++) {
+		 if(result.cache_sector_size < 550+50*(defeatPower-1)) break;
+		 }
+		 if(defeatPower<15) [out appendString:[NSString stringWithFormat:LS(@"Recommended cache defeating strength is: %d (1-14)\n\n"),defeatPower]];
+		 else [out appendString:LS(@"Your drive has a too large cache to defeat. :(\n\n")];
+		 }
+		 else {
+		 [out appendString:LS(@"The cache size is too small to have an effect.\n")];
+		 [out appendString:LS(@"You may be able to turn off \"Disable cache\" option, but I recommend you to disable cache with the minimum strength.\n\n")];
+		 }
 		 */
 	}
 	[out appendString:@"End of status report\n"];
@@ -3373,7 +3373,7 @@ end:
 	NSString *albumGroup = nil;
 	NSString *albumMEID = nil;
 	NSString *albumMUID = nil;
-	if(![[trackArr objectAtIndex:actualTotalTrack-1] enabled]) 
+	if(![[trackArr objectAtIndex:actualTotalTrack-1] enabled])
 		actualTotalTrack--;
 	
 	while(1) {
@@ -3517,11 +3517,11 @@ end:
 				if(fseeko(fp,tmp-8,SEEK_CUR) != 0) goto end;
 			}
 			/*else {
-				NSLog(@"unknown chunk (rest:%d)",rest);
-				int i;
-				for(i=0;i<4;i++) putchar(atom[i]);
-				break;
-			}*/
+			 NSLog(@"unknown chunk (rest:%d)",rest);
+			 int i;
+			 for(i=0;i<4;i++) putchar(atom[i]);
+			 break;
+			 }*/
 			rest -= tmp;
 		}
 		
@@ -3722,7 +3722,7 @@ end:
 		if(fseeko(fp,nextIdx,SEEK_SET) != 0) goto end;
 	}
 end:
-		
+	
 	if(albumTitle) [albumTitle release];
 	if(albumArtist) [albumArtist release];
 	if(albumGenre) [albumGenre release];
@@ -4302,7 +4302,7 @@ end:
 		[util release];
 		util = nil;
 		return;
-fail:
+	fail:
 		NSBeginCriticalAlertSheet(LS(@"CDDB connection"), @"OK", nil, nil, [discView window], nil, nil, nil, NULL, LS(@"The entered string is not a valid MusicBrainz or Discogs release URL."));
 	}
 	else if([(NSString *)contextInfo isEqualTo:@"GotoMBReleasePage"]) {
@@ -4385,7 +4385,7 @@ fail:
 	windowRect.size.height += 22; //title bar height
 	windowRect.size.height += 32; //border
 	
-	NSRect r = NSMakeRect([[o_preferencesTab window] frame].origin.x, [[o_preferencesTab window] frame].origin.y - 
+	NSRect r = NSMakeRect([[o_preferencesTab window] frame].origin.x, [[o_preferencesTab window] frame].origin.y -
 						  (windowRect.size.height - [[o_preferencesTab window] frame].size.height), [[o_preferencesTab window] frame].size.width, windowRect.size.height);
 	[[o_preferencesTab window] setFrame:r display:YES animate:YES];
 	//[[o_preferencesTab window] makeFirstResponder:[[o_preferencesTab selectedTabViewItem] view]];
@@ -4462,7 +4462,7 @@ fail:
     [toolbar setDelegate:self];
     [o_logWindow setToolbar:toolbar];
 	
-	[o_defaultCommentValue setFont:[NSFont systemFontOfSize:11]]; 
+	[o_defaultCommentValue setFont:[NSFont systemFontOfSize:11]];
 	[o_formatList setAutoenablesItems:NO];
 	[self makeDriveOffsetList];
 	[self loadPrefs];
@@ -4548,17 +4548,17 @@ fail:
 - (NSArray*)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
 	if([[toolbar identifier] isEqualToString:@"PrefToolbar"]) {
-		return [NSArray arrayWithObjects:GeneralIdentifier, 
+		return [NSArray arrayWithObjects:GeneralIdentifier,
 				FilenameIdentifier,
-				BatchIdentifier, 
-				CDDBIdentifier, 
-				MetadataIdentifier, 
+				BatchIdentifier,
+				CDDBIdentifier,
+				MetadataIdentifier,
 				CDRipIdentifier,
 				BurnIdentifier,
 				nil];
 	}
 	else if([[toolbar identifier] isEqualToString:@"LogToolbar"]) {
-		return [NSArray arrayWithObjects:@"SaveAs", 
+		return [NSArray arrayWithObjects:@"SaveAs",
 				nil];
 	}
 	return nil;
@@ -4576,8 +4576,8 @@ fail:
 	else return nil;
 }
 
-- (NSToolbarItem*)toolbar:(NSToolbar*)toolbar 
-	itemForItemIdentifier:(NSString*)itemId 
+- (NSToolbarItem*)toolbar:(NSToolbar*)toolbar
+	itemForItemIdentifier:(NSString*)itemId
 willBeInsertedIntoToolbar:(BOOL)willBeInserted
 {
     NSToolbarItem*  toolbarItem;
@@ -4700,7 +4700,7 @@ willBeInsertedIntoToolbar:(BOOL)willBeInserted
 	int i;
 	i = [o_profileMenu numberOfItems]-1;
 	for(;i>=3;i--) [o_profileMenu removeItemAtIndex:i];
-
+	
 	for(i=0;i<[arr count];i++) {
 		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[arr objectAtIndex:i] action:@selector(loadProfile:) keyEquivalent:@""];
 		[item setTarget:profileManager];

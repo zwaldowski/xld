@@ -136,50 +136,50 @@ static const char* ID3v1GenreList[] = {
 	XLDTrack *track = [currentTracks objectAtIndex:index];
 	
 	id obj;
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TITLE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TITLE])) {
 		[o_title setStringValue:obj];
 	}
 	else [o_title setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST])) {
 		[o_artist setStringValue:obj];
 	}
 	else [o_artist setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ALBUM]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ALBUM])) {
 		[o_album setStringValue:obj];
 	}
 	else [o_album setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ALBUMARTIST]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ALBUMARTIST])) {
 		[o_albumArtist setStringValue:obj];
 	}
 	else [o_albumArtist setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_GENRE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_GENRE])) {
 		[o_genre setStringValue:obj];
 	}
 	else [o_genre setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER])) {
 		[o_composer setStringValue:obj];
 	}
 	else [o_composer setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT])) {
 		[o_comment setStringValue:obj];
 	}
 	else [o_comment setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_DISC]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_DISC])) {
 		[o_disc setIntValue:[obj intValue]];
 	}
 	else [o_disc setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TOTALDISCS]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TOTALDISCS])) {
 		[o_totalDisc setIntValue:[obj intValue]];
 	}
 	else [o_totalDisc setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_DATE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_DATE])) {
 		[o_year setStringValue:obj];
 	}
-	else if(obj=[[track metadata] objectForKey:XLD_METADATA_YEAR]) {
+	else if((obj=[[track metadata] objectForKey:XLD_METADATA_YEAR])) {
 		[o_year setIntValue:[obj intValue]];
 	}
 	else [o_year setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPILATION]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPILATION])) {
 		if([obj boolValue]) [o_compilation setState:NSOnState];
 		else [o_compilation setState:NSOffState];
 	}
@@ -367,58 +367,58 @@ static const char* ID3v1GenreList[] = {
 	XLDTrack *track = [currentSingleTracks objectAtIndex:index];
 	
 	id obj;
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TITLE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TITLE])) {
 		[o_singleTitle setStringValue:obj];
 	}
 	else [o_singleTitle setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST])) {
 		[o_singleArtist setStringValue:obj];
 	}
 	else [o_singleArtist setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ALBUM]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ALBUM])) {
 		[o_singleAlbum setStringValue:obj];
 	}
 	else [o_singleAlbum setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_ALBUMARTIST]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_ALBUMARTIST])) {
 		[o_singleAlbumArtist setStringValue:obj];
 	}
 	else [o_singleAlbumArtist setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_GENRE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_GENRE])) {
 		[o_singleGenre setStringValue:obj];
 	}
 	else [o_singleGenre setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER])) {
 		[o_singleComposer setStringValue:obj];
 	}
 	else [o_singleComposer setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT])) {
 		[o_singleComment setStringValue:obj];
 	}
 	else [o_singleComment setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_DISC]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_DISC])) {
 		[o_singleDisc setIntValue:[obj intValue]];
 	}
 	else [o_singleDisc setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TOTALDISCS]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TOTALDISCS])) {
 		[o_singleTotalDisc setIntValue:[obj intValue]];
 	}
 	else [o_singleTotalDisc setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TRACK]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TRACK])) {
 		[o_track setIntValue:[obj intValue]];
 	}
 	else [o_track setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_TOTALTRACKS]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_TOTALTRACKS])) {
 		[o_totalTrack setIntValue:[obj intValue]];
 	}
 	else [o_totalTrack setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_DATE]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_DATE])) {
 		[o_singleYear setStringValue:obj];
 	}
-	else if(obj=[[track metadata] objectForKey:XLD_METADATA_YEAR]) {
+	else if((obj=[[track metadata] objectForKey:XLD_METADATA_YEAR])) {
 		[o_singleYear setIntValue:[obj intValue]];
 	}
 	else [o_singleYear setStringValue:@""];
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COVER]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COVER])) {
 		/*NSImage *img = [[NSImage alloc] initWithData:obj];
 		NSImageRep *rep = [img bestRepresentationForDevice:nil];
 		NSSize size;
@@ -434,7 +434,7 @@ static const char* ID3v1GenreList[] = {
 		[o_picture clearData];*/
 		[o_picture clearImage];
 	}
-	if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPILATION]) {
+	if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPILATION])) {
 		if([obj boolValue]) [o_singleCompilation setState:NSOnState];
 		else [o_singleCompilation setState:NSOffState];
 	}

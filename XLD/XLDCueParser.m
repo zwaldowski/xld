@@ -2033,17 +2033,17 @@ last:
 	[trk setFrames:length];
 	
 	id obj;
-	if(obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM])
+	if((obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM]))
 		[[trk metadata] setObject:obj forKey:XLD_METADATA_ALBUM];
 	if(![[self artist] isEqualToString:@""])
 		[[trk metadata] setObject:[self artist] forKey:XLD_METADATA_ALBUMARTIST];
-	if(obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPOSER])
+	if((obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPOSER]))
 		[[trk metadata] setObject:obj forKey:XLD_METADATA_COMPOSER];
-	if(obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_YEAR])
+	if((obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_YEAR]))
 		[[trk metadata] setObject:obj forKey:XLD_METADATA_YEAR];
-	if(obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC])
+	if((obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC]))
 		[[trk metadata] setObject:obj forKey:XLD_METADATA_DISC];
-	if(obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS])
+	if((obj = [[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS]))
 		[[trk metadata] setObject:obj forKey:XLD_METADATA_TOTALDISCS];
 	
 	/*NSMutableData *cue = [self cueData];

@@ -289,7 +289,7 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 {
 	if(!tracks) return nil;
 	int i,n=1;
-	int offset = 0;
+	xldoffset_t offset = 0;
 	BOOL removeRedundancy = NO;
 	NSMutableData *data = [[NSMutableData alloc] init];
 	if(appendBOM) {
@@ -299,16 +299,16 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	NSString *albumDate = [XLDTrackListUtil dateForTracks:tracks];
 	NSString *albumGenre = [XLDTrackListUtil genreForTracks:tracks];
 	id obj;
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM]))
 		[data appendData:[[NSString stringWithFormat:@"TITLE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUMARTIST])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUMARTIST]))
 		[data appendData:[[NSString stringWithFormat:@"PERFORMER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 	else {
 		NSString *aartist = [XLDTrackListUtil artistForTracks:tracks sameArtistForAllTracks:&removeRedundancy];
 		if(removeRedundancy)
 			[data appendData:[[NSString stringWithFormat:@"PERFORMER \"%@\"\n",aartist] dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_CATALOG])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_CATALOG]))
 		[data appendData:[[NSString stringWithFormat:@"CATALOG %@\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 	if(albumGenre) {
 		[data appendData:[[NSString stringWithFormat:@"REM GENRE \"%@\"\n",albumGenre] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -316,17 +316,17 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	if(albumDate) {
 		[data appendData:[[NSString stringWithFormat:@"REM DATE \"%@\"\n",albumDate] dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC]))
 		[data appendData:[[NSString stringWithFormat:@"REM DISCNUMBER %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS]))
 		[data appendData:[[NSString stringWithFormat:@"REM TOTALDISCS %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_FREEDBDISCID])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_FREEDBDISCID]))
 		[data appendData:[[NSString stringWithFormat:@"REM DISCID %08X\n",[obj unsignedIntValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN]))
 		[data appendData:[[NSString stringWithFormat:@"REM REPLAYGAIN_ALBUM_GAIN %.2f dB\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK]))
 		[data appendData:[[NSString stringWithFormat:@"REM REPLAYGAIN_ALBUM_PEAK %f\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPILATION])
+	if((obj=[[[tracks objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPILATION]))
 		if([obj boolValue]) [data appendData:[@"REM COMPILATION TRUE\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[data appendData:[[NSString stringWithFormat:@"FILE \"%@\" WAVE\n",[filename precomposedStringWithCanonicalMapping]] dataUsingEncoding:NSUTF8StringEncoding]];
 	
@@ -340,38 +340,38 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 			continue;
 		}
 		[data appendData:[[NSString stringWithFormat:@"  TRACK %02d AUDIO\n",n] dataUsingEncoding:NSUTF8StringEncoding]];
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_TITLE])
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_TITLE]))
 			[data appendData:[[NSString stringWithFormat:@"    TITLE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 		if((obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST]) && !removeRedundancy)
 			[data appendData:[[NSString stringWithFormat:@"    PERFORMER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER])
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER]))
 			[data appendData:[[NSString stringWithFormat:@"    SONGWRITER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_ISRC]) 
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_ISRC]))
 			[data appendData:[[NSString stringWithFormat:@"    ISRC %@\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_PREEMPHASIS]) {
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_PREEMPHASIS])) {
 			if([obj boolValue]) [data appendData:[@"    FLAGS PRE\n" dataUsingEncoding:NSUTF8StringEncoding]];
 		}
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_DCP]) {
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_DCP])) {
 			if([obj boolValue]) [data appendData:[@"    FLAGS DCP\n" dataUsingEncoding:NSUTF8StringEncoding]];
 		}
 		if(!albumGenre) {
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_GENRE])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_GENRE]))
 				[data appendData:[[NSString stringWithFormat:@"    REM GENRE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 		}
 		if(!albumDate) {
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_DATE])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_DATE]))
 				[data appendData:[[NSString stringWithFormat:@"    REM DATE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			else if(obj=[[track metadata] objectForKey:XLD_METADATA_YEAR])
+			else if((obj=[[track metadata] objectForKey:XLD_METADATA_YEAR]))
 				[data appendData:[[NSString stringWithFormat:@"    REM DATE %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 		}
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT]) {
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT])) {
 			NSMutableString *str = [NSMutableString stringWithString:obj];
 			[str replaceOccurrencesOfString:@"\n" withString:@" " options:0 range:NSMakeRange(0,[obj length])];
 			[data appendData:[[NSString stringWithFormat:@"    REM COMMENT \"%@\"\n",str] dataUsingEncoding:NSUTF8StringEncoding]];
 		}
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN])
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN]))
 			[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_GAIN %.2f dB\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-		if(obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK])
+		if((obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK]))
 			[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_PEAK %f\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 		
 		if([track gap] != 0)
@@ -408,16 +408,16 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	NSString *albumDate = [XLDTrackListUtil dateForTracks:trackList];
 	NSString *albumGenre = [XLDTrackListUtil genreForTracks:trackList];
 	id obj;
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUM]))
 		[data appendData:[[NSString stringWithFormat:@"TITLE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUMARTIST])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_ALBUMARTIST]))
 		[data appendData:[[NSString stringWithFormat:@"PERFORMER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 	else {
 		NSString *aartist = [XLDTrackListUtil artistForTracks:trackList sameArtistForAllTracks:&removeRedundancy];
 		if(removeRedundancy)
 			[data appendData:[[NSString stringWithFormat:@"PERFORMER \"%@\"\n",aartist] dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_CATALOG])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_CATALOG]))
 		[data appendData:[[NSString stringWithFormat:@"CATALOG %@\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 	if(albumGenre) {
 		[data appendData:[[NSString stringWithFormat:@"REM GENRE \"%@\"\n",albumGenre] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -425,17 +425,17 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 	if(albumDate) {
 		[data appendData:[[NSString stringWithFormat:@"REM DATE \"%@\"\n",albumDate] dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_DISC]))
 		[data appendData:[[NSString stringWithFormat:@"REM DISCNUMBER %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_TOTALDISCS]))
 		[data appendData:[[NSString stringWithFormat:@"REM TOTALDISCS %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_FREEDBDISCID])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_FREEDBDISCID]))
 		[data appendData:[[NSString stringWithFormat:@"REM DISCID %08X\n",[obj unsignedIntValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_GAIN]))
 		[data appendData:[[NSString stringWithFormat:@"REM REPLAYGAIN_ALBUM_GAIN %.2f dB\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_ALBUM_PEAK]))
 		[data appendData:[[NSString stringWithFormat:@"REM REPLAYGAIN_ALBUM_PEAK %f\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-	if(obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPILATION])
+	if((obj=[[[trackList objectAtIndex:0] metadata] objectForKey:XLD_METADATA_COMPILATION]))
 		if([obj boolValue]) [data appendData:[@"REM COMPILATION TRUE\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	for(i=0;i<[trackList count];i++) {
@@ -452,38 +452,38 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 		}
 		else {
 			[data appendData:[[NSString stringWithFormat:@"  TRACK %02d AUDIO\n",n] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_TITLE])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_TITLE]))
 				[data appendData:[[NSString stringWithFormat:@"    TITLE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 			if((obj=[[track metadata] objectForKey:XLD_METADATA_ARTIST]) && !removeRedundancy)
 				[data appendData:[[NSString stringWithFormat:@"    PERFORMER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_COMPOSER]))
 				[data appendData:[[NSString stringWithFormat:@"    SONGWRITER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_ISRC])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_ISRC]))
 				[data appendData:[[NSString stringWithFormat:@"    ISRC %@\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_PREEMPHASIS]) {
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_PREEMPHASIS])) {
 				if([obj boolValue]) [data appendData:[@"    FLAGS PRE\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_DCP]) {
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_DCP])) {
 				if([obj boolValue]) [data appendData:[@"    FLAGS DCP\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			}
 			if(!albumGenre) {
-				if(obj=[[track metadata] objectForKey:XLD_METADATA_GENRE])
+				if((obj=[[track metadata] objectForKey:XLD_METADATA_GENRE]))
 					[data appendData:[[NSString stringWithFormat:@"    REM GENRE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
 			if(!albumDate) {
-				if(obj=[[track metadata] objectForKey:XLD_METADATA_DATE])
+				if((obj=[[track metadata] objectForKey:XLD_METADATA_DATE]))
 					[data appendData:[[NSString stringWithFormat:@"    REM DATE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-				else if(obj=[[track metadata] objectForKey:XLD_METADATA_YEAR])
+				else if((obj=[[track metadata] objectForKey:XLD_METADATA_YEAR]))
 					[data appendData:[[NSString stringWithFormat:@"    REM DATE %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT]) {
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_COMMENT])) {
 				NSMutableString *str = [NSMutableString stringWithString:obj];
 				[str replaceOccurrencesOfString:@"\n" withString:@" " options:0 range:NSMakeRange(0,[obj length])];
 				[data appendData:[[NSString stringWithFormat:@"    REM COMMENT \"%@\"\n",str] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN]))
 				[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_GAIN %.2f dB\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK])
+			if((obj=[[track metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK]))
 				[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_PEAK %f\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 			if(([track gap] != 0) && (i == 0)) {
 				if(HTOA && !nogap) {
@@ -507,38 +507,38 @@ static NSString *framesToMSFStr(xldoffset_t frames, int samplerate)
 		
 		if((i != [trackList count]-1) && [[trackList objectAtIndex:i+1] gap] && !nogap) {
 			[data appendData:[[NSString stringWithFormat:@"  TRACK %02d AUDIO\n",n] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_TITLE])
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_TITLE]))
 				[data appendData:[[NSString stringWithFormat:@"    TITLE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_ARTIST]) && !removeRedundancy)
 				[data appendData:[[NSString stringWithFormat:@"    PERFORMER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_COMPOSER])
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_COMPOSER]))
 				[data appendData:[[NSString stringWithFormat:@"    SONGWRITER \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_ISRC])
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_ISRC]))
 				[data appendData:[[NSString stringWithFormat:@"    ISRC %@\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_PREEMPHASIS]) {
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_PREEMPHASIS])) {
 				if([obj boolValue]) [data appendData:[@"    FLAGS PRE\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_DCP]) {
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_DCP])) {
 				if([obj boolValue]) [data appendData:[@"    FLAGS DCP\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			}
 			if(!albumGenre) {
-				if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_GENRE])
+				if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_GENRE]))
 					[data appendData:[[NSString stringWithFormat:@"    REM GENRE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
 			if(!albumDate) {
-				if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_DATE])
+				if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_DATE]))
 					[data appendData:[[NSString stringWithFormat:@"    REM DATE \"%@\"\n",obj] dataUsingEncoding:NSUTF8StringEncoding]];
-				else if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_YEAR])
+				else if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_YEAR]))
 					[data appendData:[[NSString stringWithFormat:@"    REM DATE %d\n",[obj intValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_COMMENT]) {
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_COMMENT])) {
 				NSMutableString *str = [NSMutableString stringWithString:obj];
 				[str replaceOccurrencesOfString:@"\n" withString:@" " options:0 range:NSMakeRange(0,[obj length])];
 				[data appendData:[[NSString stringWithFormat:@"    REM COMMENT \"%@\"\n",str] dataUsingEncoding:NSUTF8StringEncoding]];
 			}
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN])
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_GAIN]))
 				[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_GAIN %.2f dB\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
-			if(obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK])
+			if((obj=[[[trackList objectAtIndex:i+1] metadata] objectForKey:XLD_METADATA_REPLAYGAIN_TRACK_PEAK]))
 				[data appendData:[[NSString stringWithFormat:@"    REM REPLAYGAIN_TRACK_PEAK %f\n",[obj floatValue]] dataUsingEncoding:NSUTF8StringEncoding]];
 			if(i==0 && HTOA && !nogap) [data appendData:[[NSString stringWithFormat:@"    INDEX 00 %@\n",framesToMSFStr([track frames]+[track gap],samplerate)] dataUsingEncoding:NSUTF8StringEncoding]];
 			else [data appendData:[[NSString stringWithFormat:@"    INDEX 00 %@\n",framesToMSFStr([track frames],samplerate)] dataUsingEncoding:NSUTF8StringEncoding]];

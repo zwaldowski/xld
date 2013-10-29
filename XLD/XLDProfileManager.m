@@ -18,7 +18,7 @@
 {
 	NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
 	id obj;
-	if(obj=[pref objectForKey:@"Profiles"]) {
+	if((obj=[pref objectForKey:@"Profiles"])) {
 		int i;
 		for(i=0;i<[obj count];i++) {
 			NSDictionary *dic = [obj objectAtIndex:i];
@@ -63,7 +63,7 @@
 {
 	NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
 	id obj;
-	if(obj=[pref objectForKey:@"Profiles"]) {
+	if((obj=[pref objectForKey:@"Profiles"])) {
 		int i;
 		for(i=0;i<[obj count];i++) {
 			NSMutableDictionary *mDic = [[obj objectAtIndex:i] mutableCopy];

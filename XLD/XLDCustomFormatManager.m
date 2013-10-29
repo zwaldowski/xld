@@ -82,7 +82,7 @@
 {
 	NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
 	id obj;
-	if(obj=[pref objectForKey:@"CustomFormatConfigurations"]) {
+	if((obj=[pref objectForKey:@"CustomFormatConfigurations"])) {
 		int i;
 		for(i=0;i<[obj count];i++) {
 			NSMutableDictionary *mDic = [[obj objectAtIndex:i] mutableCopy];
@@ -91,7 +91,7 @@
 		}
 		[o_tableView reloadData];
 	}
-	else if(obj=[pref objectForKey:@"OutputFormatList"]) {
+	else if((obj=[pref objectForKey:@"OutputFormatList"])) {
 		int i,j;
 		for(j=0;j<[obj count];j++) {
 			for(i=0;i<[outputArray count];i++) {
@@ -249,7 +249,7 @@
 - (void)loadConfigurations:(NSDictionary *)pref
 {
 	id obj;
-	if(obj=[pref objectForKey:@"CustomFormatConfigurations"]) {
+	if((obj=[pref objectForKey:@"CustomFormatConfigurations"])) {
 		NSKeyedUnarchiver *decoder = [[NSKeyedUnarchiver alloc] initForReadingWithData:obj];
 		NSArray *arr = [decoder decodeObjectForKey:@"CustomFormatConfigurations"];
 		[decoder finishDecoding];

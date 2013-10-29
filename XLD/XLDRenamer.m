@@ -60,7 +60,7 @@
 - (void)loadConfigurations:(id)pref
 {
 	id obj;
-	if(obj=[pref objectForKey:@"CharacterReplacementList"]) {
+	if((obj=[pref objectForKey:@"CharacterReplacementList"])) {
 		int i;
 		NSDictionary *map = [pref objectForKey:@"CharacterReplacementMap"];
 		if(!map) return;

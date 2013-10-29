@@ -81,7 +81,7 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDSd2fOutput_BitDepth"]) {
+	if((obj=[cfg objectForKey:@"XLDSd2fOutput_BitDepth"])) {
 		[o_bitDepth selectItemAtIndex:[obj intValue]];
 	}
 	[self statusChanged:nil];

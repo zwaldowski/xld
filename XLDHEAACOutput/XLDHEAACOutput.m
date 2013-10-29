@@ -89,11 +89,11 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDHEAACOutput_BitRate"]) {
+	if((obj=[cfg objectForKey:@"XLDHEAACOutput_BitRate"])) {
 		[o_bitrate setIntValue:[obj intValue]];
 		[o_bitrate performClick:nil];
 	}
-	if(obj=[cfg objectForKey:@"XLDHEAACOutput_UseMP4"]) {
+	if((obj=[cfg objectForKey:@"XLDHEAACOutput_UseMP4"])) {
 		[o_useMP4 setState:[obj intValue]];
 	}
 }

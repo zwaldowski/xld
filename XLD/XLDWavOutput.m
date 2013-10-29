@@ -58,19 +58,19 @@
 - (void)loadConfigurations:(id)cfg
 {
 	id obj;
-	if(obj=[cfg objectForKey:@"XLDWavOutput_BitDepth"]) {
+	if((obj=[cfg objectForKey:@"XLDWavOutput_BitDepth"])) {
 		[o_bitDepth selectItemAtIndex:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavOutput_IsFloat"]) {
+	if((obj=[cfg objectForKey:@"XLDWavOutput_IsFloat"])) {
 		[o_isFloat setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavOutput_AddTags"]) {
+	if((obj=[cfg objectForKey:@"XLDWavOutput_AddTags"])) {
 		[o_addTags setState:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavOutput_WavTagFormat"]) {
+	if((obj=[cfg objectForKey:@"XLDWavOutput_WavTagFormat"])) {
 		[o_tagFormat selectCellWithTag:[obj intValue]];
 	}
-	if(obj=[cfg objectForKey:@"XLDWavOutput_WavTagEncoding"]) {
+	if((obj=[cfg objectForKey:@"XLDWavOutput_WavTagEncoding"])) {
 		[o_tagEncoding selectItemWithTag:[obj intValue]];
 	}
 	
